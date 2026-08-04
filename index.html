@@ -4215,6 +4215,103 @@ svg {
   display: none;
 }
 
+.notification-dot {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 6px;
+  height: 6px;
+  border: 1.5px solid white;
+  border-radius: 50%;
+  background: var(--red-600);
+}
+
+.icon-button { position: relative; }
+.btn.saved { border-color: #9edaca; background: #edf9f5; color: #087a61; }
+.footer-legal { padding: 0; background: none; color: inherit; cursor: pointer; }
+.footer-legal:hover, .footer-link:hover { color: white; }
+.tab-content { padding-top: 22px; }
+.resource-list, .discussion-list, .player-resource-list { display: grid; gap: 10px; }
+.resource-list > button, .player-resource-list > button {
+  display: grid;
+  grid-template-columns: 38px 1fr auto;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: white;
+  text-align: left;
+  cursor: pointer;
+}
+.resource-list small, .resource-list strong, .player-resource-list small, .player-resource-list strong { display:block; }
+.resource-list small, .player-resource-list small { margin-top:3px; color:var(--muted); font-size:10px; }
+.resource-file { display:grid; width:38px; height:38px; place-items:center; border-radius:9px; background:var(--blue-50); color:var(--blue-600); }
+.discussion-list article { display:grid; grid-template-columns:32px 1fr; gap:10px; padding:13px 0; border-bottom:1px solid var(--line); }
+.discussion-list article small { display:block; margin-top:3px; color:var(--muted); font-size:10px; }
+.discussion-list article p { margin:7px 0 0; color:var(--muted); font-size:12px; line-height:1.6; }
+.discussion-compose, .chat-compose { display:flex; gap:8px; margin-top:12px; }
+.discussion-compose input, .chat-compose input { flex:1; }
+.player-resource-list { padding:16px; }
+.player-resource-list > button { border-color:rgba(255,255,255,.1); background:rgba(255,255,255,.04); color:white; }
+.player-discussion, .live-about { padding:18px; color:white; }
+.player-discussion p, .live-about p { color:rgba(255,255,255,.62); font-size:12px; line-height:1.7; }
+.player-discussion strong { display:block; margin-bottom:8px; color:white; }
+.player-discussion textarea { width:100%; min-height:110px; margin:12px 0; padding:11px; border:1px solid rgba(255,255,255,.12); border-radius:9px; background:rgba(255,255,255,.05); color:white; resize:vertical; }
+.caption-line { position:absolute; z-index:4; left:50%; bottom:82px; max-width:70%; padding:7px 12px; transform:translateX(-50%); border-radius:5px; background:rgba(5,10,19,.78); color:white; font-size:13px; text-align:center; }
+.control-off { opacity:.55; }
+.teacher-stream.repositioned { right:auto; left:24px; top:24px; transform:scale(.92); }
+.fullscreen-demo { position:fixed; z-index:1000; inset:0; background:#090d15; }
+.fullscreen-demo .player-layout { height:calc(100vh - 64px); }
+.live-chat-list { display:grid; gap:15px; padding:16px; }
+.chat-message { display:grid; grid-template-columns:28px 1fr; gap:9px; }
+.chat-message strong { color:white; font-size:11px; }
+.chat-message p { margin:4px 0 0; color:rgba(255,255,255,.55); font-size:11px; line-height:1.5; }
+.live-about h3 { margin:14px 0 8px; font-size:16px; }
+.live-about .info-list { margin-top:18px; }
+.live-about .info-row { border-color:rgba(255,255,255,.08); }
+.live-about .info-row span { color:rgba(255,255,255,.48); }
+.live-about .info-row strong { color:white; }
+.inline-unpublish { display:block; margin-top:5px; padding:0; background:none; color:var(--red-600); font-size:10px; cursor:pointer; }
+.upload-dropzone { display:grid; place-items:center; min-height:160px; padding:24px; border:1px dashed #b8c6da; border-radius:13px; background:#f8faff; text-align:center; }
+.selected-file, .success-text { color:var(--green-600) !important; font-weight:700; }
+.info-modal-content { display:grid; grid-template-columns:38px 1fr; align-items:start; gap:13px; }
+.info-modal-content p { margin:0; color:var(--muted); font-size:12px; line-height:1.75; }
+.notification-list { display:grid; }
+.notification-list > button { display:grid; grid-template-columns:34px 1fr auto; align-items:center; gap:11px; padding:13px 4px; border-bottom:1px solid var(--line); background:none; text-align:left; cursor:pointer; }
+.notification-list > button:last-child { border-bottom:0; }
+.notification-list strong, .notification-list span { display:block; }
+.notification-list strong { font-size:12px; }
+.notification-list span { margin-top:3px; color:var(--muted); font-size:10px; }
+.notification-list time { color:var(--muted); font-size:10px; }
+.settings-list, .settings-model-grid { display:grid; gap:12px; }
+.settings-list > label { display:grid; grid-template-columns:1fr 180px; align-items:center; gap:16px; color:var(--ink); font-size:12px; font-weight:700; }
+.agenda-list { display:grid; gap:8px; }
+.agenda-list > button { display:grid; grid-template-columns:125px 1fr auto; align-items:center; gap:15px; padding:13px; border:1px solid var(--line); border-radius:10px; background:white; text-align:left; cursor:pointer; }
+.agenda-list time, .agenda-list div > strong, .agenda-list div > span { display:block; }
+.agenda-list time { color:var(--muted); font-size:10px; }
+.agenda-list time strong { margin-top:4px; color:var(--blue-600); font-size:12px; }
+.agenda-list div > strong { font-size:12px; }
+.agenda-list div > span { margin-top:5px; color:var(--muted); font-size:10px; }
+.mini-calendar { display:grid; grid-template-columns:repeat(7,1fr); gap:6px; }
+.mini-calendar > strong { padding:6px; color:var(--muted); font-size:10px; text-align:center; }
+.mini-calendar > button { min-height:70px; padding:8px; border:1px solid var(--line); border-radius:8px; background:white; text-align:left; cursor:default; }
+.mini-calendar > button[data-calendar-day] { border-color:#aec4ff; background:var(--blue-50); cursor:pointer; }
+.mini-calendar .outside { background:#f7f8fa; }
+.mini-calendar span { display:block; font-size:11px; font-weight:700; }
+.mini-calendar i { display:block; margin-top:9px; color:var(--blue-600); font-size:9px; font-style:normal; }
+.activity-list.expanded { gap:0; }
+.settings-model-grid .switch-row { border:1px solid var(--line); border-radius:10px; }
+.processing-card { display:grid; grid-template-columns:72px 1fr; align-items:center; gap:18px; padding:18px; border-radius:12px; background:var(--blue-50); }
+.processing-ring { width:64px; height:64px; border:7px solid #dce7ff; border-top-color:var(--blue-600); border-radius:50%; }
+.processing-card p { color:var(--muted); font-size:11px; line-height:1.65; }
+.action-menu { display:grid; gap:7px; }
+.action-menu > button { display:grid; grid-template-columns:30px 1fr; align-items:center; gap:10px; padding:13px; border:1px solid var(--line); border-radius:10px; background:white; text-align:left; cursor:pointer; }
+.action-menu span strong, .action-menu span small { display:block; }
+.action-menu span small { margin-top:3px; color:var(--muted); font-size:10px; }
+.action-menu > button.danger { color:var(--red-600); }
+
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes modalIn { from { opacity:0; transform:translateY(10px) scale(.98); } to { opacity:1; transform:none; } }
 @keyframes toastIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
@@ -4361,11 +4458,51 @@ const state = {
   portalMenuOpen: false,
   courseSearch: "",
   courseCategory: "All disciplines",
+  courseSemester: "All semesters",
+  courseSort: "Most relevant",
+  courseDetailTab: "Overview",
   liveFilter: "All",
+  liveSearch: "",
   videoFilter: "All schools",
+  videoRoom: "All rooms",
+  videoSemester: "All semesters",
+  videoSearch: "",
+  scheduleSearch: "",
+  scheduleStatus: "All statuses",
+  courseAdminSchool: "All schools",
+  courseAdminStatus: "All publication states",
+  courseAdminSearch: "",
+  liveAdminFilter: "All",
+  liveAdminPublication: "All publication states",
+  liveAdminSearch: "",
+  aiSchool: "All schools",
+  aiSearch: "",
+  deviceBuilding: "All buildings",
+  deviceStatus: "All statuses",
+  deviceSearch: "",
+  scheduleRange: "Next 30 days",
+  aiRange: "Last 30 days",
+  notificationsRead: false,
   playerSpeed: "1×",
   captions: true,
   dualStream: true,
+  muted: false,
+  playerPlaying: false,
+  playerTab: "Lessons",
+  currentLesson: 3,
+  livePlaying: true,
+  liveMuted: false,
+  liveCaptions: false,
+  liveTab: "Live chat",
+  currentLiveId: 1,
+  chatMessages: [],
+  savedCourses: new Set(),
+  calendarEvents: new Set(),
+  dashboardRange: "7 days",
+  deletedVideos: new Set(),
+  scheduleOverrides: {},
+  activeScheduleId: null,
+  activeVideoId: null,
   aiTab: "Report Overview",
   aiListStatus: "All reports",
   courseAdmin: {},
@@ -4591,7 +4728,6 @@ const devices = [
 
 const analysisReports = [
   { id: 1, course: "Artificial Intelligence: Foundations and Applications", session: "Lecture 6 · Responsible AI in Practice", teacher: "Dr. Maya Chen", school: "Computing", room: "Innovation 201", date: "Aug 4, 2026 · 09:00", duration: "01:42:18", score: 88, engagement: "84%", signals: 2, status: "Complete" },
-  { id: 2, course: "Sustainable Business Strategy", session: "Week 6 · Circular Value Chains", teacher: "Dr. Noah Williams", school: "Business", room: "Harbour 105", date: "Aug 4, 2026 · 10:30", duration: "01:28:42", score: 82, engagement: "76%", signals: 4, status: "Complete" },
   { id: 3, course: "Climate Science and Global Systems", session: "Lecture 8 · Atmospheric Systems", teacher: "Dr. Amina Patel", school: "Science", room: "Discovery 302", date: "Aug 4, 2026 · 11:00", duration: "01:35:06", score: 91, engagement: "89%", signals: 1, status: "Complete" },
   { id: 4, course: "Design Thinking for Social Innovation", session: "Workshop 4 · Rapid Prototyping", teacher: "Prof. Elena Rossi", school: "Design", room: "Studio 110", date: "Aug 3, 2026 · 14:00", duration: "02:01:15", score: null, engagement: "—", signals: null, status: "Processing" },
   { id: 5, course: "Public Health in a Connected World", session: "Lecture 5 · Applied Epidemiology", teacher: "Prof. Sofia Martin", school: "Health", room: "Wellbeing 204", date: "Aug 3, 2026 · 15:30", duration: "01:46:33", score: 86, engagement: "81%", signals: 3, status: "Complete" },
@@ -4719,7 +4855,7 @@ function brandMarkup(admin = false) {
 
 function portalHeader(active = "home") {
   return `
-    <div class="top-note"><div class="container"><span>Nexus International University · Digital Learning Environment</span><div class="top-note-actions"><button>${icon("globe", 13)} English</button><button data-route="admin/dashboard">Admin Console</button></div></div></div>
+    <div class="top-note"><div class="container"><span>Nexus International University · Digital Learning Environment</span><div class="top-note-actions"><button data-action="language-info">${icon("globe", 13)} English</button><button data-route="admin/dashboard">Admin Console</button></div></div></div>
     <header class="portal-header">
       <div class="container portal-header-inner">
         ${brandMarkup(false)}
@@ -4731,7 +4867,7 @@ function portalHeader(active = "home") {
         </nav>
         <div class="portal-actions">
           <label class="header-search">${icon("search", 16)}<input data-global-search placeholder="Search courses" /></label>
-          <button class="icon-button" aria-label="Notifications">${icon("bell", 17)}</button>
+          <button class="icon-button" data-action="notifications" aria-label="Notifications">${icon("bell", 17)}${state.notificationsRead?"":`<i class="notification-dot"></i>`}</button>
           <button class="avatar-button" data-route="learning"><span class="avatar">AJ</span><span>Alex Johnson</span></button>
           <button class="icon-button mobile-menu-button" data-action="toggle-menu">${icon("menu", 18)}</button>
         </div>
@@ -4745,10 +4881,10 @@ function footer() {
       <div class="footer-grid">
         <div>${brandMarkup(false)}<p>An integrated platform for lecture capture, live learning, classroom intelligence and reliable campus media operations.</p></div>
         <div><h4>Explore</h4><button class="footer-link" data-route="courses">Course catalog</button><button class="footer-link" data-route="live">Live events</button><button class="footer-link" data-route="learning">My learning</button></div>
-        <div><h4>Resources</h4><button class="footer-link">Student guide</button><button class="footer-link">Accessibility</button><button class="footer-link">Help center</button></div>
-        <div><h4>University</h4><button class="footer-link">About Nexus</button><button class="footer-link">Academic schools</button><button class="footer-link" data-route="admin/dashboard">Admin console</button></div>
+        <div><h4>Resources</h4><button class="footer-link" data-info="Student guide">Student guide</button><button class="footer-link" data-info="Accessibility">Accessibility</button><button class="footer-link" data-info="Help center">Help center</button></div>
+        <div><h4>University</h4><button class="footer-link" data-info="About Nexus">About Nexus</button><button class="footer-link" data-info="Academic schools">Academic schools</button><button class="footer-link" data-route="admin/dashboard">Admin console</button></div>
       </div>
-      <div class="footer-bottom"><span>© 2026 Nexus International University</span><span>Privacy · Terms · Accessibility</span></div>
+      <div class="footer-bottom"><span>© 2026 Nexus International University</span><button class="footer-legal" data-info="Privacy, terms and accessibility">Privacy · Terms · Accessibility</button></div>
     </div></footer>`;
 }
 
@@ -4796,7 +4932,7 @@ function homePage() {
     <section class="portal-section"><div class="container"><div class="section-head"><div><h2>Featured courses</h2><p>Curated learning experiences from across the university.</p></div><button class="link-button" data-route="courses">View all courses ${icon("arrow", 15)}</button></div><div class="course-grid">${featured}</div></div></section>
     <section class="portal-section tint"><div class="container"><div class="section-head"><div><h2>Explore by discipline</h2><p>Find relevant learning resources across our academic schools.</p></div></div><div class="category-grid">${categories}</div></div></section>
     <section class="portal-section"><div class="container"><div class="section-head"><div><h2>Live from Nexus</h2><p>Join experts, educators and peers in real time.</p></div><button class="link-button" data-route="live">All live events ${icon("arrow", 15)}</button></div>
-      ${homeLive ? `<div class="live-feature"><div class="live-visual"><div class="live-visual-content"><button class="play-button" data-route="live-room">${icon("play", 23)}</button></div></div><div class="live-details">${pill(homeLive.status)}<h3>${escapeHtml(homeLive.title)}</h3><p>${escapeHtml(homeLive.description)}</p><div class="live-time"><span>${icon("calendar", 14)} ${homeLive.date}</span><span>${icon("clock", 14)} ${homeLive.time}</span></div><button class="btn btn-primary" data-route="live-room">${homeLive.status === "Ended" ? "Watch replay" : "Join live session"} ${icon("arrow", 15)}</button></div></div>` : `<div class="empty-state"><strong>No published live events</strong>New events will appear here after publication.</div>`}
+      ${homeLive ? `<div class="live-feature"><div class="live-visual"><div class="live-visual-content"><button class="play-button" data-route="live-room/${homeLive.id}">${icon("play", 23)}</button></div></div><div class="live-details">${pill(homeLive.status)}<h3>${escapeHtml(homeLive.title)}</h3><p>${escapeHtml(homeLive.description)}</p><div class="live-time"><span>${icon("calendar", 14)} ${homeLive.date}</span><span>${icon("clock", 14)} ${homeLive.time}</span></div><button class="btn btn-primary" data-route="live-room/${homeLive.id}">${homeLive.status === "Ended" ? "Watch replay" : "Join live session"} ${icon("arrow", 15)}</button></div></div>` : `<div class="empty-state"><strong>No published live events</strong>New events will appear here after publication.</div>`}
     </div></section>
     <section class="portal-section tint"><div class="container"><div class="section-head"><div><h2>Popular this month</h2><p>Courses learners are returning to most often.</p></div></div><div class="course-grid">${popular}</div></div></section>
   `, "home");
@@ -4805,15 +4941,17 @@ function homePage() {
 function coursesPage() {
   const categories = ["All disciplines", "Technology", "Business", "Design", "Science", "Health", "Architecture"];
   const query = state.courseSearch.toLowerCase();
-  const filtered = publishedCourses().filter(c => (state.courseCategory === "All disciplines" || c.category === state.courseCategory) && (!query || `${c.title} ${c.teacher} ${c.school}`.toLowerCase().includes(query)));
+  let filtered = publishedCourses().filter(c => (state.courseCategory === "All disciplines" || c.category === state.courseCategory) && (state.courseSemester === "All semesters" || c.semester === state.courseSemester) && (!query || `${c.title} ${c.teacher} ${c.school}`.toLowerCase().includes(query)));
+  if (state.courseSort === "Newest first") filtered = [...filtered].sort((a,b)=>b.id-a.id);
+  if (state.courseSort === "Most viewed") filtered = [...filtered].sort((a,b)=>Number(b.learners.replace(",",""))-Number(a.learners.replace(",","")));
   return portalShell(`
     <section class="page-hero"><div class="container page-title"><div><span class="eyebrow">Course library</span><h1>Learn something remarkable.</h1><p>Browse recorded courses from across Nexus International University. Pick up where you left off, or discover a new field.</p></div><span>${filtered.length} courses available</span></div></section>
     <section class="portal-section"><div class="container">
       <div class="filter-bar">
         <input class="filter-search" data-course-search value="${state.courseSearch}" placeholder="Search by course title or instructor" />
         <select class="form-control" data-course-category>${categories.map(c => `<option ${c === state.courseCategory ? "selected" : ""}>${c}</option>`).join("")}</select>
-        <select class="form-control"><option>Fall 2026</option><option>Spring 2026</option><option>All semesters</option></select>
-        <select class="form-control"><option>Most relevant</option><option>Newest first</option><option>Most viewed</option></select>
+        <select class="form-control" data-course-semester>${["All semesters","Fall 2026","Spring 2026"].map(x=>`<option ${state.courseSemester===x?"selected":""}>${x}</option>`).join("")}</select>
+        <select class="form-control" data-course-sort>${["Most relevant","Newest first","Most viewed"].map(x=>`<option ${state.courseSort===x?"selected":""}>${x}</option>`).join("")}</select>
       </div>
       ${filtered.length ? `<div class="course-grid">${filtered.map(courseCard).join("")}</div>` : `<div class="empty-state"><strong>No courses found</strong>Try changing your search or filters.</div>`}
     </div></section>
@@ -4830,12 +4968,18 @@ function courseDetailPage(id = 1) {
     "From research to real-world practice",
     "Building an AI-ready organisation",
   ];
+  const saved = state.savedCourses.has(course.id);
+  const detailContent = state.courseDetailTab === "Course materials"
+    ? `<div class="resource-list">${[["Course handbook","PDF · 2.4 MB"],["Responsible AI checklist","DOCX · 840 KB"],["Lecture slides","PPTX · 8.1 MB"]].map((x,i)=>`<button data-action="download-material"><span class="resource-file">${icon(i===2?"monitor":"book",16)}</span><div><strong>${x[0]}</strong><small>${x[1]}</small></div>${icon("download",15)}</button>`).join("")}</div>`
+    : state.courseDetailTab === "Discussion"
+      ? `<div class="discussion-list"><article><span class="mini-avatar">AJ</span><div><strong>Alex Johnson</strong><small>2 hours ago</small><p>Where should institutions draw the line between AI assistance and human accountability?</p></div></article><article><span class="mini-avatar">MC</span><div><strong>Dr. Maya Chen</strong><small>45 minutes ago</small><p>A useful starting point is to identify who owns each decision and who can challenge it.</p></div></article><div class="discussion-compose"><input class="form-control" data-discussion-input placeholder="Add to the discussion…"/><button class="btn btn-primary btn-sm" data-action="post-discussion">Post</button></div></div>`
+      : `<div><h3 style="font:700 18px Manrope;margin:0 0 10px">About this course</h3><p style="color:var(--muted);font-size: 14px;line-height:1.8">This course combines foundational concepts with current cases and practical reflection. Each recorded lecture includes downloadable materials, searchable captions and a discussion prompt.</p><h3 style="font:700 15px Manrope;margin:25px 0 13px">What you will learn</h3><div class="info-list"><div class="info-row"><strong>${icon("check",14)} Explain the core concepts with confidence</strong></div><div class="info-row"><strong>${icon("check",14)} Connect theory to real-world decisions</strong></div><div class="info-row"><strong>${icon("check",14)} Evaluate opportunities through a responsible lens</strong></div></div></div>`;
   return portalShell(`
     <section class="detail-hero"><div class="container"><div class="breadcrumb"><span data-route="home">Home</span>${icon("chevron", 11)}<span data-route="courses">Courses</span>${icon("chevron", 11)}<span>${course.category}</span></div><div class="course-detail-grid">
-      <div class="course-detail-copy"><span class="cover-badge" style="position:static">${course.badge}</span><h1>${escapeHtml(course.title)}</h1><p>${escapeHtml(course.description)}</p><div class="detail-meta"><span>${icon("user", 15)} ${escapeHtml(course.teacher)}</span><span>${icon("book", 15)} ${course.lessons} lessons</span><span>${icon("clock", 15)} ${course.duration}</span><span>${icon("users", 15)} ${course.learners} learners</span><span>${icon("globe",15)} ${escapeHtml(course.access)}</span></div><div class="button-row"><button class="btn btn-primary btn-lg" data-route="player/${course.id}">${icon("play", 16)} ${course.progress ? "Continue learning" : "Start learning"}</button><button class="btn btn-secondary btn-lg" data-action="save-course">${icon("book", 16)} Save course</button></div></div>
+      <div class="course-detail-copy"><span class="cover-badge" style="position:static">${course.badge}</span><h1>${escapeHtml(course.title)}</h1><p>${escapeHtml(course.description)}</p><div class="detail-meta"><span>${icon("user", 15)} ${escapeHtml(course.teacher)}</span><span>${icon("book", 15)} ${course.lessons} lessons</span><span>${icon("clock", 15)} ${course.duration}</span><span>${icon("users", 15)} ${course.learners} learners</span><span>${icon("globe",15)} ${escapeHtml(course.access)}</span></div><div class="button-row"><button class="btn btn-primary btn-lg" data-route="player/${course.id}">${icon("play", 16)} ${course.progress ? "Continue learning" : "Start learning"}</button><button class="btn btn-secondary btn-lg ${saved?"saved":""}" data-action="save-course" data-course-id="${course.id}">${icon(saved?"check":"book", 16)} ${saved?"Saved":"Save course"}</button></div></div>
       <div class="detail-preview"><button class="play-button" data-route="player/${course.id}">${icon("play", 23)}</button></div>
     </div></div></section>
-    <section><div class="container detail-content"><div class="panel"><div class="panel-body"><div class="tabs"><button class="active">Overview</button><button>Course materials</button><button>Discussion</button></div><div style="padding-top:22px"><h3 style="font:700 18px Manrope;margin:0 0 10px">About this course</h3><p style="color:var(--muted);font-size: 14px;line-height:1.8">This course combines foundational concepts with current cases and practical reflection. Each recorded lecture includes downloadable materials, searchable captions and a discussion prompt.</p><h3 style="font:700 15px Manrope;margin:25px 0 13px">What you will learn</h3><div class="info-list"><div class="info-row"><strong>${icon("check",14)} Explain the core concepts with confidence</strong></div><div class="info-row"><strong>${icon("check",14)} Connect theory to real-world decisions</strong></div><div class="info-row"><strong>${icon("check",14)} Evaluate opportunities through a responsible lens</strong></div></div></div></div></div>
+    <section><div class="container detail-content"><div class="panel"><div class="panel-body"><div class="tabs">${["Overview","Course materials","Discussion"].map(tab=>`<button class="${state.courseDetailTab===tab?"active":""}" data-course-detail-tab="${tab}">${tab}</button>`).join("")}</div><div class="tab-content">${detailContent}</div></div></div>
       <aside class="panel"><div class="panel-head"><h3>Course content</h3><span style="color:var(--muted);font-size: 11px">${lessons.length} of ${course.lessons}</span></div><div class="panel-body"><div class="lesson-list">${lessons.map((lesson, i) => `<div class="lesson-item ${i === 2 && course.progress ? "active" : ""}" data-route="player/${course.id}"><span class="lesson-index">${String(i + 1).padStart(2,"0")}</span><div><strong>${lesson}</strong><span>${38 + i * 3} min · Video + materials</span></div>${icon(i < 2 ? "check" : "play", 13)}</div>`).join("")}</div></div></aside>
     </div></section>
   `, "courses");
@@ -4844,26 +4988,37 @@ function courseDetailPage(id = 1) {
 function playerPage(id = 1) {
   const course = courseRecord(courses.find(c => c.id === Number(id)) || courses[0]);
   const lessons = ["Introduction and course overview", "Data, models and intelligent systems", "Neural networks in plain language", "Responsible AI and human oversight", "From research to real-world practice", "Building an AI-ready organisation"];
+  const lessonIndex = Math.min(state.currentLesson, lessons.length - 1);
+  const sideContent = state.playerTab === "Materials"
+    ? `<div class="player-resource-list">${[["Lecture slides","PPTX · 8.1 MB"],["Reading guide","PDF · 2.4 MB"],["Case worksheet","DOCX · 840 KB"]].map(x=>`<button data-action="download-material"><span>${icon("download",15)}</span><div><strong>${x[0]}</strong><small>${x[1]}</small></div></button>`).join("")}</div>`
+    : state.playerTab === "Discussion"
+      ? `<div class="player-discussion"><p><strong>Discussion prompt</strong> Which decisions in this case should always require human oversight?</p><textarea data-player-discussion placeholder="Share your response…"></textarea><button class="btn btn-primary btn-sm" data-action="post-player-discussion">Post response</button></div>`
+      : `<div class="lesson-list">${lessons.map((l, i) => `<div class="lesson-item ${i===lessonIndex?"active":""}" data-select-lesson="${i}"><span class="lesson-index">${String(i+1).padStart(2,"0")}</span><div><strong>${l}</strong><span>${38+i*3} min</span></div>${icon(i<lessonIndex?"check":"play",13)}</div>`).join("")}</div>`;
   return `<div class="player-page">
-    <header class="player-header"><div class="player-header-left"><button data-route="course/${course.id}">${icon("back", 20)}</button><div><strong>${escapeHtml(course.title)}</strong><span>Lesson 4 · Responsible AI and human oversight</span></div></div><div class="button-row"><button data-action="download-material">${icon("download", 17)}</button><button data-action="share-player">${icon("share", 17)}</button></div></header>
-    <div class="player-layout"><main class="player-main"><div class="video-canvas classroom-video"><div class="video-content-badge"><span>Now playing · Lecture 04</span><strong>Responsible AI in Practice</strong></div>${state.dualStream ? `<div class="teacher-stream teacher-image-stream" data-action="drag-stream"><span class="stream-label">Instructor camera · drag to reposition</span></div>` : ""}<div class="video-toolbar"><div class="video-progress" style="--progress:42%" data-action="seek-player"></div><div class="video-controls"><div class="video-controls-group"><button data-action="play-toggle">${icon("play", 16)}</button><span>32:18 / 1:16:42</span><button>${icon("volume", 16)}</button></div><div class="video-controls-group"><button data-action="speed">${state.playerSpeed}</button><button data-action="captions" style="color:${state.captions ? "#6ee2d7" : "white"}">${icon("captions", 17)}</button><button data-action="stream-toggle">${state.dualStream ? "Dual stream" : "Single stream"}</button><button>${icon("settings", 16)}</button><button>${icon("fullscreen", 16)}</button></div></div></div></div></main>
-      <aside class="player-side"><div class="tabs"><button class="active">Lessons</button><button>Materials</button><button>Discussion</button></div><div class="lesson-list">${lessons.map((l, i) => `<div class="lesson-item ${i===3?"active":""}" data-action="select-lesson"><span class="lesson-index">${String(i+1).padStart(2,"0")}</span><div><strong>${l}</strong><span>${38+i*3} min</span></div>${icon(i<3?"check":"play",13)}</div>`).join("")}</div></aside>
+    <header class="player-header"><div class="player-header-left"><button data-route="course/${course.id}">${icon("back", 20)}</button><div><strong>${escapeHtml(course.title)}</strong><span>Lesson ${lessonIndex+1} · ${escapeHtml(lessons[lessonIndex])}</span></div></div><div class="button-row"><button data-action="download-material" aria-label="Download lesson materials">${icon("download", 17)}</button><button data-action="share-player" aria-label="Share lesson">${icon("share", 17)}</button></div></header>
+    <div class="player-layout"><main class="player-main"><div class="video-canvas classroom-video ${state.playerPlaying?"is-playing":"is-paused"}"><div class="video-content-badge"><span>Now playing · Lecture ${String(lessonIndex+1).padStart(2,"0")}</span><strong>${escapeHtml(lessons[lessonIndex])}</strong></div>${state.dualStream ? `<div class="teacher-stream teacher-image-stream" data-action="drag-stream"><span class="stream-label">Instructor camera · drag to reposition</span></div>` : ""}${state.captions?`<div class="caption-line">Responsible AI keeps human judgement at the centre of every important decision.</div>`:""}<div class="video-toolbar"><div class="video-progress" style="--progress:${32+lessonIndex*4}%" data-action="seek-player"></div><div class="video-controls"><div class="video-controls-group"><button data-action="play-toggle" aria-label="${state.playerPlaying?"Pause":"Play"}">${state.playerPlaying?"Ⅱ":icon("play", 16)}</button><span>32:18 / 1:16:42</span><button data-action="volume-toggle" class="${state.muted?"control-off":""}" aria-label="Mute or unmute">${icon("volume", 16)}</button></div><div class="video-controls-group"><button data-action="speed">${state.playerSpeed}</button><button data-action="captions" style="color:${state.captions ? "#6ee2d7" : "white"}">${icon("captions", 17)}</button><button data-action="stream-toggle">${state.dualStream ? "Dual stream" : "Single stream"}</button><button data-action="player-settings" aria-label="Playback settings">${icon("settings", 16)}</button><button data-action="fullscreen" aria-label="Full screen">${icon("fullscreen", 16)}</button></div></div></div></div></main>
+      <aside class="player-side"><div class="tabs">${["Lessons","Materials","Discussion"].map(tab=>`<button class="${state.playerTab===tab?"active":""}" data-player-tab="${tab}">${tab}</button>`).join("")}</div>${sideContent}</aside>
     </div></div>`;
 }
 
 function livePage() {
-  const filtered = publishedLiveEvents().filter(e => state.liveFilter === "All" || e.status === state.liveFilter);
+  const query = state.liveSearch.toLowerCase();
+  const filtered = publishedLiveEvents().filter(e => (state.liveFilter === "All" || e.status === state.liveFilter) && (!query || `${e.title} ${e.teacher}`.toLowerCase().includes(query)));
   return portalShell(`
     <section class="page-hero"><div class="container page-title"><div><span class="eyebrow">Live learning</span><h1>Be part of the conversation.</h1><p>Join live classes, guest lectures and campus events — or revisit completed sessions through instant replay.</p></div></div></section>
-    <section class="portal-section"><div class="container"><div class="filter-bar"><div class="segmented">${["All","Live now","Upcoming","Ended"].map(f=>`<button class="${state.liveFilter===f?"active":""}" data-live-filter="${f}">${f}</button>`).join("")}</div><input class="filter-search" placeholder="Search live events or instructors" /></div>
-      <div class="live-admin-grid">${filtered.map(e=>`<article class="live-admin-card"><div class="live-admin-cover ${e.cover}">${pill(e.status)}</div><div class="live-admin-body"><h3>${escapeHtml(e.title)}</h3><p class="live-card-description">${escapeHtml(e.description)}</p><div class="info-list"><div class="info-row"><span>Host</span><strong>${escapeHtml(e.teacher)}</strong></div><div class="info-row"><span>Date</span><strong>${e.date}</strong></div><div class="info-row"><span>Time</span><strong>${e.time}</strong></div><div class="info-row"><span>Viewing access</span><strong>${escapeHtml(e.visibility)}</strong></div></div><div class="card-actions"><button class="btn btn-secondary btn-sm" data-action="save-event">${icon("calendar",13)} Add to calendar</button><button class="btn btn-primary btn-sm" data-route="live-room">${e.status==="Ended"?"Watch replay":"View event"} ${icon("arrow",13)}</button></div></div></article>`).join("")}</div>
+    <section class="portal-section"><div class="container"><div class="filter-bar"><div class="segmented">${["All","Live now","Upcoming","Ended"].map(f=>`<button class="${state.liveFilter===f?"active":""}" data-live-filter="${f}">${f}</button>`).join("")}</div><input class="filter-search" data-live-search value="${escapeHtml(state.liveSearch)}" placeholder="Search live events or instructors" /></div>
+      ${filtered.length?`<div class="live-admin-grid">${filtered.map(e=>`<article class="live-admin-card"><div class="live-admin-cover ${e.cover}">${pill(e.status)}</div><div class="live-admin-body"><h3>${escapeHtml(e.title)}</h3><p class="live-card-description">${escapeHtml(e.description)}</p><div class="info-list"><div class="info-row"><span>Host</span><strong>${escapeHtml(e.teacher)}</strong></div><div class="info-row"><span>Date</span><strong>${e.date}</strong></div><div class="info-row"><span>Time</span><strong>${e.time}</strong></div><div class="info-row"><span>Viewing access</span><strong>${escapeHtml(e.visibility)}</strong></div></div><div class="card-actions"><button class="btn btn-secondary btn-sm ${state.calendarEvents.has(e.id)?"saved":""}" data-save-event="${e.id}">${icon(state.calendarEvents.has(e.id)?"check":"calendar",13)} ${state.calendarEvents.has(e.id)?"Added":"Add to calendar"}</button><button class="btn btn-primary btn-sm" data-route="live-room/${e.id}">${e.status==="Ended"?"Watch replay":"View event"} ${icon("arrow",13)}</button></div></div></article>`).join("")}</div>`:`<div class="empty-state"><strong>No live events found</strong>Try changing your search or status filter.</div>`}
     </div></section>
   `,"live");
 }
 
-function liveRoomPage() {
-  const live = liveRecord(liveEvents[0]);
-  return `<div class="player-page"><header class="player-header"><div class="player-header-left"><button data-route="live">${icon("back",20)}</button><div><strong>${escapeHtml(live.title)}</strong><span><span class="live-dot"></span>${live.status} · 428 watching</span></div></div><div class="button-row"><button data-action="share-live">${icon("share",17)} Share</button></div></header><div class="player-layout"><main class="player-main"><div class="video-canvas"><div class="video-slide"><small>Live keynote</small><h2>${escapeHtml(live.title)}</h2><p>${escapeHtml(live.teacher)} · Nexus International University</p></div><div class="teacher-stream"><div class="presenter"></div><span class="stream-label">${escapeHtml(live.teacher)}</span></div><div class="video-toolbar"><div class="video-progress" style="--progress:64%"></div><div class="video-controls"><div class="video-controls-group"><button>${icon("play",16)}</button><span>${live.status} · 01:02:18</span><button>${icon("volume",16)}</button></div><div class="video-controls-group"><button>${icon("captions",17)}</button><button>${icon("settings",16)}</button><button>${icon("fullscreen",16)}</button></div></div></div></div></main><aside class="player-side"><div class="tabs"><button class="active">Live chat</button><button>About</button></div><div style="padding:16px;display:grid;gap:16px">${[["ER","Elena Rossi","A thoughtful point about assessment design."],["NW","Noah Williams","How do we keep AI guidance consistent at scale?"],["AP","Amina Patel","The student agency framework is especially useful."],["AJ","Alex Johnson","Will the slides be available after the session?"]].map(x=>`<div style="display:grid;grid-template-columns:28px 1fr;gap:9px"><span class="mini-avatar">${x[0]}</span><div><strong style="font-size: 11px">${x[1]}</strong><p style="margin:4px 0 0;color:rgba(255,255,255,.55);font-size: 11px;line-height:1.5">${x[2]}</p></div></div>`).join("")}<div style="margin-top:15px"><input class="form-control" style="width:100%;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1);color:white" placeholder="Join the conversation…" /></div></div></aside></div></div>`;
+function liveRoomPage(id = 1) {
+  const live = liveRecord(liveEvents.find(item=>item.id===Number(id)) || liveEvents[0]);
+  state.currentLiveId = live.id;
+  const baseChat = [["ER","Elena Rossi","A thoughtful point about assessment design."],["NW","Noah Williams","How do we keep AI guidance consistent at scale?"],["AP","Amina Patel","The student agency framework is especially useful."],["AJ","Alex Johnson","Will the slides be available after the session?"]];
+  const chat = [...baseChat,...state.chatMessages.map(message=>["AJ","Alex Johnson",message])];
+  const side = state.liveTab === "About" ? `<div class="live-about"><span>${pill(live.status)}</span><h3>${escapeHtml(live.title)}</h3><p>${escapeHtml(live.description)}</p><div class="info-list"><div class="info-row"><span>Host</span><strong>${escapeHtml(live.teacher)}</strong></div><div class="info-row"><span>Schedule</span><strong>${live.date}<br>${live.time}</strong></div><div class="info-row"><span>Access</span><strong>${escapeHtml(live.visibility)}</strong></div></div></div>` : `<div class="live-chat-list">${chat.map(x=>`<div class="chat-message"><span class="mini-avatar">${x[0]}</span><div><strong>${x[1]}</strong><p>${x[2]}</p></div></div>`).join("")}<div class="chat-compose"><input class="form-control" data-chat-input placeholder="Join the conversation…" /><button class="btn btn-primary btn-sm" data-action="send-chat">Send</button></div></div>`;
+  return `<div class="player-page"><header class="player-header"><div class="player-header-left"><button data-route="live">${icon("back",20)}</button><div><strong>${escapeHtml(live.title)}</strong><span><span class="live-dot"></span>${live.status} · 428 watching</span></div></div><div class="button-row"><button data-share-event="${live.id}">${icon("share",17)} Share</button></div></header><div class="player-layout"><main class="player-main"><div class="video-canvas ${state.livePlaying?"is-playing":"is-paused"}"><div class="video-slide"><small>${live.status==="Ended"?"Event replay":"Live keynote"}</small><h2>${escapeHtml(live.title)}</h2><p>${escapeHtml(live.teacher)} · Nexus International University</p></div><div class="teacher-stream"><div class="presenter"></div><span class="stream-label">${escapeHtml(live.teacher)}</span></div>${state.liveCaptions?`<div class="caption-line">The question is how we keep human agency visible as technology scales.</div>`:""}<div class="video-toolbar"><div class="video-progress" style="--progress:64%" data-action="seek-player"></div><div class="video-controls"><div class="video-controls-group"><button data-action="live-play-toggle">${state.livePlaying?"Ⅱ":icon("play",16)}</button><span>${live.status} · 01:02:18</span><button data-action="live-volume-toggle" class="${state.liveMuted?"control-off":""}">${icon("volume",16)}</button></div><div class="video-controls-group"><button data-action="live-captions" style="color:${state.liveCaptions?"#6ee2d7":"white"}">${icon("captions",17)}</button><button data-action="player-settings">${icon("settings",16)}</button><button data-action="fullscreen">${icon("fullscreen",16)}</button></div></div></div></div></main><aside class="player-side"><div class="tabs">${["Live chat","About"].map(tab=>`<button class="${state.liveTab===tab?"active":""}" data-live-tab="${tab}">${tab}</button>`).join("")}</div>${side}</aside></div></div>`;
 }
 
 function learningPage() {
@@ -4871,7 +5026,7 @@ function learningPage() {
   return portalShell(`
     <section class="page-hero"><div class="container page-title"><div><span class="eyebrow">My learning</span><h1>Welcome back, Alex.</h1><p>Continue where you left off and keep your week organised.</p></div><button class="btn btn-primary" data-route="courses">Discover courses ${icon("arrow",14)}</button></div></section>
     <section class="portal-section"><div class="container"><div class="section-head"><div><h2>Continue learning</h2><p>Your recent courses and progress.</p></div></div><div class="course-grid">${learning.map(c=>`<article class="course-card" data-route="player/${c.id}"><div class="course-cover ${c.cover}"><span class="cover-kicker">${escapeHtml(c.school)}</span><span class="cover-index">${c.code}</span><span class="cover-art">${icon("brain",58)}</span></div><div class="course-body"><h3>${escapeHtml(c.title)}</h3><div class="course-teacher"><span class="mini-avatar">${c.initials}</span>${escapeHtml(c.teacher)}</div><div class="metric-bar" style="--w:${c.progress}%"></div><div class="course-meta" style="border:0;padding-top:8px"><span>${c.progress}% complete</span><span>Continue ${icon("arrow",12)}</span></div></div></article>`).join("")}</div></div></section>
-    <section class="portal-section tint"><div class="container"><div class="section-head"><div><h2>This week</h2><p>Your classes and live sessions, August 3–9.</p></div><button class="btn btn-secondary btn-sm">${icon("calendar",14)} Full schedule</button></div><div class="panel"><div class="panel-body"><div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px">${["Monday","Tuesday","Wednesday","Thursday","Friday"].map((d,i)=>`<div><div style="padding:8px;color:var(--muted);font-size: 11px;font-weight:700">${d}<strong style="display:block;color:var(--ink);font-size: 18px;margin-top:3px">${3+i}</strong></div><div style="min-height:120px;padding:12px;border-radius:11px;background:${i===1?"var(--blue-50)":"#f7f9fb"}"><span style="font-size: 10px;color:var(--blue-600);font-weight:700">${["09:00","10:30","11:00","14:00","09:30"][i]}</span><strong style="display:block;margin-top:8px;font-size: 12px">${["Sustainable Business","Public Health","AI Foundations","Design Thinking","Climate Science"][i]}</strong><span style="display:block;margin-top:7px;color:var(--muted);font-size: 10px">${["Harbour 105","Wellbeing 204","Innovation 201","Studio 110","Discovery 302"][i]}</span></div></div>`).join("")}</div></div></div></div></section>
+    <section class="portal-section tint"><div class="container"><div class="section-head"><div><h2>This week</h2><p>Your classes and live sessions, August 3–9.</p></div><button class="btn btn-secondary btn-sm" data-action="full-schedule">${icon("calendar",14)} Full schedule</button></div><div class="panel"><div class="panel-body"><div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px">${["Monday","Tuesday","Wednesday","Thursday","Friday"].map((d,i)=>`<div><div style="padding:8px;color:var(--muted);font-size: 11px;font-weight:700">${d}<strong style="display:block;color:var(--ink);font-size: 18px;margin-top:3px">${3+i}</strong></div><div style="min-height:120px;padding:12px;border-radius:11px;background:${i===1?"var(--blue-50)":"#f7f9fb"}"><span style="font-size: 10px;color:var(--blue-600);font-weight:700">${["09:00","10:30","11:00","14:00","09:30"][i]}</span><strong style="display:block;margin-top:8px;font-size: 12px">${["Sustainable Business","Public Health","AI Foundations","Design Thinking","Climate Science"][i]}</strong><span style="display:block;margin-top:7px;color:var(--muted);font-size: 10px">${["Harbour 105","Wellbeing 204","Innovation 201","Studio 110","Discovery 302"][i]}</span></div></div>`).join("")}</div></div></div></div></section>
   `,"learning");
 }
 
@@ -4887,7 +5042,7 @@ function adminSidebar(active) {
 }
 
 function adminShell(content, active, title) {
-  return `<div class="admin-shell">${adminSidebar(active)}<div class="admin-main"><header class="admin-topbar"><div class="admin-topbar-left"><span>Nexus International University</span>${icon("chevron",11)}<strong>${title}</strong></div><div class="admin-topbar-right"><button class="icon-button" aria-label="Notifications">${icon("bell",16)}</button><button class="btn btn-secondary btn-sm" data-route="home">${icon("globe",13)} View portal</button></div></header><main class="admin-content">${content}</main></div></div>`;
+  return `<div class="admin-shell">${adminSidebar(active)}<div class="admin-main"><header class="admin-topbar"><div class="admin-topbar-left"><span>Nexus International University</span>${icon("chevron",11)}<strong>${title}</strong></div><div class="admin-topbar-right"><button class="icon-button" data-action="notifications" aria-label="Notifications">${icon("bell",16)}${state.notificationsRead?"":`<i class="notification-dot"></i>`}</button><button class="btn btn-secondary btn-sm" data-route="home">${icon("globe",13)} View portal</button></div></header><main class="admin-content">${content}</main></div></div>`;
 }
 
 function adminPageHead(title, description, actions = "") {
@@ -4899,55 +5054,65 @@ function statCard(label, value, trend, ico, glow = "") {
 }
 
 function dashboardPage() {
-  const bars = [54,72,63,84,69,92,77].map((h,i)=>`<div class="chart-bar-group"><span class="chart-bar" style="--h:${h}%"></span><span class="chart-bar secondary" style="--h:${Math.max(30,h-18)}%"></span></div>`).join("");
+  const values = state.dashboardRange === "30 days" ? [48,58,66,61,75,82,88] : [54,72,63,84,69,92,77];
+  const bars = values.map((h,i)=>`<div class="chart-bar-group"><span class="chart-bar" style="--h:${h}%"></span><span class="chart-bar secondary" style="--h:${Math.max(30,h-18)}%"></span></div>`).join("");
   return adminShell(`
     ${adminPageHead("Good morning, Sarah.","Here’s what is happening across the learning environment today.",`<button class="btn btn-secondary" data-route="home">${icon("globe",14)} Open portal</button><button class="btn btn-primary" data-action="quick-create">${icon("plus",14)} Quick create</button>`)}
     <div class="stats-grid">${statCard("Recorded this week","186","↑ 12.4% from last week","video")}${statCard("Live sessions","12","3 currently live","live","#ffecef")}${statCard("Published courses","124","8 updated this week","book","#e8faf6")}${statCard("Device availability","91%","20 of 22 online","monitor","#fff4df")}</div>
-    <div class="dashboard-grid"><section class="panel"><div class="panel-head"><h3>Learning activity</h3><div class="segmented"><button class="active">7 days</button><button>30 days</button></div></div><div class="panel-body"><div style="display:flex;gap:18px;font-size: 11px;color:var(--muted)"><span><i class="legend-dot" style="--dot:var(--blue-500)"></i>Views</span><span><i class="legend-dot" style="--dot:#9fdecf"></i>Unique learners</span></div><div class="chart-area"><div class="chart-bars">${bars}</div><div class="chart-labels"><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span><span>Mon</span><span>Tue</span></div></div></div></section>
-      <section class="panel"><div class="panel-head"><h3>Recent activity</h3><button class="link-button">View all</button></div><div class="panel-body"><div class="activity-list">${[["video","Recording completed","AI Foundations · Innovation 201","8 min"],["brain","Analysis report ready","Climate Science · Score 88","24 min"],["live","Live event started","AI and the Future of Higher Education","1 hr"],["book","Course published","Public Health in a Connected World","2 hr"],["monitor","Device needs attention","Studio 110 · Connection lost","3 hr"]].map(x=>`<div class="activity-item"><span class="activity-dot">${icon(x[0],13)}</span><div><strong>${x[1]}</strong><span>${x[2]}</span></div><time>${x[3]}</time></div>`).join("")}</div></div></section>
+    <div class="dashboard-grid"><section class="panel"><div class="panel-head"><h3>Learning activity</h3><div class="segmented">${["7 days","30 days"].map(range=>`<button class="${state.dashboardRange===range?"active":""}" data-dashboard-range="${range}">${range}</button>`).join("")}</div></div><div class="panel-body"><div style="display:flex;gap:18px;font-size: 11px;color:var(--muted)"><span><i class="legend-dot" style="--dot:var(--blue-500)"></i>Views</span><span><i class="legend-dot" style="--dot:#9fdecf"></i>Unique learners</span></div><div class="chart-area"><div class="chart-bars">${bars}</div><div class="chart-labels"><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span><span>Mon</span><span>Tue</span></div></div></div></section>
+      <section class="panel"><div class="panel-head"><h3>Recent activity</h3><button class="link-button" data-action="all-activity">View all</button></div><div class="panel-body"><div class="activity-list">${[["video","Recording completed","AI Foundations · Innovation 201","8 min"],["brain","Analysis report ready","Climate Science · Score 88","24 min"],["live","Live event started","AI and the Future of Higher Education","1 hr"],["book","Course published","Public Health in a Connected World","2 hr"],["monitor","Device needs attention","Studio 110 · Connection lost","3 hr"]].map(x=>`<div class="activity-item"><span class="activity-dot">${icon(x[0],13)}</span><div><strong>${x[1]}</strong><span>${x[2]}</span></div><time>${x[3]}</time></div>`).join("")}</div></div></section>
     </div>
   `,"admin/dashboard","Overview");
 }
 
 function recordingsPage() {
-  const filtered = recordings.filter(r=>state.videoFilter==="All schools" || r.school===state.videoFilter);
+  const query = state.videoSearch.toLowerCase();
+  const filtered = recordings.filter(r=>!state.deletedVideos.has(r.id))
+    .filter(r=>(state.videoFilter==="All schools" || r.school===state.videoFilter) && (state.videoRoom==="All rooms" || r.room===state.videoRoom) && (state.videoSemester==="All semesters" || state.videoSemester==="Fall 2026") && (!query || `${r.title} ${r.course} ${r.teacher}`.toLowerCase().includes(query)));
   return adminShell(`
     ${adminPageHead("Recorded Videos","Review, organise and publish lecture capture content.",`<button class="btn btn-secondary" data-action="detect-invalid">${icon("spark",14)} Run quality check</button><button class="btn btn-primary" data-action="upload-video">${icon("upload",14)} Upload video</button>`)}
-    <div class="table-panel"><div class="table-toolbar"><div class="table-toolbar-left"><select class="form-control" data-video-filter><option>All schools</option>${["Computing","Business","Science","Design","Health","Architecture"].map(x=>`<option ${state.videoFilter===x?"selected":""}>${x}</option>`).join("")}</select><select class="form-control"><option>All rooms</option><option>Innovation 201</option><option>Discovery 302</option><option>Studio 110</option></select><select class="form-control"><option>Fall 2026</option><option>Spring 2026</option></select><input class="form-control" style="width:220px" placeholder="Search video or instructor" /></div><div class="table-toolbar-right"><span style="color:var(--muted);font-size: 11px">${filtered.length} of 2,486 videos</span>${icon("settings",15)}</div></div>
-      <div class="data-table-wrap"><table class="data-table"><thead><tr><th>Video</th><th>Recorded</th><th>Duration</th><th>Course</th><th>Instructor</th><th>School / Room</th><th>Size</th><th>Portal</th><th>Actions</th></tr></thead><tbody>${filtered.map(r=>`<tr><td><span class="table-title">${r.title}</span><span class="table-subtitle">${r.segments} video segments · ${r.status}</span></td><td>${r.date}</td><td>${r.duration}</td><td>${r.course}</td><td>${r.teacher}</td><td>${r.school}<span class="table-subtitle">${r.room}</span></td><td>${r.size}</td><td>${state.publishedVideos.has(r.id)?pill("Published"):`<button class="btn btn-primary btn-sm" data-publish="${r.id}">Publish</button>`}</td><td><div class="table-actions"><button data-action="edit-video">Edit</button><button data-action="download-video">Download</button><button class="danger" data-delete-video="${r.id}">Delete</button></div></td></tr>`).join("")}</tbody></table></div>
+    <div class="table-panel"><div class="table-toolbar"><div class="table-toolbar-left"><select class="form-control" data-video-filter><option>All schools</option>${["Computing","Business","Science","Design","Health","Architecture"].map(x=>`<option ${state.videoFilter===x?"selected":""}>${x}</option>`).join("")}</select><select class="form-control" data-video-room>${["All rooms","Innovation 201","Harbour 105","Discovery 302","Studio 110","Wellbeing 204","Urban Lab 402"].map(x=>`<option ${state.videoRoom===x?"selected":""}>${x}</option>`).join("")}</select><select class="form-control" data-video-semester>${["All semesters","Fall 2026","Spring 2026"].map(x=>`<option ${state.videoSemester===x?"selected":""}>${x}</option>`).join("")}</select><input class="form-control" data-video-search value="${escapeHtml(state.videoSearch)}" style="width:220px" placeholder="Search video or instructor" /></div><div class="table-toolbar-right"><span style="color:var(--muted);font-size: 11px">${filtered.length} of 2,486 videos</span><button class="icon-button" data-action="table-columns" aria-label="Table display settings">${icon("settings",15)}</button></div></div>
+      <div class="data-table-wrap"><table class="data-table"><thead><tr><th>Video</th><th>Recorded</th><th>Duration</th><th>Course</th><th>Instructor</th><th>School / Room</th><th>Size</th><th>Portal</th><th>Actions</th></tr></thead><tbody>${filtered.map(r=>`<tr><td><span class="table-title">${r.title}</span><span class="table-subtitle">${r.segments} video segments · ${r.status}</span></td><td>${r.date}</td><td>${r.duration}</td><td>${r.course}</td><td>${r.teacher}</td><td>${r.school}<span class="table-subtitle">${r.room}</span></td><td>${r.size}</td><td>${state.publishedVideos.has(r.id)?`${pill("Published")}<button class="inline-unpublish" data-unpublish="${r.id}">Unpublish</button>`:`<button class="btn btn-primary btn-sm" data-publish="${r.id}">Publish</button>`}</td><td><div class="table-actions"><button data-edit-video="${r.id}">Edit</button><button data-action="download-video">Download</button><button class="danger" data-delete-video="${r.id}">Delete</button></div></td></tr>`).join("")}</tbody></table>${filtered.length?"":`<div class="empty-state"><strong>No recorded videos found</strong>Try changing your filters.</div>`}</div>
     </div>
   `,"admin/recordings","Recorded Videos");
 }
 
 function schedulesPage() {
+  const query = state.scheduleSearch.toLowerCase();
+  let managedSchedules = schedules.map(s=>({...s,...(state.scheduleOverrides[s.id]||{})})).filter(s=>(state.scheduleStatus==="All statuses"||s.status===state.scheduleStatus)&&(!query||`${s.title} ${s.teacher} ${s.room}`.toLowerCase().includes(query)));
+  if (state.scheduleRange === "This week") managedSchedules = managedSchedules.slice(0,5);
   return adminShell(`
-    ${adminPageHead("Recording Schedules","Automate lecture capture by course, room and teaching timetable.",`<button class="btn btn-secondary">${icon("calendar",14)} Calendar view</button><button class="btn btn-primary" data-action="create-schedule">${icon("plus",14)} New schedule</button>`)}
-    <div class="filter-bar"><input class="filter-search" placeholder="Search course, instructor or room" /><select class="form-control"><option>Next 30 days</option><option>This week</option><option>This semester</option></select><select class="form-control"><option>All statuses</option><option>Scheduled</option><option>Attention</option></select></div>
-    <div class="schedule-grid">${schedules.map(s=>`<article class="schedule-card"><div class="schedule-date"><div><strong>${s.date}</strong><span>${s.day}</span></div>${pill(s.status)}</div><div class="schedule-body"><h3>${s.title}</h3><div class="info-list"><div class="info-row"><span>Instructor</span><strong>${s.teacher}</strong></div><div class="info-row"><span>Room</span><strong>${s.room}</strong></div><div class="info-row"><span>Capture device</span><strong>${s.device}</strong></div><div class="info-row"><span>Repeats</span><strong>${s.repeat}</strong></div></div><div class="card-actions"><button class="btn btn-ghost btn-sm" data-action="edit-schedule">Edit schedule</button><button class="icon-button" style="width:34px;height:34px" data-action="schedule-more">${icon("more",15)}</button></div></div></article>`).join("")}</div>
+    ${adminPageHead("Recording Schedules","Automate lecture capture by course, room and teaching timetable.",`<button class="btn btn-secondary" data-action="calendar-view">${icon("calendar",14)} Calendar view</button><button class="btn btn-primary" data-action="create-schedule">${icon("plus",14)} New schedule</button>`)}
+    <div class="filter-bar"><input class="filter-search" data-schedule-search value="${escapeHtml(state.scheduleSearch)}" placeholder="Search course, instructor or room" /><select class="form-control" data-schedule-range>${["Next 30 days","This week","This semester"].map(x=>`<option ${state.scheduleRange===x?"selected":""}>${x}</option>`).join("")}</select><select class="form-control" data-schedule-status>${["All statuses","Scheduled","Attention","Paused"].map(x=>`<option ${state.scheduleStatus===x?"selected":""}>${x}</option>`).join("")}</select></div>
+    ${managedSchedules.length?`<div class="schedule-grid">${managedSchedules.map(s=>`<article class="schedule-card"><div class="schedule-date"><div><strong>${s.date}</strong><span>${s.day}</span></div>${pill(s.status)}</div><div class="schedule-body"><h3>${s.title}</h3><div class="info-list"><div class="info-row"><span>Instructor</span><strong>${s.teacher}</strong></div><div class="info-row"><span>Room</span><strong>${s.room}</strong></div><div class="info-row"><span>Capture device</span><strong>${s.device}</strong></div><div class="info-row"><span>Repeats</span><strong>${s.repeat}</strong></div></div><div class="card-actions"><button class="btn btn-ghost btn-sm" data-edit-schedule="${s.id}">Edit schedule</button><button class="icon-button" style="width:34px;height:34px" data-schedule-more="${s.id}">${icon("more",15)}</button></div></div></article>`).join("")}</div>`:`<div class="empty-state"><strong>No schedules found</strong>Try changing your search or status filter.</div>`}
   `,"admin/schedules","Recording Schedules");
 }
 
 function coursesAdminPage() {
-  const managedCourses = courses.slice(0, 6).map(courseRecord);
+  const query = state.courseAdminSearch.toLowerCase();
+  const managedCourses = courses.map(courseRecord).filter(c=>(state.courseAdminSchool==="All schools"||c.school.includes(state.courseAdminSchool))&&(state.courseAdminStatus==="All publication states"||c.status===state.courseAdminStatus)&&(!query||`${c.title} ${c.teacher}`.toLowerCase().includes(query)));
   return adminShell(`
     ${adminPageHead("Course Management","Create structured learning experiences and publish them to the portal.",`<button class="btn btn-primary" data-action="create-course">${icon("plus",14)} Create course</button>`)}
     <div class="content-lifecycle-note"><span class="stat-icon">${icon("globe",16)}</span><div><strong>Portal publication</strong><p>Published courses appear immediately in the course portal. Unpublishing removes them from discovery while keeping all course content and settings.</p></div></div>
-    <div class="table-panel"><div class="table-toolbar"><div class="table-toolbar-left"><select class="form-control"><option>All schools</option><option>Computing</option><option>Business</option><option>Science</option></select><select class="form-control"><option>All publication states</option><option>Published</option><option>Draft</option></select><input class="form-control" style="width:250px" placeholder="Search course or instructor" /></div><span style="color:var(--muted);font-size: 11px">124 courses</span></div><div class="data-table-wrap"><table class="data-table"><thead><tr><th>Course</th><th>Instructor</th><th>School</th><th>Semester</th><th>Structure</th><th>Access</th><th>Portal status</th><th>Actions</th></tr></thead><tbody>${managedCourses.map((c,i)=>`<tr><td><span class="table-title">${escapeHtml(c.title)}</span><span class="table-subtitle">CRS-${20260+i+1} · ${escapeHtml(c.description).slice(0,65)}${c.description.length>65?"…":""}</span></td><td>${escapeHtml(c.teacher)}</td><td>${escapeHtml(c.school.replace("School of ",""))}</td><td>${escapeHtml(c.semester)}</td><td>${3+i%3} modules · ${c.lessons} lessons</td><td><span class="access-label">${icon(c.access==="Public"?"globe":"users",11)} ${escapeHtml(c.access)}</span></td><td>${pill(c.status)}</td><td><div class="table-actions lifecycle-actions"><button data-edit-course="${c.id}">Edit</button><button data-route="course/${c.id}">Preview</button><button class="${c.status==="Published"?"danger":"publish-action"}" data-course-publication="${c.id}" data-next-status="${c.status==="Published"?"Draft":"Published"}">${c.status==="Published"?"Unpublish":"Publish"}</button></div></td></tr>`).join("")}</tbody></table></div></div>
+    <div class="table-panel"><div class="table-toolbar"><div class="table-toolbar-left"><select class="form-control" data-course-admin-school>${["All schools","Computing","Business","Science","Design","Health","Architecture"].map(x=>`<option ${state.courseAdminSchool===x?"selected":""}>${x}</option>`).join("")}</select><select class="form-control" data-course-admin-status>${["All publication states","Published","Draft"].map(x=>`<option ${state.courseAdminStatus===x?"selected":""}>${x}</option>`).join("")}</select><input class="form-control" data-course-admin-search value="${escapeHtml(state.courseAdminSearch)}" style="width:250px" placeholder="Search course or instructor" /></div><span style="color:var(--muted);font-size: 11px">${managedCourses.length} of 124 courses</span></div><div class="data-table-wrap"><table class="data-table"><thead><tr><th>Course</th><th>Instructor</th><th>School</th><th>Semester</th><th>Structure</th><th>Access</th><th>Portal status</th><th>Actions</th></tr></thead><tbody>${managedCourses.map((c,i)=>`<tr><td><span class="table-title">${escapeHtml(c.title)}</span><span class="table-subtitle">CRS-${20260+c.id} · ${escapeHtml(c.description).slice(0,65)}${c.description.length>65?"…":""}</span></td><td>${escapeHtml(c.teacher)}</td><td>${escapeHtml(c.school.replace("School of ",""))}</td><td>${escapeHtml(c.semester)}</td><td>${3+i%3} modules · ${c.lessons} lessons</td><td><span class="access-label">${icon(c.access==="Public"?"globe":"users",11)} ${escapeHtml(c.access)}</span></td><td>${pill(c.status)}</td><td><div class="table-actions lifecycle-actions"><button data-edit-course="${c.id}">Edit</button><button data-route="course/${c.id}">Preview</button><button class="${c.status==="Published"?"danger":"publish-action"}" data-course-publication="${c.id}" data-next-status="${c.status==="Published"?"Draft":"Published"}">${c.status==="Published"?"Unpublish":"Publish"}</button></div></td></tr>`).join("")}</tbody></table>${managedCourses.length?"":`<div class="empty-state"><strong>No courses found</strong>Try changing your filters.</div>`}</div></div>
   `,"admin/courses","Course Management");
 }
 
 function liveAdminPage() {
-  const managedEvents = liveEvents.map(liveRecord);
+  const query = state.liveAdminSearch.toLowerCase();
+  const managedEvents = liveEvents.map(liveRecord).filter(e=>(state.liveAdminFilter==="All"||e.status===state.liveAdminFilter)&&(state.liveAdminPublication==="All publication states"||e.publication===state.liveAdminPublication)&&(!query||`${e.title} ${e.teacher}`.toLowerCase().includes(query)));
   return adminShell(`
     ${adminPageHead("Live Events","Create, share and manage live teaching experiences.",`<button class="btn btn-primary" data-action="create-live">${icon("plus",14)} Create live event</button>`)}
     <div class="content-lifecycle-note"><span class="stat-icon">${icon("live",16)}</span><div><strong>Event status and publication are managed separately</strong><p>An event can be upcoming, live or ended while remaining unpublished from the portal. Publishing preserves the same share link and replay settings.</p></div></div>
-    <div class="filter-bar"><div class="segmented">${["All","Live now","Upcoming","Ended"].map((f,i)=>`<button class="${i===0?"active":""}">${f}</button>`).join("")}</div><select class="form-control"><option>All publication states</option><option>Published</option><option>Draft</option></select><input class="filter-search" placeholder="Search live event" /></div>
-    <div class="live-admin-grid">${managedEvents.map(e=>`<article class="live-admin-card"><div class="live-admin-cover ${e.cover}">${pill(e.status)}<span class="publication-chip ${e.publication.toLowerCase()}">${icon(e.publication==="Published"?"globe":"edit",10)} ${e.publication}</span></div><div class="live-admin-body"><h3>${escapeHtml(e.title)}</h3><p class="live-card-description">${escapeHtml(e.description)}</p><div class="info-list"><div class="info-row"><span>Host</span><strong>${escapeHtml(e.teacher)}</strong></div><div class="info-row"><span>Schedule</span><strong>${e.date}<br>${e.time}</strong></div><div class="info-row"><span>Viewing access</span><strong>${escapeHtml(e.visibility)}</strong></div><div class="info-row"><span>Replay</span><strong>${e.replay?"Enabled":"Disabled"}</strong></div></div><div class="card-actions live-lifecycle-actions"><button class="btn btn-secondary btn-sm" data-edit-live="${e.id}">${icon("edit",12)} Edit</button>${e.publication==="Published"?`<button class="btn btn-secondary btn-sm" data-share-event="${e.id}">${icon("share",12)} Share</button>`:""}<button class="btn ${e.publication==="Published"?"btn-danger":"btn-primary"} btn-sm" data-live-publication="${e.id}" data-next-publication="${e.publication==="Published"?"Draft":"Published"}">${e.publication==="Published"?"Unpublish":"Publish"}</button></div></div></article>`).join("")}</div>
+    <div class="filter-bar"><div class="segmented">${["All","Live now","Upcoming","Ended"].map(f=>`<button class="${state.liveAdminFilter===f?"active":""}" data-live-admin-filter="${f}">${f}</button>`).join("")}</div><select class="form-control" data-live-admin-publication>${["All publication states","Published","Draft"].map(x=>`<option ${state.liveAdminPublication===x?"selected":""}>${x}</option>`).join("")}</select><input class="filter-search" data-live-admin-search value="${escapeHtml(state.liveAdminSearch)}" placeholder="Search live event" /></div>
+    ${managedEvents.length?`<div class="live-admin-grid">${managedEvents.map(e=>`<article class="live-admin-card"><div class="live-admin-cover ${e.cover}">${pill(e.status)}<span class="publication-chip ${e.publication.toLowerCase()}">${icon(e.publication==="Published"?"globe":"edit",10)} ${e.publication}</span></div><div class="live-admin-body"><h3>${escapeHtml(e.title)}</h3><p class="live-card-description">${escapeHtml(e.description)}</p><div class="info-list"><div class="info-row"><span>Host</span><strong>${escapeHtml(e.teacher)}</strong></div><div class="info-row"><span>Schedule</span><strong>${e.date}<br>${e.time}</strong></div><div class="info-row"><span>Viewing access</span><strong>${escapeHtml(e.visibility)}</strong></div><div class="info-row"><span>Replay</span><strong>${e.replay?"Enabled":"Disabled"}</strong></div></div><div class="card-actions live-lifecycle-actions"><button class="btn btn-secondary btn-sm" data-edit-live="${e.id}">${icon("edit",12)} Edit</button>${e.publication==="Published"?`<button class="btn btn-secondary btn-sm" data-share-event="${e.id}">${icon("share",12)} Share</button>`:""}<button class="btn ${e.publication==="Published"?"btn-danger":"btn-primary"} btn-sm" data-live-publication="${e.id}" data-next-publication="${e.publication==="Published"?"Draft":"Published"}">${e.publication==="Published"?"Unpublish":"Publish"}</button></div></div></article>`).join("")}</div>`:`<div class="empty-state"><strong>No live events found</strong>Try changing the search or filters.</div>`}
   `,"admin/live","Live Events");
 }
 
 function aiPage() {
-  const filtered = analysisReports.filter(report => state.aiListStatus === "All reports" || report.status === state.aiListStatus);
+  const query = state.aiSearch.toLowerCase();
+  let filtered = analysisReports.filter(report => (state.aiListStatus === "All reports" || report.status === state.aiListStatus) && (state.aiSchool === "All schools" || report.school === state.aiSchool) && (!query || `${report.course} ${report.teacher} ${report.room}`.toLowerCase().includes(query)));
+  if (state.aiRange === "This week") filtered = filtered.slice(0,4);
   return adminShell(`
     ${adminPageHead("AI Classroom","Explore completed classroom analyses, evidence signals and detailed source video.",`<button class="btn btn-secondary" data-action="ai-settings">${icon("settings",14)} Analysis settings</button>`)}
     <div class="stats-grid ai-list-stats">
@@ -4957,8 +5122,8 @@ function aiPage() {
       ${statCard("Processing now","3","Estimated under 12 min","clock","#f0ecff")}
     </div>
     <section class="panel ai-overview-band"><div class="panel-body"><div class="ai-overview-copy"><span class="eyebrow">Portfolio overview</span><h2>Teaching quality is trending upward.</h2><p>Across 186 analysed sessions, engagement improved by 4.6% while average instructor talk time remained balanced.</p></div><div class="ai-overview-metrics"><div><strong>96%</strong><span>Reports completed</span></div><div><strong>82%</strong><span>Average engagement</span></div><div><strong>93%</strong><span>Average attendance</span></div></div></div></section>
-    <div class="table-panel ai-report-list"><div class="table-toolbar"><div class="table-toolbar-left"><select class="form-control" data-ai-status>${["All reports","Complete","Processing"].map(value=>`<option ${state.aiListStatus===value?"selected":""}>${value}</option>`).join("")}</select><select class="form-control"><option>All schools</option><option>Computing</option><option>Business</option><option>Science</option><option>Design</option></select><select class="form-control"><option>Last 30 days</option><option>This week</option><option>This semester</option></select><input class="form-control ai-report-search" placeholder="Search course, instructor or room" /></div><span class="table-result-count">${filtered.length} of 186 reports</span></div>
-      <div class="data-table-wrap"><table class="data-table ai-report-table"><thead><tr><th>Class session</th><th>Instructor</th><th>Recorded</th><th>Duration</th><th>Insight score</th><th>Engagement</th><th>Evidence signals</th><th>Status</th><th></th></tr></thead><tbody>${filtered.map(report=>`<tr data-route="admin/ai/report/${report.id}"><td><span class="table-title">${report.course}</span><span class="table-subtitle">${report.session} · ${report.room}</span></td><td>${report.teacher}<span class="table-subtitle">School of ${report.school}</span></td><td>${report.date}</td><td>${report.duration}</td><td>${report.score===null?`<span class="score-pending">—</span>`:`<span class="table-score ${report.score<82?"attention":""}">${report.score}</span>`}</td><td>${report.engagement}</td><td>${report.signals===null?"—":`<button class="evidence-count" data-route="admin/ai/report/${report.id}">${report.signals} ${report.signals===1?"signal":"signals"}</button>`}</td><td>${pill(report.status)}</td><td><button class="btn btn-secondary btn-sm" data-route="admin/ai/report/${report.id}">View report ${icon("arrow",12)}</button></td></tr>`).join("")}</tbody></table></div>
+    <div class="table-panel ai-report-list"><div class="table-toolbar"><div class="table-toolbar-left"><select class="form-control" data-ai-status>${["All reports","Complete","Processing"].map(value=>`<option ${state.aiListStatus===value?"selected":""}>${value}</option>`).join("")}</select><select class="form-control" data-ai-school>${["All schools","Computing","Business","Science","Design","Health","Architecture"].map(x=>`<option ${state.aiSchool===x?"selected":""}>${x}</option>`).join("")}</select><select class="form-control" data-ai-range>${["Last 30 days","This week","This semester"].map(x=>`<option ${state.aiRange===x?"selected":""}>${x}</option>`).join("")}</select><input class="form-control ai-report-search" data-ai-search value="${escapeHtml(state.aiSearch)}" placeholder="Search course, instructor or room" /></div><span class="table-result-count">${filtered.length} of 186 reports</span></div>
+      <div class="data-table-wrap"><table class="data-table ai-report-table"><thead><tr><th>Class session</th><th>Instructor</th><th>Recorded</th><th>Duration</th><th>Insight score</th><th>Engagement</th><th>Evidence signals</th><th>Status</th><th></th></tr></thead><tbody>${filtered.map(report=>`<tr ${report.status==="Complete"?`data-route="admin/ai/report/${report.id}"`:""}><td><span class="table-title">${report.course}</span><span class="table-subtitle">${report.session} · ${report.room}</span></td><td>${report.teacher}<span class="table-subtitle">School of ${report.school}</span></td><td>${report.date}</td><td>${report.duration}</td><td>${report.score===null?`<span class="score-pending">—</span>`:`<span class="table-score ${report.score<82?"attention":""}">${report.score}</span>`}</td><td>${report.engagement}</td><td>${report.signals===null?"—":`<button class="evidence-count" data-route="admin/ai/report/${report.id}">${report.signals} ${report.signals===1?"signal":"signals"}</button>`}</td><td>${pill(report.status)}</td><td><button class="btn btn-secondary btn-sm" ${report.status==="Complete"?`data-route="admin/ai/report/${report.id}"`:`data-action="processing-report"`}>${report.status==="Complete"?`View report ${icon("arrow",12)}`:`View progress ${icon("clock",12)}`}</button></td></tr>`).join("")}</tbody></table>${filtered.length?"":`<div class="empty-state"><strong>No analysis reports found</strong>Try changing your filters.</div>`}</div>
     </div>
   `,"admin/ai","AI Classroom");
 }
@@ -4993,7 +5158,7 @@ function aiConductContent() {
     <section class="report-section"><div class="report-section-head"><div><h2>Body language</h2><p>Expressiveness remained high through most of the session, with a short low-activity period around 36 minutes.</p></div><button class="report-evidence-link" data-evidence="body-language">${icon("play",12)} View video evidence</button></div><div class="conduct-line-chart"><div class="chart-axis"><span>Expressive</span><span>Neutral</span></div><svg viewBox="0 0 900 150" preserveAspectRatio="none"><path d="M0 118 L22 105 L35 34 L54 45 L70 82 L92 51 L110 119 L140 103 L160 72 L180 88 L205 58 L230 110 L250 92 L270 38 L292 55 L318 28 L340 104 L365 112 L388 94 L415 48 L438 77 L460 91 L485 42 L510 104 L540 86 L565 52 L590 118 L615 96 L640 66 L670 82 L700 38 L730 30 L750 104 L780 120" fill="none" stroke="#4d83ff" stroke-width="3"/><path d="M0 118 L22 105 L35 34 L54 45 L70 82 L92 51 L110 119 L140 103 L160 72 L180 88 L205 58 L230 110 L250 92 L270 38 L292 55 L318 28 L340 104 L365 112 L388 94 L415 48 L438 77 L460 91 L485 42 L510 104 L540 86 L565 52 L590 118 L615 96 L640 66 L670 82 L700 38 L730 30 L750 104 L780 120 L780 150 L0 150Z" fill="url(#bodyGradient)"/><defs><linearGradient id="bodyGradient" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#4d83ff" stop-opacity=".16"/><stop offset="1" stop-color="#4d83ff" stop-opacity="0"/></linearGradient></defs></svg><div class="chart-times"><span>00:00</span><span>15:00</span><span>30:00</span><span>45:00</span><span>60:00</span><span>75:00</span><span>90:00</span></div></div></section>
     <section class="report-section"><div class="report-section-head"><div><h2>Teaching posture</h2><p>Standing was the dominant posture. Walking activity aligned with discussion and demonstration moments.</p></div><button class="report-evidence-link" data-evidence="posture">${icon("play",12)} View video evidence</button></div><div class="posture-layout"><div class="posture-donut"><div class="donut-visual"><span>90 min</span></div><div class="donut-legend"><span><i style="--dot:#356df3"></i>Standing <strong>62%</strong></span><span><i style="--dot:#19b990"></i>Walking <strong>31%</strong></span><span><i style="--dot:#e858bd"></i>Seated <strong>7%</strong></span></div></div><div class="posture-timeline">${[["Standing","#356df3","8%,13%,6%,18%,8%"],["Walking","#19b990","12%,8%,16%,10%,9%"],["Seated","#e858bd","0%,5%,0%,4%,0%"]].map(([label,color,widths])=>`<div><span>${label}</span><div class="posture-track">${widths.split(",").map((w,i)=>`<i style="left:${i*19+3}%;width:${w};background:${color}"></i>`).join("")}</div></div>`).join("")}<div class="timeline-scale"><span>00:00</span><span>30:00</span><span>60:00</span><span>90:00</span></div></div></div></section>
     <section class="report-section"><div class="report-section-head"><div><h2>Classroom movement</h2><p>67.2% of instructor time was spent in the presentation zone and 32.8% in the student zone.</p></div><button class="report-evidence-link" data-evidence="movement">${icon("play",12)} View video evidence</button></div><div class="movement-layout"><div class="movement-stats"><button data-evidence="presentation-zone"><strong>67.2%</strong><span>Presentation zone</span></button><button data-evidence="student-zone"><strong>32.8%</strong><span>Student zone</span></button></div><div class="movement-map"><span class="movement-board">Presentation area</span><i class="movement-path path-one"></i><i class="movement-path path-two"></i><i class="movement-path path-three"></i><span class="movement-start">Start</span><span class="movement-end">End</span></div></div></section>
-    <section class="report-section"><div class="report-section-head"><div><h2>Classroom management signals</h2><p>Select a detected moment to inspect the corresponding video evidence.</p></div></div><div class="signal-timeline"><div class="signal-track">${[["8%","Attendance","complete"],["27%","Board use","complete"],["36%","Attire","review"],["58%","Phone use","review"],["76%","Student reminder","complete"]].map(([x,label,status])=>`<button style="--x:${x}" class="signal-marker ${status}" ${status==="review"?`data-evidence="${label==="Attire"?"attire":"phone"}"`:""}><i></i><span>${label}</span></button>`).join("")}</div><div class="timeline-scale"><span>00:00</span><span>30:00</span><span>60:00</span><span>90:00</span></div></div></section>`;
+    <section class="report-section"><div class="report-section-head"><div><h2>Classroom management signals</h2><p>Select a detected moment to inspect the corresponding video evidence.</p></div></div><div class="signal-timeline"><div class="signal-track">${[["8%","Attendance","complete","attendance"],["27%","Board use","complete","board"],["36%","Attire","review","attire"],["58%","Phone use","review","phone"],["76%","Student reminder","complete","feedback"]].map(([x,label,status,evidence])=>`<button style="--x:${x}" class="signal-marker ${status}" data-evidence="${evidence}"><i></i><span>${label}</span></button>`).join("")}</div><div class="timeline-scale"><span>00:00</span><span>30:00</span><span>60:00</span><span>90:00</span></div></div></section>`;
 }
 
 function aiAnalysisSection(tab) {
@@ -5013,24 +5178,29 @@ function aiAnalysisSection(tab) {
 }
 
 function devicesPage() {
+  const query = state.deviceSearch.toLowerCase();
+  const filteredDevices = devices.filter(d=>{const current=state.devices[d.id]||d.status;return (state.deviceBuilding==="All buildings"||d.room.startsWith(state.deviceBuilding))&&(state.deviceStatus==="All statuses"||current===state.deviceStatus)&&(!query||`${d.id} ${d.room} ${d.ip}`.toLowerCase().includes(query));});
   return adminShell(`
     ${adminPageHead("Device Operations","Monitor and control lecture capture devices across campus.",`<button class="btn btn-secondary" data-action="storage-settings">${icon("settings",14)} Storage settings</button><button class="btn btn-primary" data-action="add-device">${icon("plus",14)} Add device</button>`)}
     <div class="device-summary"><section class="panel"><div class="panel-head"><h3>Fleet health</h3><span style="color:var(--muted);font-size: 11px">Updated just now</span></div><div class="panel-body"><div class="device-health"><span class="health-ring"></span><div class="health-legend"><div class="legend-row"><span><i class="legend-dot" style="--dot:#138f72"></i>Online</span><strong>20</strong></div><div class="legend-row"><span><i class="legend-dot" style="--dot:#d94a60"></i>Recording / Live</span><strong>7</strong></div><div class="legend-row"><span><i class="legend-dot" style="--dot:#9aa6b9"></i>Offline</span><strong>2</strong></div></div></div></div></section><section class="panel"><div class="panel-head"><h3>Storage server</h3><button class="link-button" data-action="storage-settings">Configure</button></div><div class="panel-body"><div class="resource-bars"><div><div class="resource-bar-head"><span>Primary media storage</span><strong>38.4 / 64 TB</strong></div><div class="resource-bar-track" style="--w:60%"></div></div><div><div class="resource-bar-head"><span>Archive storage</span><strong>81.2 / 128 TB</strong></div><div class="resource-bar-track" style="--w:63%;--bar:var(--cyan-500)"></div></div><div class="switch-row"><div><strong>Intelligent video overwrite</strong><span>Automatically protect published and recent content</span></div><button class="toggle on" data-action="toggle-switch"></button></div></div></div></section></div>
-    <div class="table-panel"><div class="table-toolbar"><div class="table-toolbar-left"><select class="form-control"><option>All buildings</option><option>Innovation</option><option>Harbour</option><option>Discovery</option></select><select class="form-control"><option>All statuses</option><option>Idle</option><option>Recording</option><option>Live</option><option>Offline</option></select><input class="form-control" style="width:220px" placeholder="Search device, room or IP" /></div><span style="color:var(--muted);font-size: 11px">22 devices · 20 online</span></div><div class="data-table-wrap"><table class="data-table"><thead><tr><th>Device</th><th>Room / IP</th><th>Status</th><th>Signal</th><th>CPU</th><th>Memory</th><th>Disk</th><th>Network ↓ / ↑</th><th>Version</th><th>Remote actions</th></tr></thead><tbody>${devices.map(d=>{const current=state.devices[d.id]||d.status;return `<tr><td><span class="table-title">${d.id}</span><span class="table-subtitle">Lecture Capture Pro</span></td><td>${d.room}<span class="table-subtitle">${d.ip}</span></td><td>${pill(current)}</td><td>${d.signal}</td><td>${d.cpu}%</td><td>${d.memory}%</td><td>${d.disk}%</td><td>${d.network}</td><td>${d.version}</td><td><div class="table-actions">${current==="Offline"?`<button data-device-action="restart" data-device="${d.id}">Diagnose</button>`:current==="Recording"?`<button class="danger" data-device-action="stop recording" data-device="${d.id}">Stop recording</button>`:current==="Live"?`<button class="danger" data-device-action="stop live" data-device="${d.id}">Stop live</button>`:`<button data-device-action="start recording" data-device="${d.id}">Record</button><button data-device-action="start live" data-device="${d.id}">Live</button>`}<button data-device-action="restart" data-device="${d.id}">${icon("refresh",13)}</button><button data-device-action="power off" data-device="${d.id}">${icon("power",13)}</button></div></td></tr>`}).join("")}</tbody></table></div></div>
+    <div class="table-panel"><div class="table-toolbar"><div class="table-toolbar-left"><select class="form-control" data-device-building>${["All buildings","Innovation","Harbour","Discovery","Studio","Wellbeing"].map(x=>`<option ${state.deviceBuilding===x?"selected":""}>${x}</option>`).join("")}</select><select class="form-control" data-device-status>${["All statuses","Idle","Recording","Live","Offline"].map(x=>`<option ${state.deviceStatus===x?"selected":""}>${x}</option>`).join("")}</select><input class="form-control" data-device-search value="${escapeHtml(state.deviceSearch)}" style="width:220px" placeholder="Search device, room or IP" /></div><span style="color:var(--muted);font-size: 11px">${filteredDevices.length} of 22 devices · 20 online</span></div><div class="data-table-wrap"><table class="data-table"><thead><tr><th>Device</th><th>Room / IP</th><th>Status</th><th>Signal</th><th>CPU</th><th>Memory</th><th>Disk</th><th>Network ↓ / ↑</th><th>Version</th><th>Remote actions</th></tr></thead><tbody>${filteredDevices.map(d=>{const current=state.devices[d.id]||d.status;return `<tr><td><span class="table-title">${d.id}</span><span class="table-subtitle">Lecture Capture Pro</span></td><td>${d.room}<span class="table-subtitle">${d.ip}</span></td><td>${pill(current)}</td><td>${d.signal}</td><td>${d.cpu}%</td><td>${d.memory}%</td><td>${d.disk}%</td><td>${d.network}</td><td>${d.version}</td><td><div class="table-actions">${current==="Offline"?`<button data-device-action="restart" data-device="${d.id}">Diagnose</button>`:current==="Recording"?`<button class="danger" data-device-action="stop recording" data-device="${d.id}">Stop recording</button>`:current==="Live"?`<button class="danger" data-device-action="stop live" data-device="${d.id}">Stop live</button>`:`<button data-device-action="start recording" data-device="${d.id}">Record</button><button data-device-action="start live" data-device="${d.id}">Live</button>`}<button data-device-action="restart" data-device="${d.id}" aria-label="Restart device">${icon("refresh",13)}</button><button data-device-action="power off" data-device="${d.id}" aria-label="Power off device">${icon("power",13)}</button></div></td></tr>`}).join("")}</tbody></table>${filteredDevices.length?"":`<div class="empty-state"><strong>No devices found</strong>Try changing your filters.</div>`}</div></div>
   `,"admin/devices","Device Operations");
 }
 
 function formInput(label, value, type = "text", full = false) {
-  return `<div class="form-group ${full ? "full" : ""}"><label>${label}</label><input class="form-control" type="${type}" value="${value}" /></div>`;
+  return `<div class="form-group ${full ? "full" : ""}"><label>${label}</label><input class="form-control" data-form-field="${escapeHtml(label)}" type="${type}" value="${escapeHtml(value)}" /></div>`;
 }
 
-function scheduleModal() {
+function scheduleModal(scheduleId = null) {
+  const base = schedules.find(item=>item.id===Number(scheduleId));
+  const schedule = base ? {...base,...(state.scheduleOverrides[base.id]||{})} : null;
+  state.activeScheduleId = schedule?.id || null;
   showModal({
-    title: "Create recording schedule",
+    title: schedule ? "Edit recording schedule" : "Create recording schedule",
     subtitle: "The selected capture device will start and stop automatically.",
     size: "modal-lg",
-    body: `<div class="form-grid">${formInput("Course","AI Foundations")}${formInput("Instructor","Dr. Maya Chen")}${formInput("Date","2026-08-12","date")}${formInput("Start time","09:00","time")}${formInput("End time","10:45","time")}${formInput("Teaching room","Innovation 201")}${formInput("Capture device","LH-A201")}${formInput("Repeat","Weekly · Until Nov 25")}${formInput("Recording owner","maya.chen@nexus.edu", "email", true)}<div class="form-group full"><label>Capture sources</label><div class="switch-row"><div><strong>Instructor camera</strong><span>Main teaching view</span></div><button class="toggle on" data-action="toggle-switch"></button></div><div class="switch-row"><div><strong>Presentation source</strong><span>Lectern computer or wireless input</span></div><button class="toggle on" data-action="toggle-switch"></button></div></div></div>`,
-    footer: `<button class="btn btn-secondary" data-action="close-modal">Cancel</button><button class="btn btn-primary" data-action="confirm-schedule">Create schedule</button>`,
+    body: `<div class="form-grid">${formInput("Course",schedule?.title||"AI Foundations")}${formInput("Instructor",schedule?.teacher||"Dr. Maya Chen")}${formInput("Date","2026-08-12","date")}${formInput("Start time","09:00","time")}${formInput("End time","10:45","time")}${formInput("Teaching room",schedule?.room||"Innovation 201")}${formInput("Capture device",schedule?.device||"LH-A201")}${formInput("Repeat",schedule?.repeat||"Weekly · Until Nov 25")}${formInput("Recording owner","maya.chen@nexus.edu", "email", true)}<div class="form-group full"><label>Capture sources</label><div class="switch-row"><div><strong>Instructor camera</strong><span>Main teaching view</span></div><button class="toggle on" data-action="toggle-switch"></button></div><div class="switch-row"><div><strong>Presentation source</strong><span>Lectern computer or wireless input</span></div><button class="toggle on" data-action="toggle-switch"></button></div></div></div>`,
+    footer: `<button class="btn btn-secondary" data-action="close-modal">Cancel</button><button class="btn btn-primary" data-action="confirm-schedule">${schedule?"Save changes":"Create schedule"}</button>`,
   });
 }
 
@@ -5146,7 +5316,7 @@ function uploadModal() {
   showModal({
     title: "Upload video",
     subtitle: "Add a new media file to the recorded video library.",
-    body: `<div style="display:grid;place-items:center;min-height:160px;padding:24px;border:1px dashed #b8c6da;border-radius:13px;background:#f8faff;text-align:center"><span class="stat-icon" style="width:46px;height:46px">${icon("upload",20)}</span><strong style="margin-top:13px;font-size: 13px">Drop a video file here</strong><span style="margin-top:5px;color:var(--muted);font-size: 11px">MP4 or MOV · up to 20 GB</span><button class="btn btn-secondary btn-sm" style="margin-top:13px">Choose file</button></div><div class="form-grid" style="margin-top:16px">${formInput("Video name","Guest Lecture — Responsible AI", "text", true)}${formInput("Course","Artificial Intelligence")}${formInput("Instructor","Dr. Maya Chen")}</div>`,
+    body: `<div class="upload-dropzone"><span class="stat-icon" style="width:46px;height:46px">${icon("upload",20)}</span><strong style="margin-top:13px;font-size: 13px">Drop a video file here</strong><span data-upload-file style="margin-top:5px;color:var(--muted);font-size: 11px">MP4 or MOV · up to 20 GB</span><button class="btn btn-secondary btn-sm" data-action="choose-file" style="margin-top:13px">Choose file</button></div><div class="form-grid" style="margin-top:16px">${formInput("Video name","Guest Lecture — Responsible AI", "text", true)}${formInput("Course","Artificial Intelligence")}${formInput("Instructor","Dr. Maya Chen")}</div>`,
     footer: `<button class="btn btn-secondary" data-action="close-modal">Cancel</button><button class="btn btn-primary" data-action="confirm-upload">Upload video</button>`,
   });
 }
@@ -5159,6 +5329,122 @@ function shareModal(eventId = 1) {
     subtitle: "The link and poster remain valid if published event details change.",
     body: `<div style="display:grid;grid-template-columns:150px 1fr;align-items:center;gap:22px"><div class="qr-placeholder">${qrPattern.map(x=>x?"<i></i>":"<span></span>").join("")}</div><div><label style="display:block;color:var(--muted);font-size: 11px;margin-bottom:7px">Event link</label><div style="display:flex;gap:7px"><input class="form-control" value="lecturehub.nexus.edu/live/${sharedEvent.id}AI26" readonly style="width:100%" /><button class="icon-button" data-action="copy-link">${icon("copy",15)}</button></div><p style="color:var(--muted);font-size: 11px;line-height:1.6"><strong>Viewing access: ${escapeHtml(sharedEvent.visibility)}.</strong> ${sharedEvent.visibility==="Anyone with the link"?"University sign-in is not required.":"Eligible viewers will be asked to sign in."}</p></div></div>`,
     footer: `<button class="btn btn-secondary" data-action="copy-poster">${icon("copy",14)} Copy poster</button><button class="btn btn-primary" data-action="copy-link">${icon("share",14)} Copy link</button>`,
+  });
+}
+
+function infoModal(title, message) {
+  showModal({
+    title,
+    size: "modal-sm",
+    body: `<div class="info-modal-content"><span class="stat-icon">${icon("book",18)}</span><p>${message}</p></div>`,
+    footer: `<button class="btn btn-primary" data-action="close-modal">Got it</button>`,
+  });
+}
+
+function notificationsModal() {
+  showModal({
+    title: "Notifications",
+    subtitle: "Your latest learning and platform updates.",
+    body: `<div class="notification-list">${[["brain","Classroom analysis ready","AI Foundations · score 88","8 min ago"],["live","Live event begins soon","AI and the Future of Higher Education","15 min ago"],["video","New recording available","Climate Systems · Atmosphere","1 hr ago"],["monitor","Device connection restored","Studio 110 is back online","3 hr ago"]].map((x,i)=>`<button data-action="notification-open" data-notification-route="${i===0?"admin/ai/report/1":i===1?"live-room/1":i===2?"course/4":"admin/devices"}"><span class="activity-dot">${icon(x[0],14)}</span><div><strong>${x[1]}</strong><span>${x[2]}</span></div><time>${x[3]}</time></button>`).join("")}</div>`,
+    footer: `<button class="btn btn-secondary" data-action="mark-notifications">Mark all as read</button><button class="btn btn-primary" data-action="close-modal">Close</button>`,
+  });
+}
+
+function playerSettingsModal() {
+  showModal({
+    title: "Playback settings",
+    body: `<div class="settings-list"><label><span>Video quality</span><select class="form-control"><option>Auto (1080p)</option><option>1080p</option><option>720p</option><option>480p</option></select></label><label><span>Caption language</span><select class="form-control"><option>English</option><option>English (auto-generated)</option></select></label><div class="switch-row"><div><strong>Remember playback speed</strong><span>Use ${state.playerSpeed} for the next lesson</span></div><button class="toggle on" data-action="toggle-switch"></button></div></div>`,
+    footer: `<button class="btn btn-primary" data-action="close-modal">Done</button>`,
+  });
+}
+
+function fullScheduleModal() {
+  showModal({
+    title: "My full schedule",
+    subtitle: "August 3–9, 2026 · Asia/Shanghai (GMT+8)",
+    size: "modal-lg",
+    body: `<div class="agenda-list">${[["Mon, Aug 3","09:00–10:30","Sustainable Business","Harbour 105"],["Tue, Aug 4","10:30–12:00","Public Health","Wellbeing 204"],["Wed, Aug 5","11:00–12:30","AI Foundations","Innovation 201"],["Thu, Aug 6","14:00–16:00","Design Thinking","Studio 110"],["Fri, Aug 7","09:30–11:00","Climate Science","Discovery 302"]].map(x=>`<button data-route="learning"><time>${x[0]}<strong>${x[1]}</strong></time><div><strong>${x[2]}</strong><span>${icon("building",12)} ${x[3]}</span></div>${icon("chevron",14)}</button>`).join("")}</div>`,
+    footer: `<button class="btn btn-secondary" data-action="calendar-download">${icon("download",14)} Export calendar</button><button class="btn btn-primary" data-action="close-modal">Close</button>`,
+  });
+}
+
+function calendarViewModal() {
+  showModal({
+    title: "Recording calendar",
+    subtitle: "August 2026 · automated room captures",
+    size: "modal-lg",
+    body: `<div class="mini-calendar">${["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].map(x=>`<strong>${x}</strong>`).join("")}${Array.from({length:35},(_,i)=>{const day=i-4;const count=day===5?2:day===7?2:[6,10,12,14,17,19,21,24,26].includes(day)?1:0;return `<button class="${day<1||day>31?"outside":""}" ${count?`data-calendar-day="${day}"`:""}><span>${day>0&&day<32?day:""}</span>${count?`<i>${count} capture${count>1?"s":""}</i>`:""}</button>`;}).join("")}</div>`,
+    footer: `<button class="btn btn-primary" data-action="close-modal">Close calendar</button>`,
+  });
+}
+
+function activityModal() {
+  showModal({
+    title: "Platform activity",
+    subtitle: "Latest content, intelligence and device events.",
+    size: "modal-lg",
+    body: `<div class="activity-list expanded">${[["video","Recording completed","AI Foundations · Innovation 201","8 min"],["brain","Analysis report ready","Climate Science · Score 88","24 min"],["live","Live event started","AI and the Future of Higher Education","1 hr"],["book","Course published","Public Health in a Connected World","2 hr"],["monitor","Device needs attention","Studio 110 · Connection lost","3 hr"],["video","Upload processed","Future Cities · Urban Mobility","5 hr"],["calendar","Schedule updated","Design Thinking · Studio 110","Yesterday"]].map(x=>`<div class="activity-item"><span class="activity-dot">${icon(x[0],13)}</span><div><strong>${x[1]}</strong><span>${x[2]}</span></div><time>${x[3]}</time></div>`).join("")}</div>`,
+    footer: `<button class="btn btn-primary" data-action="close-modal">Close</button>`,
+  });
+}
+
+function storageSettingsModal() {
+  showModal({
+    title: "Storage settings",
+    subtitle: "Configure the media storage service used by capture devices.",
+    body: `<div class="form-grid">${formInput("Primary server IP","10.24.1.12")}${formInput("Archive server IP","10.24.1.18")}<div class="form-group full"><div class="switch-row"><div><strong>Intelligent video overwrite</strong><span>Protect published and recent media automatically</span></div><button class="toggle on" data-action="toggle-switch"></button></div></div><div class="form-group full"><label>Minimum free space</label><select class="form-control"><option>Keep at least 10%</option><option>Keep at least 15%</option><option>Keep at least 20%</option></select></div></div>`,
+    footer: `<button class="btn btn-secondary" data-action="close-modal">Cancel</button><button class="btn btn-primary" data-action="save-storage">Save settings</button>`,
+  });
+}
+
+function addDeviceModal() {
+  showModal({
+    title: "Add capture device",
+    subtitle: "Bind a reachable recorder to a teaching room.",
+    body: `<div class="form-grid">${formInput("Device ID","LH-F402")}${formInput("Device IP","10.24.8.72")}${formInput("Teaching room","Urban Lab 402")}${formInput("Administrator password","••••••••","password")}<div class="form-group full"><button class="btn btn-secondary" data-action="test-device">${icon("refresh",14)} Test connection</button><span class="field-help" data-device-test>Connection has not been tested.</span></div></div>`,
+    footer: `<button class="btn btn-secondary" data-action="close-modal">Cancel</button><button class="btn btn-primary" data-action="confirm-add-device">Add device</button>`,
+  });
+}
+
+function aiSettingsModal() {
+  showModal({
+    title: "Classroom analysis settings",
+    subtitle: "Choose which automated insights appear in completed reports.",
+    size: "modal-lg",
+    body: `<div class="settings-model-grid">${[["Teaching conduct","Posture, movement and classroom signals"],["Teaching delivery","Pace, volume, keywords and board use"],["Student engagement","Participation, attention and head-up rate"],["Questioning & feedback","Bloom model, wait time and response quality"],["Attendance & dynamics","Attendance, arrival and seating distribution"]].map(x=>`<div class="switch-row"><div><strong>${x[0]}</strong><span>${x[1]}</span></div><button class="toggle on" data-action="toggle-switch"></button></div>`).join("")}</div>`,
+    footer: `<button class="btn btn-secondary" data-action="close-modal">Cancel</button><button class="btn btn-primary" data-action="save-ai-settings">Save settings</button>`,
+  });
+}
+
+function processingReportModal() {
+  showModal({
+    title: "Analysis in progress",
+    subtitle: "Design Thinking · Rapid Prototyping",
+    body: `<div class="processing-card"><span class="processing-ring"></span><div><strong>72% complete</strong><p>Video indexing and classroom behaviour analysis are running now. The full evidence-linked report will be available in approximately 8 minutes.</p><div class="metric-bar" style="--w:72%"></div></div></div>`,
+    footer: `<button class="btn btn-primary" data-action="close-modal">Close</button>`,
+  });
+}
+
+function editVideoModal(videoId) {
+  const item = recordings.find(r=>r.id===Number(videoId)) || recordings[0];
+  state.activeVideoId = item.id;
+  showModal({
+    title: "Edit recorded video",
+    subtitle: `${item.duration} · ${item.size} · ${item.segments} segments`,
+    body: `<div class="form-grid">${formInput("Video name",item.title,"text",true)}${formInput("Course",item.course)}${formInput("Instructor",item.teacher)}${formInput("Academic school",item.school)}${formInput("Teaching room",item.room)}<div class="form-group full"><label>Description</label><textarea data-form-field="Description">Recorded automatically from ${escapeHtml(item.room)} and ready for course publication.</textarea></div></div>`,
+    footer: `<button class="btn btn-secondary" data-action="close-modal">Cancel</button><button class="btn btn-primary" data-action="save-video-edit">Save changes</button>`,
+  });
+}
+
+function scheduleOptionsModal(scheduleId) {
+  const item = schedules.find(s=>s.id===Number(scheduleId));
+  if (!item) return;
+  state.activeScheduleId = item.id;
+  const status = state.scheduleOverrides[item.id]?.status || item.status;
+  showModal({
+    title: "Schedule options",
+    subtitle: `${item.title} · ${item.room}`,
+    body: `<div class="action-menu"><button data-action="duplicate-schedule">${icon("copy",16)}<span><strong>Duplicate schedule</strong><small>Create a copy with the same room and sources</small></span></button><button data-action="pause-schedule">${icon(status==="Paused"?"play":"clock",16)}<span><strong>${status==="Paused"?"Resume":"Pause"} schedule</strong><small>${status==="Paused"?"Return the schedule to automatic capture":"Keep the configuration without recording"}</small></span></button><button class="danger" data-action="remove-schedule">${icon("trash",16)}<span><strong>Remove schedule</strong><small>Delete future capture occurrences</small></span></button></div>`,
   });
 }
 
@@ -5269,6 +5555,7 @@ function quickCreateModal() {
 
 function confirmDeleteVideo(id) {
   const item = recordings.find(r=>r.id===Number(id));
+  state.activeVideoId = Number(id);
   showModal({
     title: "Delete recorded video?",
     subtitle: item?.title || "Recorded video",
@@ -5286,6 +5573,7 @@ function render() {
   if (state.route.startsWith("admin/ai/report/")) html = aiReportPage(state.route.split("/")[3]);
   else if (base === "course") html = courseDetailPage(id);
   else if (base === "player") html = playerPage(id);
+  else if (base === "live-room") html = liveRoomPage(id);
   else {
     const routes = {
       home: homePage,
@@ -5328,6 +5616,62 @@ function handleClick(event) {
     navigate("courses");
     return;
   }
+
+  const infoEl = event.target.closest("[data-info]");
+  if (infoEl) {
+    const descriptions = {
+      "Student guide": "Find practical guidance for discovering courses, joining live sessions, using captions and tracking your learning progress.",
+      "Accessibility": "Smart Managment supports keyboard navigation, readable contrast, captions and responsive layouts across desktop and mobile devices.",
+      "Help center": "For this demonstration, help content includes portal navigation, playback, live participation and account support.",
+      "About Nexus": "Nexus International University is a fictional global university created to demonstrate the connected learning experience.",
+      "Academic schools": "Explore Computing, Business, Design, Science, Health and Architecture learning resources in the course catalog.",
+      "Privacy, terms and accessibility": "This demonstration uses sample data only. No personal information is collected or stored.",
+    };
+    infoModal(infoEl.dataset.info, descriptions[infoEl.dataset.info] || "More information is available in the full platform.");
+    return;
+  }
+
+  const courseDetailTab = event.target.closest("[data-course-detail-tab]");
+  if (courseDetailTab) { state.courseDetailTab = courseDetailTab.dataset.courseDetailTab; render(); return; }
+
+  const playerTab = event.target.closest("[data-player-tab]");
+  if (playerTab) { state.playerTab = playerTab.dataset.playerTab; render(); return; }
+
+  const lesson = event.target.closest("[data-select-lesson]");
+  if (lesson) { state.currentLesson = Number(lesson.dataset.selectLesson); state.playerPlaying = true; render(); toast("Lesson loaded", `Lesson ${state.currentLesson + 1} is ready to play.`); return; }
+
+  const liveTab = event.target.closest("[data-live-tab]");
+  if (liveTab) { state.liveTab = liveTab.dataset.liveTab; render(); return; }
+
+  const saveEvent = event.target.closest("[data-save-event]");
+  if (saveEvent) {
+    const id = Number(saveEvent.dataset.saveEvent);
+    if (state.calendarEvents.has(id)) state.calendarEvents.delete(id); else state.calendarEvents.add(id);
+    render();
+    toast(state.calendarEvents.has(id) ? "Added to calendar" : "Removed from calendar", state.calendarEvents.has(id) ? "We’ll remind you 15 minutes before it begins." : "The event reminder has been removed.");
+    return;
+  }
+
+  const dashboardRange = event.target.closest("[data-dashboard-range]");
+  if (dashboardRange) { state.dashboardRange = dashboardRange.dataset.dashboardRange; render(); return; }
+
+  const liveAdminFilter = event.target.closest("[data-live-admin-filter]");
+  if (liveAdminFilter) { state.liveAdminFilter = liveAdminFilter.dataset.liveAdminFilter; render(); return; }
+
+  const editSchedule = event.target.closest("[data-edit-schedule]");
+  if (editSchedule) { scheduleModal(editSchedule.dataset.editSchedule); return; }
+
+  const scheduleMore = event.target.closest("[data-schedule-more]");
+  if (scheduleMore) { scheduleOptionsModal(scheduleMore.dataset.scheduleMore); return; }
+
+  const editVideo = event.target.closest("[data-edit-video]");
+  if (editVideo) { editVideoModal(editVideo.dataset.editVideo); return; }
+
+  const unpublish = event.target.closest("[data-unpublish]");
+  if (unpublish) { state.publishedVideos.delete(Number(unpublish.dataset.unpublish)); render(); toast("Video unpublished", "The recording has been removed from the portal."); return; }
+
+  const calendarDay = event.target.closest("[data-calendar-day]");
+  if (calendarDay) { closeModal(); toast("Calendar day selected", `Showing the captures scheduled for August ${calendarDay.dataset.calendarDay}.`); return; }
 
   const liveFilter = event.target.closest("[data-live-filter]");
   if (liveFilter) {
@@ -5450,69 +5794,119 @@ function handleClick(event) {
   const actions = {
     "close-modal": closeModal,
     "toggle-menu": () => { state.portalMenuOpen = !state.portalMenuOpen; const nav=document.querySelector(".portal-nav"); if(nav) nav.classList.toggle("open",state.portalMenuOpen); },
-    "save-course": () => toast("Course saved", "You can find it anytime in My Learning."),
-    "save-event": () => toast("Added to calendar", "We’ll remind you 15 minutes before it begins."),
+    "language-info": () => infoModal("Language", "The customer demo is presented in English. Additional interface languages can be enabled for a production deployment."),
+    "notifications": notificationsModal,
+    "mark-notifications": () => { state.notificationsRead=true; closeModal(); render(); toast("Notifications cleared", "All notifications have been marked as read."); },
+    "notification-open": () => { const route=actionEl.dataset.notificationRoute; closeModal(); if(route) navigate(route); },
+    "save-course": () => { const id=Number(actionEl.dataset.courseId||1); if(state.savedCourses.has(id)) state.savedCourses.delete(id); else state.savedCourses.add(id); render(); toast(state.savedCourses.has(id)?"Course saved":"Course removed", state.savedCourses.has(id)?"You can find it anytime in My Learning.":"The course has been removed from your saved list."); },
     "download-material": () => toast("Course materials ready", "The lesson PDF would download in the full product."),
     "download-video": () => toast("Download prepared", "The source video would download in the full product."),
-    "share-player": shareModal,
+    "share-player": () => infoModal("Share lesson", "A secure lesson link has been copied. Viewers will follow the course access rules configured by the administrator."),
     "share-live": shareModal,
     "create-schedule": scheduleModal,
     "create-live": liveModal,
     "create-course": courseModal,
     "upload-video": uploadModal,
     "quick-create": quickCreateModal,
-    "confirm-schedule": () => { closeModal(); toast("Recording schedule created", "LH-A201 will capture the class automatically."); },
-    "confirm-live": () => { closeModal(); toast("Live event created", "The share link and event poster are ready."); },
-    "confirm-course": () => { closeModal(); toast("Course created", "Add modules and resources when you’re ready."); },
-    "confirm-upload": () => { closeModal(); toast("Upload started", "The video will appear in the library after processing."); },
+    "confirm-schedule": () => {
+      const values = Object.fromEntries([...document.querySelectorAll("[data-form-field]")].map(el=>[el.dataset.formField,el.value]));
+      if (state.activeScheduleId) state.scheduleOverrides[state.activeScheduleId] = { ...(state.scheduleOverrides[state.activeScheduleId]||{}), title:values.Course, teacher:values.Instructor, room:values["Teaching room"], device:values["Capture device"], repeat:values.Repeat };
+      else schedules.push({ id:Math.max(...schedules.map(s=>s.id))+1, date:"Aug 12", day:`Wednesday · ${values["Start time"]}–${values["End time"]}`, title:values.Course, teacher:values.Instructor, room:values["Teaching room"], device:values["Capture device"], repeat:values.Repeat, status:"Scheduled" });
+      const editing=Boolean(state.activeScheduleId); state.activeScheduleId=null; closeModal(); render(); toast(editing?"Schedule updated":"Recording schedule created", `${values["Capture device"]} will capture the class automatically.`);
+    },
+    "confirm-live": () => {
+      const values = Object.fromEntries([...document.querySelectorAll("[data-form-field]")].map(el=>[el.dataset.formField,el.value]));
+      const id=Math.max(...liveEvents.map(e=>e.id))+1;
+      liveEvents.push({id,title:values["Event title"],teacher:values.Host,date:values.Date,time:`${values["Start time"]}–${values["End time"]} GMT+8`,viewers:"0 registered",status:"Upcoming",cover:"alt"});
+      state.liveAdmin[id]={room:values["Teaching room"],visibility:document.querySelector(".modal select")?.value||"Anyone with the link",description:document.querySelector(".modal textarea")?.value||"New live learning event.",publication:"Draft",replay:true};
+      closeModal(); render(); toast("Live event created", "The draft event is ready to edit, publish and share.");
+    },
+    "confirm-course": () => {
+      const values = Object.fromEntries([...document.querySelectorAll("[data-form-field]")].map(el=>[el.dataset.formField,el.value]));
+      const id=Math.max(...courses.map(c=>c.id))+1;
+      courses.push({id,title:values["Course title"],teacher:values["Lead instructor"],initials:"MC",school:values["Academic school"],category:values.Discipline,cover:"cover-tech",code:(values["Course code"]||"NC").slice(0,2),lessons:0,learners:"0",duration:"0h 00m",badge:"New",progress:0});
+      state.courseAdmin[id]={semester:values.Semester,access:values.Access,description:document.querySelector(".modal textarea")?.value||"New course.",status:"Draft"};
+      closeModal(); render(); toast("Course created", "The draft course is ready for modules, resources and publication.");
+    },
+    "choose-file": () => { const label=document.querySelector("[data-upload-file]"); if(label){label.textContent="responsible-ai-guest-lecture.mp4 · 1.8 GB";label.classList.add("selected-file");} toast("File selected", "responsible-ai-guest-lecture.mp4 is ready to upload."); },
+    "confirm-upload": () => {
+      const values=Object.fromEntries([...document.querySelectorAll("[data-form-field]")].map(el=>[el.dataset.formField,el.value]));
+      const id=Math.max(...recordings.map(r=>r.id))+1; recordings.unshift({id,title:values["Video name"],date:"Aug 4, 2026 · 16:20",duration:"01:12:08",segments:1,course:values.Course,teacher:values.Instructor,school:"Computing",room:"Manual upload",size:"1.8 GB",status:"Processing"});
+      closeModal(); render(); toast("Upload started", "The video is now processing in the recorded video library.");
+    },
     "copy-link": () => { navigator.clipboard?.writeText("https://lecturehub.nexus.edu/live/AI26"); toast("Link copied", "The live event link is ready to share."); },
     "copy-poster": () => toast("Poster copied", "The event poster is ready to paste."),
     "detect-invalid": () => toast("Quality check complete", "2,486 videos checked · no urgent issues found."),
-    "ai-settings": () => toast("Analysis settings", "Configure thresholds and enabled classroom insight models."),
+    "ai-settings": aiSettingsModal,
+    "save-ai-settings": () => { closeModal(); toast("Analysis settings saved", "Future recordings will use the selected insight models."); },
     "export-ai-report": () => toast("Report prepared", "The classroom analysis report is ready to download."),
+    "processing-report": processingReportModal,
     "review-evidence-video": () => { closeModal(); navigate("player/1"); toast("Evidence moment opened", "Playback is aligned to the selected evidence timestamp."); },
-    "confirm-delete-video": () => { closeModal(); toast("Video removed", "The deletion was simulated for this demo."); },
+    "confirm-delete-video": () => { if(state.activeVideoId) state.deletedVideos.add(state.activeVideoId); state.activeVideoId=null; closeModal(); render(); toast("Video removed", "The recording has been removed from this demo library."); },
+    "save-video-edit": () => { const item=recordings.find(r=>r.id===state.activeVideoId); const values=Object.fromEntries([...document.querySelectorAll("[data-form-field]")].map(el=>[el.dataset.formField,el.value])); if(item) Object.assign(item,{title:values["Video name"],course:values.Course,teacher:values.Instructor,school:values["Academic school"],room:values["Teaching room"]}); state.activeVideoId=null; closeModal(); render(); toast("Video updated", "The title and course association have been saved."); },
     "toggle-switch": () => actionEl.classList.toggle("on"),
-    "play-toggle": () => { actionEl.innerHTML = actionEl.dataset.playing ? icon("play",16) : "Ⅱ"; actionEl.dataset.playing = actionEl.dataset.playing ? "" : "true"; },
+    "play-toggle": () => { state.playerPlaying=!state.playerPlaying; render(); },
+    "volume-toggle": () => { state.muted=!state.muted; render(); toast(state.muted?"Muted":"Sound on", state.muted?"Lesson audio is muted.":"Lesson audio has been restored."); },
+    "live-play-toggle": () => { state.livePlaying=!state.livePlaying; render(); },
+    "live-volume-toggle": () => { state.liveMuted=!state.liveMuted; render(); },
+    "live-captions": () => { state.liveCaptions=!state.liveCaptions; render(); },
     "speed": () => { const speeds=["1×","1.25×","1.5×","2×","0.75×"]; const i=speeds.indexOf(state.playerSpeed); state.playerSpeed=speeds[(i+1)%speeds.length]; render(); },
     "captions": () => { state.captions=!state.captions; render(); toast(state.captions?"Captions on":"Captions off",state.captions?"English captions are now visible.":"Captions have been hidden."); },
     "stream-toggle": () => { state.dualStream=!state.dualStream; render(); toast(state.dualStream?"Dual stream view":"Single stream view",state.dualStream?"Instructor camera and presentation are visible.":"Presentation stream is now prioritised."); },
     "seek-player": () => toast("Playback moved", "Jumped to 42:18 in this demo."),
-    "select-lesson": () => toast("Lesson selected", "Loading the selected chapter."),
+    "player-settings": playerSettingsModal,
+    "fullscreen": () => { const page=document.querySelector(".player-page"); if(page){page.classList.toggle("fullscreen-demo"); toast(page.classList.contains("fullscreen-demo")?"Full screen view":"Full screen closed", "Press the same control to switch back.");} },
+    "drag-stream": () => { const stream=document.querySelector(".teacher-stream"); if(stream) stream.classList.toggle("repositioned"); toast("Camera repositioned", "The instructor stream can be placed over the presentation."); },
+    "post-player-discussion": () => { const input=document.querySelector("[data-player-discussion]"); if(!input?.value.trim()) return toast("Write a response", "Add your comment before posting."); input.value=""; toast("Response posted", "Your contribution is now visible in the lesson discussion."); },
+    "post-discussion": () => { const input=document.querySelector("[data-discussion-input]"); if(!input?.value.trim()) return toast("Write a comment", "Add your comment before posting."); input.value=""; toast("Comment posted", "Your message has been added to the course discussion."); },
+    "send-chat": () => { const input=document.querySelector("[data-chat-input]"); if(!input?.value.trim()) return toast("Write a message", "Enter a message before sending."); state.chatMessages.push(input.value.trim()); render(); },
     "ai-event": () => {},
-    "storage-settings": () => toast("Storage settings", "Primary server: 10.24.1.12 · automatic overwrite enabled."),
-    "add-device": () => toast("Device discovery started", "Searching the campus network for new capture devices."),
-    "edit-video": () => toast("Video editor opened", "Title, ownership and course association can be updated."),
-    "edit-schedule": scheduleModal,
+    "storage-settings": storageSettingsModal,
+    "save-storage": () => { closeModal(); toast("Storage settings saved", "Connection and intelligent overwrite settings are active."); },
+    "add-device": addDeviceModal,
+    "test-device": () => { const label=document.querySelector("[data-device-test]"); if(label){label.textContent="Connection successful · Lecture Capture Pro detected";label.classList.add("success-text");} toast("Device found", "The recorder is reachable and ready to bind."); },
+    "confirm-add-device": () => { const values=Object.fromEntries([...document.querySelectorAll("[data-form-field]")].map(el=>[el.dataset.formField,el.value])); if(!devices.some(d=>d.id===values["Device ID"])) { devices.push({id:values["Device ID"],room:values["Teaching room"],ip:values["Device IP"],status:"Idle",cpu:12,memory:34,disk:8,network:"4 / 2 Mbps",signal:"4 / 4",version:"v4.8.2"}); state.devices[values["Device ID"]]="Idle"; } closeModal(); render(); toast("Device added", `${values["Device ID"]} is now bound to ${values["Teaching room"]}.`); },
+    "calendar-view": calendarViewModal,
+    "full-schedule": fullScheduleModal,
+    "calendar-download": () => toast("Calendar exported", "Your schedule is ready as an .ics calendar file."),
+    "all-activity": activityModal,
+    "table-columns": () => infoModal("Table display", "All essential recording fields are currently visible. Column preferences can be saved per administrator."),
+    "duplicate-schedule": () => { const base=schedules.find(s=>s.id===state.activeScheduleId); if(base){schedules.push({...base,id:Math.max(...schedules.map(s=>s.id))+1,date:"Aug 13",status:"Scheduled",title:`${base.title} · Copy`});} state.activeScheduleId=null; closeModal(); render(); toast("Schedule duplicated", "The copied schedule is ready to edit."); },
+    "pause-schedule": () => { const id=state.activeScheduleId; const base=schedules.find(s=>s.id===id); if(base){const current=state.scheduleOverrides[id]?.status||base.status;state.scheduleOverrides[id]={...(state.scheduleOverrides[id]||{}),status:current==="Paused"?"Scheduled":"Paused"};} closeModal(); render(); toast("Schedule status updated", "The automatic capture status has been changed."); },
+    "remove-schedule": () => { const index=schedules.findIndex(s=>s.id===state.activeScheduleId); if(index>=0)schedules.splice(index,1); state.activeScheduleId=null; closeModal(); render(); toast("Schedule removed", "Future capture occurrences have been deleted."); },
+    "date-range": () => {},
+    "ai-date-range": () => {},
     "manage-course": courseModal,
     "edit-live": liveModal,
-    "schedule-more": () => toast("Schedule options", "Duplicate, pause or remove this schedule."),
   };
   if (actions[action]) actions[action]();
 }
 
 function handleChange(event) {
-  if (event.target.matches("[data-course-category]")) {
-    state.courseCategory = event.target.value;
-    render();
-  }
-  if (event.target.matches("[data-video-filter]")) {
-    state.videoFilter = event.target.value;
-    render();
-  }
-  if (event.target.matches("[data-ai-status]")) {
-    state.aiListStatus = event.target.value;
-    render();
-  }
+  const mappings = [
+    ["data-course-category","courseCategory"], ["data-course-semester","courseSemester"], ["data-course-sort","courseSort"],
+    ["data-video-filter","videoFilter"], ["data-video-room","videoRoom"], ["data-video-semester","videoSemester"],
+    ["data-schedule-status","scheduleStatus"], ["data-schedule-range","scheduleRange"], ["data-course-admin-school","courseAdminSchool"], ["data-course-admin-status","courseAdminStatus"],
+    ["data-live-admin-publication","liveAdminPublication"], ["data-ai-status","aiListStatus"], ["data-ai-school","aiSchool"], ["data-ai-range","aiRange"],
+    ["data-device-building","deviceBuilding"], ["data-device-status","deviceStatus"],
+  ];
+  const match = mappings.find(([attribute])=>event.target.hasAttribute(attribute));
+  if (match) { state[match[1]] = event.target.value; render(); }
 }
 
 function handleInput(event) {
-  if (event.target.matches("[data-course-search]")) {
-    state.courseSearch = event.target.value;
-    const active = document.activeElement;
+  const mappings = [
+    ["data-course-search","courseSearch"], ["data-live-search","liveSearch"], ["data-video-search","videoSearch"],
+    ["data-schedule-search","scheduleSearch"], ["data-course-admin-search","courseAdminSearch"], ["data-live-admin-search","liveAdminSearch"],
+    ["data-ai-search","aiSearch"], ["data-device-search","deviceSearch"],
+  ];
+  const match = mappings.find(([attribute])=>event.target.hasAttribute(attribute));
+  if (match) {
+    const selector=`[${match[0]}]`;
+    state[match[1]] = event.target.value;
     render();
-    const next = document.querySelector("[data-course-search]");
-    if (active && next) { next.focus(); next.setSelectionRange(next.value.length,next.value.length); }
+    const next = document.querySelector(selector);
+    if (next) { next.focus(); next.setSelectionRange(next.value.length,next.value.length); }
   }
   if (event.target.matches("[data-global-search]") && event.inputType === "insertLineBreak") {
     state.courseSearch = event.target.value;
