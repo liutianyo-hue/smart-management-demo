@@ -4296,7 +4296,7 @@ svg {
 .agenda-list div > span { margin-top:5px; color:var(--muted); font-size:10px; }
 .mini-calendar { display:grid; grid-template-columns:repeat(7,1fr); gap:6px; }
 .mini-calendar > strong { padding:6px; color:var(--muted); font-size:10px; text-align:center; }
-.mini-calendar > button { min-height:70px; padding:8px; border:1px solid var(--line); border-radius:8px; background:white; text-align:left; cursor:default; }
+.mini-calendar > button, .mini-calendar > div { min-height:70px; padding:8px; border:1px solid var(--line); border-radius:8px; background:white; text-align:left; cursor:default; }
 .mini-calendar > button[data-calendar-day] { border-color:#aec4ff; background:var(--blue-50); cursor:pointer; }
 .mini-calendar .outside { background:#f7f8fa; }
 .mini-calendar span { display:block; font-size:11px; font-weight:700; }
@@ -5373,7 +5373,7 @@ function calendarViewModal() {
     title: "Recording calendar",
     subtitle: "August 2026 · automated room captures",
     size: "modal-lg",
-    body: `<div class="mini-calendar">${["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].map(x=>`<strong>${x}</strong>`).join("")}${Array.from({length:35},(_,i)=>{const day=i-4;const count=day===5?2:day===7?2:[6,10,12,14,17,19,21,24,26].includes(day)?1:0;return `<button class="${day<1||day>31?"outside":""}" ${count?`data-calendar-day="${day}"`:""}><span>${day>0&&day<32?day:""}</span>${count?`<i>${count} capture${count>1?"s":""}</i>`:""}</button>`;}).join("")}</div>`,
+    body: `<div class="mini-calendar">${["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].map(x=>`<strong>${x}</strong>`).join("")}${Array.from({length:35},(_,i)=>{const day=i-4;const count=day===5?2:day===7?2:[6,10,12,14,17,19,21,24,26].includes(day)?1:0;return count?`<button data-calendar-day="${day}"><span>${day}</span><i>${count} capture${count>1?"s":""}</i></button>`:`<div class="${day<1||day>31?"outside":""}"><span>${day>0&&day<32?day:""}</span></div>`;}).join("")}</div>`,
     footer: `<button class="btn btn-primary" data-action="close-modal">Close calendar</button>`,
   });
 }
@@ -5529,7 +5529,7 @@ function evidenceModal(type = "attire") {
     title: `Video evidence · ${evidence.title}`,
     subtitle: `AI Foundations · Lecture 6 · ${evidence.time}`,
     size: "modal-lg evidence-modal",
-    body: `<div class="evidence-modal-grid"><div><div class="evidence-frame ${evidence.frameClass}"><div class="evidence-board"><span>Responsible AI</span><strong>Human judgement & accountability</strong></div><div class="evidence-person"><i></i></div><div class="evidence-detection-box"><span>${evidence.tag} · ${evidence.confidence}</span></div><span class="evidence-timecode">${evidence.time}</span><button class="evidence-play">${icon("play",18)}</button></div><div class="evidence-strip"><button class="active"><i></i><span>${evidence.time}</span></button><button><i></i><span>+ 00:03</span></button><button><i></i><span>+ 00:06</span></button><button><i></i><span>+ 00:09</span></button></div></div><aside class="evidence-facts"><span class="status-pill status-complete">AI analysis complete</span><h3>${evidence.finding}</h3><div class="evidence-confidence"><span>Model confidence</span><strong>${evidence.confidence}</strong><div class="metric-bar" style="--w:${evidence.confidence}"></div></div><div class="evidence-rationale"><strong>Why this was detected</strong><p>${evidence.explanation}</p></div><div class="evidence-meta"><div><span>Source</span><strong>Instructor camera</strong></div><div><span>Duration</span><strong>${type==="phone"?"11 sec":"8 sec"}</strong></div><div><span>Evidence type</span><strong>Video fragment</strong></div></div></aside></div>`,
+    body: `<div class="evidence-modal-grid"><div><div class="evidence-frame ${evidence.frameClass}"><div class="evidence-board"><span>Responsible AI</span><strong>Human judgement & accountability</strong></div><div class="evidence-person"><i></i></div><div class="evidence-detection-box"><span>${evidence.tag} · ${evidence.confidence}</span></div><span class="evidence-timecode">${evidence.time}</span><button class="evidence-play" data-action="evidence-preview-play" aria-label="Play evidence fragment">${icon("play",18)}</button></div><div class="evidence-strip"><button class="active" data-evidence-offset="0"><i></i><span>${evidence.time}</span></button><button data-evidence-offset="3"><i></i><span>+ 00:03</span></button><button data-evidence-offset="6"><i></i><span>+ 00:06</span></button><button data-evidence-offset="9"><i></i><span>+ 00:09</span></button></div></div><aside class="evidence-facts"><span class="status-pill status-complete">AI analysis complete</span><h3>${evidence.finding}</h3><div class="evidence-confidence"><span>Model confidence</span><strong>${evidence.confidence}</strong><div class="metric-bar" style="--w:${evidence.confidence}"></div></div><div class="evidence-rationale"><strong>Why this was detected</strong><p>${evidence.explanation}</p></div><div class="evidence-meta"><div><span>Source</span><strong>Instructor camera</strong></div><div><span>Duration</span><strong>${type==="phone"?"11 sec":"8 sec"}</strong></div><div><span>Evidence type</span><strong>Video fragment</strong></div></div></aside></div>`,
     footer: `<button class="btn btn-secondary" data-action="close-modal">Close</button><button class="btn btn-primary" data-action="review-evidence-video">${icon("play",14)} Open at ${evidence.time}</button>`,
   });
 }
@@ -5700,6 +5700,14 @@ function handleClick(event) {
     return;
   }
 
+  const evidenceOffset = event.target.closest("[data-evidence-offset]");
+  if (evidenceOffset) {
+    document.querySelectorAll("[data-evidence-offset]").forEach(item=>item.classList.remove("active"));
+    evidenceOffset.classList.add("active");
+    toast("Evidence frame selected", `Previewing the fragment at +00:${String(evidenceOffset.dataset.evidenceOffset).padStart(2,"0")}.`);
+    return;
+  }
+
   const editCourse = event.target.closest("[data-edit-course]");
   if (editCourse) {
     courseEditModal(editCourse.dataset.editCourse);
@@ -5842,6 +5850,7 @@ function handleClick(event) {
     "export-ai-report": () => toast("Report prepared", "The classroom analysis report is ready to download."),
     "processing-report": processingReportModal,
     "review-evidence-video": () => { closeModal(); navigate("player/1"); toast("Evidence moment opened", "Playback is aligned to the selected evidence timestamp."); },
+    "evidence-preview-play": () => { actionEl.classList.toggle("playing"); actionEl.innerHTML=actionEl.classList.contains("playing")?"Ⅱ":icon("play",18); toast(actionEl.classList.contains("playing")?"Evidence playing":"Evidence paused", "This preview is aligned to the detected classroom moment."); },
     "confirm-delete-video": () => { if(state.activeVideoId) state.deletedVideos.add(state.activeVideoId); state.activeVideoId=null; closeModal(); render(); toast("Video removed", "The recording has been removed from this demo library."); },
     "save-video-edit": () => { const item=recordings.find(r=>r.id===state.activeVideoId); const values=Object.fromEntries([...document.querySelectorAll("[data-form-field]")].map(el=>[el.dataset.formField,el.value])); if(item) Object.assign(item,{title:values["Video name"],course:values.Course,teacher:values.Instructor,school:values["Academic school"],room:values["Teaching room"]}); state.activeVideoId=null; closeModal(); render(); toast("Video updated", "The title and course association have been saved."); },
     "toggle-switch": () => actionEl.classList.toggle("on"),
