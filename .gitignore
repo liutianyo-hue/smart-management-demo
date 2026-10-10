@@ -1,0 +1,5 @@
+# Keep local source videos out of the published repository.
+assets/videos/*.mov
+assets/videos/11.mp4
+assets/videos/22.mp4
+.DS_Store

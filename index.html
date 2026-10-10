@@ -171,18 +171,27 @@ svg {
 
 .brand-mark {
   display: block;
-  width: 52px;
-  height: 52px;
-  flex: none;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
   border-radius: 50%;
-  object-fit: cover;
-  background: white;
-  box-shadow: 0 5px 14px rgba(2, 23, 55, 0.15);
+  background: url("assets/riverdale-university-logo-transparent.png") center / contain no-repeat;
 }
 
-.brand-copy {
-  display: block;
-  text-align: left;
+.brand-mark::before,
+.brand-mark::after {
+  display: none;
+}
+
+.brand-mark::before {
+  width: 22px;
+  height: 22px;
+}
+
+.brand-mark::after {
+  width: 8px;
+  height: 8px;
+  background: white;
 }
 
 .brand-copy strong {
@@ -191,6 +200,10 @@ svg {
   font-size: 20px;
   font-weight: 800;
   letter-spacing: -0.03em;
+}
+
+.brand-copy {
+  text-align: left;
 }
 
 .brand-copy small {
@@ -463,8 +476,6 @@ svg {
 
 .video-stage {
   position: absolute;
-  display: flex;
-  flex-direction: column;
   top: 37px;
   right: 0;
   width: 92%;
@@ -472,18 +483,47 @@ svg {
   overflow: hidden;
   border: 7px solid rgba(255, 255, 255, 0.9);
   border-radius: 24px;
-  background: linear-gradient(145deg, #17345f, #0d1e3f);
+  background: #0d1e3f url("assets/ai-and-society-lecture.png") center / cover no-repeat;
   box-shadow: var(--shadow-lg);
   transform: perspective(900px) rotateY(-5deg) rotateX(1deg);
 }
 
-.stage-poster {
+.video-stage::before {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(7, 26, 61, 0.48), transparent 42%);
+  content: "";
+}
+
+.stage-board {
+  position: absolute;
+  z-index: 2;
+  top: 55px;
+  left: 60px;
+  width: 205px;
+  padding: 17px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 7px;
+  background: rgba(12, 31, 62, 0.68);
+  color: white;
+  backdrop-filter: blur(5px);
+}
+
+.stage-board span {
   display: block;
-  width: 100%;
-  min-height: 0;
-  flex: 1;
-  object-fit: cover;
-  object-position: center top;
+  color: #88e5dc;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.stage-board strong {
+  display: block;
+  margin-top: 8px;
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  line-height: 1.25;
 }
 
 .presenter {
@@ -518,16 +558,14 @@ svg {
 }
 
 .stage-controls {
-  position: relative;
+  position: absolute;
   z-index: 4;
+  right: 16px;
+  bottom: 13px;
+  left: 16px;
   display: flex;
-  width: 100%;
-  height: 30px;
-  flex: none;
   align-items: center;
   gap: 10px;
-  padding: 0 16px;
-  background: #0d1e3f;
   color: white;
   font-size: 12px;
 }
@@ -562,7 +600,7 @@ svg {
   right: 18px;
   bottom: 0;
   display: flex;
-  width: 250px;
+  width: 220px;
   align-items: center;
   gap: 13px;
   padding: 14px;
@@ -571,23 +609,24 @@ svg {
 
 .score-ring {
   display: grid;
-  width: 52px;
-  height: 52px;
-  flex: 0 0 52px;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
   place-items: center;
   border-radius: 50%;
-  background: conic-gradient(var(--cyan-500) 0 88%, #e8edf4 88% 100%);
+  background: conic-gradient(var(--cyan-500) 0 88%, #e8edf4 88%);
 }
 
-.score-ring > span {
+.score-ring::before {
   display: grid;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   place-items: center;
   border-radius: 50%;
   background: white;
   color: var(--navy-900);
-  font-size: 12px;
+  content: "88%";
+  font-size: 14px;
   font-weight: 800;
 }
 
@@ -597,23 +636,12 @@ svg {
   font-size: 14px;
 }
 
-.floating-insight > div > span,
-.floating-live > span {
+.floating-insight span,
+.floating-live span {
   display: block;
   margin-top: 3px;
   color: var(--muted);
   font-size: 12px;
-}
-
-.floating-live strong {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-
-.floating-live .live-dot {
-  flex: none;
-  margin: 0;
 }
 
 .floating-live {
@@ -623,8 +651,14 @@ svg {
   border-radius: 13px;
 }
 
+.floating-live strong {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
 .live-dot {
-  display: inline-block;
+  display: block;
   width: 7px;
   height: 7px;
   margin-right: 7px;
@@ -904,16 +938,12 @@ svg {
 }
 
 .category-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   min-height: 136px;
   padding: 22px;
   border: 1px solid #e5eaf2;
   border-radius: 15px;
   background: white;
-  text-align: center;
+  text-align: left;
   cursor: pointer;
   transition: 0.2s ease;
 }
@@ -958,37 +988,20 @@ svg {
 }
 
 .live-visual {
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  min-height: 330px;
-  padding: 32px;
-  background:
-    radial-gradient(circle at 30% 30%, rgba(77, 131, 255, 0.48), transparent 24%),
-    radial-gradient(circle at 74% 65%, rgba(40, 196, 197, 0.36), transparent 25%),
-    linear-gradient(135deg, #122c5b, #07172f);
-}
-
-.live-cover {
   position: relative;
   overflow: hidden;
-  width: min(100%, 780px);
+  min-height: 0;
   aspect-ratio: 16 / 9;
-  border-radius: 12px;
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.28);
+  background: #07172f url("assets/ai-future-higher-education.png") center / cover no-repeat;
 }
 
-.live-cover-image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+.live-visual::before {
+  display: none;
 }
 
 .live-visual-content {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   inset: 0;
   display: grid;
   place-items: center;
@@ -1089,21 +1102,29 @@ svg {
   font-size: 14px;
 }
 
+select.form-control {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 42px;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236f7d96' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 14px 14px;
+  cursor: pointer;
+}
+
+input[placeholder^="Search"]:not([data-global-search]) {
+  padding-left: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236f7d96' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 13px center;
+  background-size: 16px 16px;
+}
+
 .filter-search {
   min-width: 260px;
   flex: 1;
-}
-
-.portal-shell .filter-bar select.form-control {
-  min-width: 160px;
-  padding: 0 42px 0 14px;
-  appearance: none;
-  -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2353617b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 16px center;
-  background-size: 14px;
-  cursor: pointer;
 }
 
 .filter-search:focus,
@@ -1112,96 +1133,6 @@ svg {
   border-color: #98b4ff;
   box-shadow: 0 0 0 3px rgba(53, 109, 243, 0.08);
 }
-
-.admin-shell input[data-video-search],
-.admin-shell input[data-schedule-search],
-.admin-shell input[data-course-admin-search],
-.admin-shell input[data-live-admin-search],
-.admin-shell input[data-ai-search],
-.admin-shell input[data-device-search] {
-  padding-left: 38px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2397a2b5' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-4-4'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: 13px center;
-  background-size: 16px;
-}
-
-.admin-select {
-  position: relative;
-  display: inline-flex;
-  max-width: 100%;
-  vertical-align: middle;
-}
-
-.admin-select-native {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.admin-select-trigger {
-  display: flex;
-  width: 100%;
-  min-height: 40px;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 0 13px 0 12px;
-  border: 1px solid #dde3ec;
-  border-radius: 9px;
-  background: #fff;
-  color: var(--ink);
-  font-size: 14px;
-  text-align: left;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: border-color .15s ease, box-shadow .15s ease;
-}
-
-.admin-select-trigger:hover { border-color: #b9c8e0; }
-.admin-select-trigger:focus-visible,
-.admin-select-trigger[aria-expanded="true"] {
-  border-color: #98b4ff;
-  outline: 0;
-  box-shadow: 0 0 0 3px rgba(53, 109, 243, 0.1);
-}
-.admin-select-trigger svg { flex: none; color: #73839e; transform: rotate(90deg); transition: transform .15s ease; }
-.admin-select-trigger[aria-expanded="true"] svg { transform: rotate(270deg); }
-.admin-select-label { overflow: hidden; text-overflow: ellipsis; }
-.form-group .admin-select { width: 100% !important; }
-
-.admin-select-menu {
-  position: fixed;
-  z-index: 220;
-  overflow-y: auto;
-  max-height: min(280px, calc(100vh - 24px));
-  padding: 5px;
-  border: 1px solid #dce5f3;
-  border-radius: 11px;
-  background: #fff;
-  box-shadow: 0 16px 38px rgba(20, 44, 86, .16);
-}
-.admin-select-option {
-  display: flex;
-  width: 100%;
-  min-height: 36px;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 8px 10px;
-  border-radius: 7px;
-  background: transparent;
-  color: #43516b;
-  font-size: 13px;
-  text-align: left;
-  cursor: pointer;
-}
-.admin-select-option:hover,
-.admin-select-option:focus-visible { outline: 0; background: #f1f5ff; color: var(--blue-700); }
-.admin-select-option[aria-selected="true"] { background: #eaf1ff; color: var(--blue-700); font-weight: 700; }
-.admin-select-option svg { flex: none; }
 
 .segmented {
   display: inline-flex;
@@ -1456,25 +1387,24 @@ svg {
   font-size: 12px;
 }
 
-.player-title-row {
+.player-header-left > div > span {
   display: flex;
   align-items: center;
-  gap: 8px;
-}
-
-.player-header .player-title-row .live-dot {
-  flex: none;
-  margin: 0;
-}
-
-.player-header .player-share-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  gap: 7px;
   white-space: nowrap;
 }
 
-.player-share-button svg { flex: none; }
+.player-header-left .live-dot {
+  display: block;
+  margin: 0;
+}
+
+.player-header .button-row button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+}
 
 .player-layout {
   display: grid;
@@ -1513,13 +1443,6 @@ svg {
 .video-canvas.classroom-video::before {
   display: none;
 }
-
-.video-canvas.live-recording { background: #050d1b; }
-.video-canvas.live-recording::before { display: none; }
-.live-main-media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
-.live-recording .teacher-stream { background: #050d1b; }
-.live-inset-media { width: 100%; height: 100%; object-fit: contain; }
-.live-recording .video-toolbar { padding-top: 26px; background: linear-gradient(transparent, rgba(0,0,0,.55)); }
 
 .video-content-badge {
   position: absolute;
@@ -1609,6 +1532,30 @@ svg {
   box-shadow: 0 12px 30px rgba(0,0,0,.3);
 }
 
+.live-main-video,
+.live-pip-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: #07111f;
+  object-fit: cover;
+}
+
+.live-main-video {
+  z-index: 1;
+}
+
+.live-pip-video {
+  z-index: 2;
+}
+
+.video-canvas.has-live-videos::before,
+.video-canvas.has-live-videos .video-slide,
+.teacher-stream.has-live-video .presenter {
+  display: none;
+}
+
 .teacher-stream.teacher-image-stream {
   background-color: #163456;
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjkwMCIgdmlld0JveD0iMCAwIDE2MDAgOTAwIiBmaWxsPSJub25lIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0icm9vbSIgeDE9IjE4MCIgeTE9IjcwIiB4Mj0iMTMyMCIgeTI9Ijg4MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8c3RvcCBzdG9wLWNvbG9yPSIjMjAzQzY1Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iLjU1IiBzdG9wLWNvbG9yPSIjMTQyQjREIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzA5MUEzMSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ic2NyZWVuIiB4MT0iMzQwIiB5MT0iMTcwIiB4Mj0iOTUwIiB5Mj0iNTcwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiNGOEZDRkYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRENFQUZGIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJqYWNrZXQiIHgxPSIxMTA1IiB5MT0iMzYzIiB4Mj0iMTI3MCIgeTI9IjY5MiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8c3RvcCBzdG9wLWNvbG9yPSIjM0E3NEY1Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzI1QjNDNCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZmxvb3IiIHgxPSI3ODAiIHkxPSI1NzIiIHgyPSI4MDAiIHkyPSI5MDAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHN0b3Agc3RvcC1jb2xvcj0iIzI5NDM2MSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwQjFCMzAiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9ImxpZ2h0IiBjeD0iMCIgY3k9IjAiIHI9IjEiIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTExMCAyODQpIHJvdGF0ZSgxMDUpIHNjYWxlKDMzMCA0MTApIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiM1REJGRUEiIHN0b3Atb3BhY2l0eT0iLjM0Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzVEQkZFQSIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8L3JhZGlhbEdyYWRpZW50PgogICAgPGZpbHRlciBpZD0ic2hhZG93IiB4PSItNDAlIiB5PSItNDAlIiB3aWR0aD0iMTgwJSIgaGVpZ2h0PSIxODAlIj4KICAgICAgPGZlRHJvcFNoYWRvdyBkeD0iMCIgZHk9IjIwIiBzdGREZXZpYXRpb249IjI2IiBmbG9vZC1jb2xvcj0iIzA3MTYyOSIgZmxvb2Qtb3BhY2l0eT0iLjUiLz4KICAgIDwvZmlsdGVyPgogICAgPGZpbHRlciBpZD0iYmx1ciI+PGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iOCIvPjwvZmlsdGVyPgogIDwvZGVmcz4KCiAgPHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iOTAwIiBmaWxsPSJ1cmwoI3Jvb20pIi8+CiAgPHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iOTAwIiBmaWxsPSJ1cmwoI2xpZ2h0KSIvPgogIDxwYXRoIGQ9Ik0wIDYxOEw4MjEgNTIxTDE2MDAgNTkwVjkwMEgwVjYxOFoiIGZpbGw9InVybCgjZmxvb3IpIi8+CiAgPHBhdGggZD0iTTAgNjE5TDgyMSA1MjFMMTYwMCA1OTAiIHN0cm9rZT0iIzcxODhBMyIgc3Ryb2tlLW9wYWNpdHk9Ii4yNCIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgPHBhdGggZD0iTTgzIDc2MEw3NjMgNjI1TTQ4MiA5MDBMOTkyIDYwNk0xMTI0IDkwMEwxMTYwIDYyMCIgc3Ryb2tlPSIjODhBMUJBIiBzdHJva2Utb3BhY2l0eT0iLjA4IiBzdHJva2Utd2lkdGg9IjMiLz4KCiAgPGcgZmlsdGVyPSJ1cmwoI3NoYWRvdykiPgogICAgPHJlY3QgeD0iMTQ1IiB5PSIxMTAiIHdpZHRoPSI4NDAiIGhlaWdodD0iNDgwIiByeD0iMTQiIGZpbGw9IiMxMDFGMzYiIHN0cm9rZT0iIzhBQTNDMyIgc3Ryb2tlLW9wYWNpdHk9Ii40IiBzdHJva2Utd2lkdGg9IjQiLz4KICAgIDxyZWN0IHg9IjE2OSIgeT0iMTM0IiB3aWR0aD0iNzkyIiBoZWlnaHQ9IjQzMiIgcng9IjYiIGZpbGw9InVybCgjc2NyZWVuKSIvPgogIDwvZz4KICA8cmVjdCB4PSIyMDciIHk9IjE3OCIgd2lkdGg9Ijc2IiBoZWlnaHQ9IjYiIHJ4PSIzIiBmaWxsPSIjMzU2REYzIi8+CiAgPHRleHQgeD0iMjA3IiB5PSIyMjQiIGZpbGw9IiMyOTQwNjEiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9IjcwMCIgbGV0dGVyLXNwYWNpbmc9IjIiPkxFQ1RVUkUgMDY8L3RleHQ+CiAgPHRleHQgeD0iMjA3IiB5PSIyOTIiIGZpbGw9IiMxMDI2NEEiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI0MiIgZm9udC13ZWlnaHQ9IjcwMCI+UmVzcG9uc2libGUgQUkgaW4gUHJhY3RpY2U8L3RleHQ+CiAgPHRleHQgeD0iMjA3IiB5PSIzMzQiIGZpbGw9IiM1RDZGODgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCI+SHVtYW4ganVkZ2VtZW50LCBjb250ZXh0IGFuZCBhY2NvdW50YWJpbGl0eTwvdGV4dD4KCiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjA4IDM4MikiPgogICAgPHJlY3Qgd2lkdGg9IjIxMCIgaGVpZ2h0PSIxMTYiIHJ4PSIxMiIgZmlsbD0iI0VBRjFGRiIvPgogICAgPGNpcmNsZSBjeD0iNDQiIGN5PSI0MyIgcj0iMTkiIGZpbGw9IiMzNTZERjMiIGZpbGwtb3BhY2l0eT0iLjE0Ii8+CiAgICA8cGF0aCBkPSJNMzUgNDNMNDIgNTBMNTUgMzUiIHN0cm9rZT0iIzM1NkRGMyIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICAgIDx0ZXh0IHg9IjMwIiB5PSI4MiIgZmlsbD0iIzE3MzI1QyIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE3IiBmb250LXdlaWdodD0iNzAwIj5IdW1hbiBvdmVyc2lnaHQ8L3RleHQ+CiAgICA8dGV4dCB4PSIzMCIgeT0iMTA0IiBmaWxsPSIjNzY4NjlEIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiPkRlY2lzaW9ucyBzdGF5IGFjY291bnRhYmxlPC90ZXh0PgogIDwvZz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MzcgMzgyKSI+CiAgICA8cmVjdCB3aWR0aD0iMjEwIiBoZWlnaHQ9IjExNiIgcng9IjEyIiBmaWxsPSIjRTVGOUY1Ii8+CiAgICA8Y2lyY2xlIGN4PSI0NCIgY3k9IjQzIiByPSIxOSIgZmlsbD0iIzIwQTk4QyIgZmlsbC1vcGFjaXR5PSIuMTQiLz4KICAgIDxwYXRoIGQ9Ik0zNCA0OUM0MyAzMiA1MSAzMiA1OCA0OCIgc3Ryb2tlPSIjMTU5NzdDIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogICAgPHRleHQgeD0iMzAiIHk9IjgyIiBmaWxsPSIjMTczMjVDIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTciIGZvbnQtd2VpZ2h0PSI3MDAiPlRyYW5zcGFyZW50IHVzZTwvdGV4dD4KICAgIDx0ZXh0IHg9IjMwIiB5PSIxMDQiIGZpbGw9IiM3Njg2OUQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMyI+RXhwbGFpbiBwdXJwb3NlIGFuZCBsaW1pdHM8L3RleHQ+CiAgPC9nPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY2NiAzODIpIj4KICAgIDxyZWN0IHdpZHRoPSIyNDgiIGhlaWdodD0iMTE2IiByeD0iMTIiIGZpbGw9IiNGRkYyRTgiLz4KICAgIDxjaXJjbGUgY3g9IjQ0IiBjeT0iNDMiIHI9IjE5IiBmaWxsPSIjRUU4QTQzIiBmaWxsLW9wYWNpdHk9Ii4xNiIvPgogICAgPHBhdGggZD0iTTM0IDQzSDU0TTQ0IDMzVjUzIiBzdHJva2U9IiNERDc1MzAiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8dGV4dCB4PSIzMCIgeT0iODIiIGZpbGw9IiMxNzMyNUMiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNyIgZm9udC13ZWlnaHQ9IjcwMCI+UHJhY3RpY2FsIHNhZmVndWFyZHM8L3RleHQ+CiAgICA8dGV4dCB4PSIzMCIgeT0iMTA0IiBmaWxsPSIjNzY4NjlEIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiPlRlc3Qgcmlza3MgYmVmb3JlIGRlcGxveW1lbnQ8L3RleHQ+CiAgPC9nPgoKICA8cmVjdCB4PSIxMDE4IiB5PSIxMjIiIHdpZHRoPSI0MzAiIGhlaWdodD0iMjM4IiByeD0iMTAiIGZpbGw9IiMwQzFEMzYiIHN0cm9rZT0iIzZCODZBOCIgc3Ryb2tlLW9wYWNpdHk9Ii4zNSIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgPHBhdGggZD0iTTEwNTEgMzEwQzEwOTggMjUxIDExNDIgMjc2IDExODYgMjIwQzEyMzEgMTYyIDEyODMgMjExIDEzMjUgMTc4QzEzNTcgMTUzIDEzOTUgMTY2IDE0MjAgMTQ2IiBzdHJva2U9IiM1RUQ2RDEiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPHBhdGggZD0iTTEwNTAgMzAwSDE0MThNMTA1MCAyNTBIMTQxOE0xMDUwIDIwMEgxNDE4TTEwNTAgMTUwSDE0MTgiIHN0cm9rZT0iIzZCODZBOCIgc3Ryb2tlLW9wYWNpdHk9Ii4xMiIvPgogIDx0ZXh0IHg9IjEwNTEiIHk9IjMzOCIgZmlsbD0iIzdGQTJDNCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIj5TVFVERU5UIEVOR0FHRU1FTlQgwrcgTElWRTwvdGV4dD4KCiAgPGVsbGlwc2UgY3g9IjExNzMiIGN5PSI3MzgiIHJ4PSIxODQiIHJ5PSI0NCIgZmlsbD0iIzA2MTMyNiIgZmlsbC1vcGFjaXR5PSIuNTgiIGZpbHRlcj0idXJsKCNibHVyKSIvPgogIDxnIGZpbHRlcj0idXJsKCNzaGFkb3cpIj4KICAgIDxjaXJjbGUgY3g9IjExNzIiIGN5PSIzNzEiIHI9IjU0IiBmaWxsPSIjRDlBMTgxIi8+CiAgICA8cGF0aCBkPSJNMTEyNyAzNTRDMTEzOSAzMTIgMTIwNyAzMDUgMTIyMyAzNTZDMTE5NSAzMzcgMTE1MiAzMzcgMTEyNyAzNTRaIiBmaWxsPSIjMzAyQjMxIi8+CiAgICA8cGF0aCBkPSJNMTEwNyA0NTJDMTEwNyA0MDggMTE0MyAzODAgMTE4NCAzODZMMTIxNSAzOTFDMTI1NCAzOTcgMTI4MiA0MzEgMTI3NiA0NzFMMTI0NiA2ODRIMTA5MEwxMTA3IDQ1MloiIGZpbGw9InVybCgjamFja2V0KSIvPgogICAgPHBhdGggZD0iTTExMTUgNDU4TDEwMzMgNTUwIiBzdHJva2U9IiNEOUExODEiIHN0cm9rZS13aWR0aD0iMjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogICAgPHBhdGggZD0iTTEyNjIgNDY1TDEzNTAgNTI2IiBzdHJva2U9IiNEOUExODEiIHN0cm9rZS13aWR0aD0iMjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogICAgPGNpcmNsZSBjeD0iMTAyOCIgY3k9IjU1NCIgcj0iMTgiIGZpbGw9IiNEOUExODEiLz4KICAgIDxjaXJjbGUgY3g9IjEzNTUiIGN5PSI1MzAiIHI9IjE4IiBmaWxsPSIjRDlBMTgxIi8+CiAgICA8cGF0aCBkPSJNMTEyMSA2ODBMMTExMiA3OTZNMTIxNyA2ODBMMTIzNSA3OTYiIHN0cm9rZT0iIzE3MkE0NSIgc3Ryb2tlLXdpZHRoPSIzNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPC9nPgoKICA8ZyBvcGFjaXR5PSIuOTQiPgogICAgPGVsbGlwc2UgY3g9IjMyOCIgY3k9IjgzNSIgcng9IjE2MCIgcnk9IjQ0IiBmaWxsPSIjMDYxMzI2IiBmaWxsLW9wYWNpdHk9Ii41Ii8+CiAgICA8Y2lyY2xlIGN4PSIzMTYiIGN5PSI2OTEiIHI9IjQyIiBmaWxsPSIjOUM2RTVCIi8+CiAgICA8cGF0aCBkPSJNMjQ1IDc4OUMyNDggNzMzIDI3OCA3MDQgMzE3IDcwNEMzNjEgNzA0IDM5MSA3MzggMzk1IDc5MFY5MDBIMjQ1Vjc4OVoiIGZpbGw9IiMxNTI5NDUiLz4KICAgIDxlbGxpcHNlIGN4PSI2MDEiIGN5PSI4NDIiIHJ4PSIxNzAiIHJ5PSI0NiIgZmlsbD0iIzA2MTMyNiIgZmlsbC1vcGFjaXR5PSIuNSIvPgogICAgPGNpcmNsZSBjeD0iNTk0IiBjeT0iNzA3IiByPSI0MiIgZmlsbD0iI0M1OEM2RCIvPgogICAgPHBhdGggZD0iTTUxOSA4MDNDNTI1IDc0NCA1NTQgNzIwIDU5NCA3MjBDNjM3IDcyMCA2NjkgNzUwIDY3MyA4MDNWOTAwSDUxOVY4MDNaIiBmaWxsPSIjMUQzNTU0Ii8+CiAgICA8ZWxsaXBzZSBjeD0iODg4IiBjeT0iODQ3IiByeD0iMTcwIiByeT0iNDYiIGZpbGw9IiMwNjEzMjYiIGZpbGwtb3BhY2l0eT0iLjUiLz4KICAgIDxjaXJjbGUgY3g9Ijg3MiIgY3k9IjcyMiIgcj0iNDIiIGZpbGw9IiNEN0E5OEMiLz4KICAgIDxwYXRoIGQ9Ik03OTcgODE0QzgwMyA3NTggODMyIDczMyA4NzMgNzMzQzkxNSA3MzMgOTQ2IDc2MyA5NTEgODE0VjkwMEg3OTdWODE0WiIgZmlsbD0iIzFBMzA0RCIvPgogICAgPGVsbGlwc2UgY3g9IjE0NTAiIGN5PSI4NDQiIHJ4PSIxNTUiIHJ5PSI0MiIgZmlsbD0iIzA2MTMyNiIgZmlsbC1vcGFjaXR5PSIuNSIvPgogICAgPGNpcmNsZSBjeD0iMTQzNCIgY3k9IjcxMSIgcj0iNDAiIGZpbGw9IiM4QjVGNTIiLz4KICAgIDxwYXRoIGQ9Ik0xMzY3IDgwNUMxMzcwIDc1MCAxMzk4IDcyMiAxNDM3IDcyMkMxNDc3IDcyMiAxNTA3IDc1MSAxNTEyIDgwNVY5MDBIMTM2N1Y4MDVaIiBmaWxsPSIjMTcyQjQ2Ii8+CiAgPC9nPgoKICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI5MDAiIGZpbGw9InVybCgjbGlnaHQpIiBvcGFjaXR5PSIuMzUiLz4KPC9zdmc+Cg==");
@@ -1655,6 +1602,27 @@ svg {
   border-radius: inherit;
   background: var(--blue-500);
   content: "";
+}
+
+.video-progress::after {
+  position: absolute;
+  top: 50%;
+  left: var(--progress, 38%);
+  width: 12px;
+  height: 12px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background: var(--blue-500);
+  box-shadow: 0 2px 8px rgba(0,0,0,.35);
+  content: "";
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity .15s ease;
+}
+
+.video-progress:hover::after,
+.video-progress.dragging::after {
+  opacity: 1;
 }
 
 .video-controls {
@@ -1732,7 +1700,7 @@ svg {
 .admin-brand .brand-mark {
   width: 34px;
   height: 34px;
-  border-radius: 50%;
+  border-radius: 10px;
 }
 
 .admin-brand strong {
@@ -1924,8 +1892,6 @@ svg {
 }
 
 .stat-card {
-  --stat-accent: #356df3;
-  --stat-tint: #edf3ff;
   position: relative;
   overflow: hidden;
   min-height: 126px;
@@ -1938,22 +1904,16 @@ svg {
 
 .stat-card::after {
   position: absolute;
-  top: -62px;
-  right: -62px;
-  width: 170px;
-  height: 170px;
+  top: -48px;
+  right: -38px;
+  width: 132px;
+  height: 116px;
   border-radius: 50%;
-  background: radial-gradient(circle, var(--stat-tint), transparent 72%);
+  background: var(--stat-glow, var(--blue-50));
+  filter: blur(8px);
+  opacity: 0.42;
   content: "";
-  pointer-events: none;
 }
-
-.stat-card.stat-live { --stat-accent: #dd4f72; --stat-tint: #fff0f3; }
-.stat-card.stat-book,
-.stat-card.stat-chart { --stat-accent: #129b82; --stat-tint: #e9f8f3; }
-.stat-card.stat-monitor,
-.stat-card.stat-spark { --stat-accent: #bd7818; --stat-tint: #fff5e5; }
-.stat-card.stat-clock { --stat-accent: #8057d8; --stat-tint: #f3edff; }
 
 .stat-top {
   position: relative;
@@ -1977,17 +1937,43 @@ svg {
 }
 
 .stat-card .stat-icon {
-  width: 46px;
-  height: 46px;
-  flex: 0 0 auto;
-  border: 1px solid rgba(255, 255, 255, .85);
-  border-radius: 14px;
-  background: var(--stat-tint);
-  color: var(--stat-accent);
-  box-shadow: 0 6px 16px rgba(25, 49, 91, .07);
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.68);
+  color: color-mix(in srgb, var(--stat-icon-color, var(--blue-600)) 72%, #65728a);
+  box-shadow: 0 4px 14px rgba(42, 62, 98, 0.06);
+  backdrop-filter: blur(8px);
 }
 
-.stat-card .stat-icon svg { width: 22px; height: 22px; stroke-width: 2; }
+.stat-card .stat-icon svg {
+  opacity: 0.84;
+}
+
+.stats-grid .stat-card:nth-child(1) {
+  --stat-icon-color: #356df3;
+  --stat-icon-bg: #edf3ff;
+  --stat-icon-border: #d8e4ff;
+}
+
+.stats-grid .stat-card:nth-child(2) {
+  --stat-icon-color: #d94a60;
+  --stat-icon-bg: #fff0f3;
+  --stat-icon-border: #ffdbe2;
+}
+
+.stats-grid .stat-card:nth-child(3) {
+  --stat-icon-color: #138f72;
+  --stat-icon-bg: #e9faf5;
+  --stat-icon-border: #cff1e7;
+}
+
+.stats-grid .stat-card:nth-child(4) {
+  --stat-icon-color: #b56a08;
+  --stat-icon-bg: #fff6e5;
+  --stat-icon-border: #ffe8bd;
+}
 
 .stat-value {
   margin: 12px 0 5px;
@@ -2238,7 +2224,7 @@ svg {
   gap: 16px;
 }
 
-.admin-shell .live-admin-grid {
+.admin-content .live-admin-grid {
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
@@ -2316,36 +2302,31 @@ svg {
 
 .live-admin-cover {
   position: relative;
-  overflow: hidden;
+  width: 100%;
+  height: auto;
   aspect-ratio: 16 / 9;
-  background: linear-gradient(135deg, #153b71, #356df3 64%, #2fc3c1);
+  background:
+    linear-gradient(180deg, rgba(7, 26, 61, 0.08), rgba(7, 26, 61, 0.3)),
+    url("assets/ai-future-higher-education.png") center / cover no-repeat;
 }
 
-.live-admin-cover.alt { background: linear-gradient(135deg, #4b368c, #9461d9 62%, #e88ac4); }
-.live-admin-cover.warm { background: linear-gradient(135deg, #8c4b27, #e48442 62%, #f4cb62); }
+.live-admin-cover.alt {
+  background:
+    linear-gradient(180deg, rgba(39, 27, 83, 0.06), rgba(39, 27, 83, 0.28)),
+    url("assets/live-inclusive-learning.png") center / cover no-repeat;
+}
 
-.live-admin-cover-image {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.live-admin-cover.warm {
+  background:
+    linear-gradient(180deg, rgba(62, 42, 16, 0.04), rgba(62, 42, 16, 0.28)),
+    url("assets/live-climate-action.png") center / cover no-repeat;
 }
 
 .live-admin-cover .status-pill {
   position: absolute;
-  z-index: 1;
   top: 12px;
   left: 12px;
   background: rgba(255,255,255,.93);
-}
-
-.admin-shell .live-admin-cover .status-pill {
-  top: 8px;
-  left: 8px;
-  padding: 4px 7px;
-  font-size: 9px;
 }
 
 .live-admin-body {
@@ -2402,7 +2383,6 @@ svg {
 
 .publication-chip {
   position: absolute;
-  z-index: 2;
   top: 12px;
   right: 12px;
   display: inline-flex;
@@ -2419,13 +2399,6 @@ svg {
 
 .publication-chip.draft {
   color: var(--amber-600);
-}
-
-.admin-shell .publication-chip {
-  top: 8px;
-  right: 8px;
-  padding: 4px 7px;
-  font-size: 9px;
 }
 
 .live-card-description {
@@ -2448,15 +2421,6 @@ svg {
 .live-lifecycle-actions .btn:last-child {
   margin-left: auto;
 }
-
-.admin-shell .live-admin-body { padding: 12px; }
-.admin-shell .live-admin-card h3 { min-height: 36px; margin-bottom: 8px; font-size: 13px; line-height: 1.35; }
-.admin-shell .live-card-description { min-height: 30px; margin: 0 0 12px; font-size: 10px; }
-.admin-shell .live-admin-body .info-list { gap: 8px; }
-.admin-shell .live-admin-body .info-row { gap: 8px; font-size: 10px; }
-.admin-shell .live-admin-body .info-row strong { font-size: 10px; overflow-wrap: anywhere; }
-.admin-shell .live-lifecycle-actions { gap: 5px; margin-top: 11px; padding-top: 10px; }
-.admin-shell .live-lifecycle-actions .btn-sm { min-height: 30px; padding: 0 8px; font-size: 11px; }
 
 .publication-summary {
   display: flex;
@@ -4343,6 +4307,11 @@ svg {
   color: white;
 }
 
+.footer .brand,
+.footer .brand-copy {
+  text-align: left;
+}
+
 .footer-grid {
   display: grid;
   grid-template-columns: 1.4fr repeat(3, 1fr);
@@ -4354,10 +4323,6 @@ svg {
   color: rgba(255,255,255,.5);
   font-size: 13px;
   line-height: 1.7;
-}
-
-.footer .brand-copy small {
-  color: rgba(255, 255, 255, 0.58);
 }
 
 .footer h4 {
@@ -4490,10 +4455,6 @@ svg {
 @keyframes modalIn { from { opacity:0; transform:translateY(10px) scale(.98); } to { opacity:1; transform:none; } }
 @keyframes toastIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
 
-@media (max-width: 1350px) {
-  .admin-shell .live-admin-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-}
-
 @media (max-width: 1100px) {
   .course-grid { grid-template-columns: repeat(3, 1fr); }
   .category-grid { grid-template-columns: repeat(3, 1fr); }
@@ -4501,7 +4462,7 @@ svg {
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .metric-grid { grid-template-columns: repeat(2, 1fr); }
   .schedule-grid, .live-admin-grid { grid-template-columns: repeat(2, 1fr); }
-  .admin-shell .live-admin-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .admin-content .live-admin-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .dashboard-grid, .ai-grid, .device-summary { grid-template-columns: 1fr; }
   .diagnostic-grid { grid-template-columns: repeat(2, 1fr); }
   .conduct-basics { grid-template-columns: repeat(4, 1fr); }
@@ -4556,12 +4517,10 @@ svg {
   .trust-item { border-left: 0; padding: 10px 0; }
   .course-grid { grid-template-columns: repeat(2, 1fr); }
   .live-feature { grid-template-columns: 1fr; }
-  .live-visual { min-height: 0; padding: 24px; }
   .course-detail-grid, .detail-content { grid-template-columns: 1fr; }
   .player-layout { grid-template-columns: 1fr; }
   .player-side { display:none; }
   .admin-shell { grid-template-columns: 74px 1fr; }
-  .admin-shell .live-admin-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .admin-sidebar { overflow:hidden; }
   .admin-brand { justify-content:center; padding:0; }
   .admin-brand > div:last-child, .admin-nav button span:not(.nav-count), .nav-label, .admin-profile > div:last-child { display:none; }
@@ -4585,7 +4544,6 @@ svg {
 }
 
 @media (max-width: 560px) {
-  .admin-shell .live-admin-grid { grid-template-columns: 1fr; }
   .portal-actions .icon-button:not(.mobile-menu-button) { display:none; }
   .brand-copy small { display:none; }
   .hero h1 { font-size: 40px; }
@@ -4600,6 +4558,7 @@ svg {
   .page-title { align-items:start; flex-direction:column; }
   .filter-search { min-width:100%; }
   .stats-grid, .metric-grid, .schedule-grid, .live-admin-grid { grid-template-columns:1fr; }
+  .admin-content .live-admin-grid { grid-template-columns:1fr; }
   .ai-overview-band .panel-body { gap:20px; padding:22px; }
   .ai-overview-metrics,
   .report-summary-cards,
@@ -4672,9 +4631,8 @@ const state = {
   playerPlaying: false,
   playerTab: "Lessons",
   currentLesson: 3,
-  livePlaying: false,
-  liveMuted: false,
-  liveMediaTime: 0,
+  livePlaying: true,
+  liveMuted: true,
   liveCaptions: false,
   liveTab: "Live chat",
   currentLiveId: 1,
@@ -4823,18 +4781,18 @@ const courses = [
   },
   {
     id: 9,
-    title: "Sustainable Architecture and Urban Life",
-    teacher: "Dr. Lucas Meyer",
-    initials: "LM",
-    school: "School of Architecture",
-    category: "Architecture",
-    cover: "cover-architecture",
-    code: "SA",
+    title: "Digital Ethics and Responsible Innovation",
+    teacher: "Dr. Noah Williams",
+    initials: "NW",
+    school: "Business School",
+    category: "Business",
+    cover: "cover-business",
+    code: "DE",
     lessons: 12,
-    learners: "684",
-    duration: "8h 20m",
-    badge: "New",
-    progress: 0,
+    learners: "864",
+    duration: "8h 35m",
+    badge: "Popular",
+    progress: 18,
   },
 ];
 
@@ -4857,9 +4815,9 @@ const schedules = [
 ];
 
 const liveEvents = [
-  { id: 1, title: "AI and the Future of Higher Education", teacher: "Dr. Maya Chen", date: "Aug 4, 2026", time: "14:00–15:30 GMT+8", viewers: "428 registered", status: "Live now", cover: "", coverImage: "assets/higher-education-ai-cover.png", coverAlt: "AI and higher education illustrated event cover" },
-  { id: 2, title: "Designing Inclusive Learning Experiences", teacher: "Prof. Elena Rossi", date: "Aug 6, 2026", time: "10:00–11:00 GMT+8", viewers: "216 registered", status: "Upcoming", cover: "alt", coverImage: "assets/live-inclusive-design.jpg", coverAlt: "Participants collaborating with sticky notes in a design workshop" },
-  { id: 3, title: "Climate Action: From Campus to Community", teacher: "Dr. Amina Patel", date: "Aug 1, 2026", time: "15:00–16:20 GMT+8", viewers: "1,105 views", status: "Ended", cover: "warm", coverImage: "assets/live-climate-action.jpg", coverAlt: "Students planting seedlings outdoors" },
+  { id: 1, title: "AI and the Future of Higher Education", teacher: "Dr. Maya Chen", date: "Aug 4, 2026", time: "14:00–15:30 GMT+8", viewers: "428 registered", status: "Live now", cover: "" },
+  { id: 2, title: "Designing Inclusive Learning Experiences", teacher: "Prof. Elena Rossi", date: "Aug 6, 2026", time: "10:00–11:00 GMT+8", viewers: "216 registered", status: "Upcoming", cover: "alt" },
+  { id: 3, title: "Climate Action: From Campus to Community", teacher: "Dr. Amina Patel", date: "Aug 1, 2026", time: "15:00–16:20 GMT+8", viewers: "1,105 views", status: "Ended", cover: "warm" },
 ];
 
 const courseDescriptions = {
@@ -4871,7 +4829,7 @@ const courseDescriptions = {
   6: "Investigate how people, space, mobility and technology shape the cities of tomorrow.",
   7: "Turn complex data into clear, ethical and compelling visual stories.",
   8: "Design useful products by connecting user insight, prototyping and iterative decision-making.",
-  9: "Explore sustainable building ideas and how architecture can support healthier urban communities.",
+  9: "Examine digital responsibility, ethical decision-making and innovation practices for a rapidly changing world.",
 };
 
 function escapeHtml(value = "") {
@@ -5012,74 +4970,11 @@ function toast(title, message = "Your changes have been saved.") {
   setTimeout(() => el.remove(), 3300);
 }
 
-let activeAdminSelect = null;
-let adminSelectId = 0;
-
-function closeAdminSelectMenu(restoreFocus = false) {
-  if (!activeAdminSelect) return;
-  const { trigger, menu } = activeAdminSelect;
-  menu.remove();
-  trigger.setAttribute("aria-expanded", "false");
-  activeAdminSelect = null;
-  if (restoreFocus && trigger.isConnected) trigger.focus();
-}
-
-function enhanceAdminSelects(root) {
-  root.querySelectorAll("select.form-control:not(.admin-select-native)").forEach(select => {
-    const width = Math.ceil(select.getBoundingClientRect().width);
-    const wrapper = document.createElement("span");
-    wrapper.className = "admin-select";
-    const label = select.options[select.selectedIndex]?.text || select.options[0]?.text || "Select an option";
-    const longestLabel = Math.max(...[...select.options].map(option => option.text.length));
-    wrapper.style.width = `${Math.max(width, longestLabel * 7 + 54)}px`;
-    const trigger = document.createElement("button");
-    trigger.type = "button";
-    trigger.className = "admin-select-trigger";
-    trigger.dataset.adminSelectTrigger = String(++adminSelectId);
-    trigger.setAttribute("aria-haspopup", "listbox");
-    trigger.setAttribute("aria-expanded", "false");
-    const fieldLabel = select.closest(".form-group")?.querySelector("label")?.textContent || select.closest("label")?.querySelector("span")?.textContent;
-    if (fieldLabel) {
-      trigger.dataset.adminSelectFieldLabel = fieldLabel;
-      trigger.setAttribute("aria-label", `${fieldLabel}: ${label}`);
-    }
-    trigger.innerHTML = `<span class="admin-select-label">${escapeHtml(label)}</span>${icon("chevron", 14)}`;
-    select.before(wrapper);
-    wrapper.append(select, trigger);
-    select.classList.add("admin-select-native");
-    select.tabIndex = -1;
-    select.setAttribute("aria-hidden", "true");
-  });
-}
-
-function openAdminSelectMenu(trigger) {
-  closeAdminSelectMenu();
-  const select = trigger.parentElement.querySelector("select");
-  const menu = document.createElement("div");
-  menu.id = `admin-select-menu-${trigger.dataset.adminSelectTrigger}`;
-  menu.className = "admin-select-menu";
-  menu.setAttribute("role", "listbox");
-  menu.setAttribute("aria-label", trigger.querySelector(".admin-select-label").textContent);
-  menu.innerHTML = [...select.options].map((option, index) => `<button type="button" class="admin-select-option" role="option" tabindex="-1" data-admin-select-option="${index}" aria-selected="${index === select.selectedIndex}"><span>${escapeHtml(option.text)}</span>${index === select.selectedIndex ? icon("check", 14) : ""}</button>`).join("");
-  document.body.append(menu);
-  const rect = trigger.getBoundingClientRect();
-  const menuWidth = Math.max(rect.width, 184);
-  const menuHeight = Math.min(select.options.length * 36 + 12, 280);
-  menu.style.width = `${menuWidth}px`;
-  menu.style.left = `${Math.max(8, Math.min(rect.left, innerWidth - menuWidth - 8))}px`;
-  menu.style.top = `${innerHeight - rect.bottom < menuHeight + 12 && rect.top > menuHeight ? rect.top - menuHeight - 6 : rect.bottom + 6}px`;
-  trigger.setAttribute("aria-controls", menu.id);
-  trigger.setAttribute("aria-expanded", "true");
-  activeAdminSelect = { trigger, select, menu };
-}
-
 function closeModal() {
-  closeAdminSelectMenu();
   modalRoot.innerHTML = "";
 }
 
 function showModal({ title, subtitle = "", body, footer, size = "" }) {
-  closeAdminSelectMenu();
   modalRoot.innerHTML = `
     <div class="modal-backdrop" data-modal-backdrop>
       <div class="modal ${size}" role="dialog" aria-modal="true" aria-label="${title}">
@@ -5091,7 +4986,6 @@ function showModal({ title, subtitle = "", body, footer, size = "" }) {
         ${footer ? `<div class="modal-footer">${footer}</div>` : ""}
       </div>
     </div>`;
-  if (state.route.startsWith("admin/")) enhanceAdminSelects(modalRoot);
 }
 
 function courseCard(course) {
@@ -5101,7 +4995,7 @@ function courseCard(course) {
         <span class="cover-kicker">${escapeHtml(course.school)}</span>
         <span class="cover-badge">${course.badge}</span>
         <span class="cover-index">${course.code}</span>
-        <span class="cover-art">${icon(course.category === "Business" ? "chart" : course.category === "Health" ? "users" : course.category === "Design" ? "spark" : course.category === "Architecture" ? "building" : "brain", 58)}</span>
+        <span class="cover-art">${icon(course.category === "Business" ? "chart" : course.category === "Health" ? "users" : course.category === "Design" ? "spark" : "brain", 58)}</span>
       </div>
       <div class="course-body">
         <h3>${escapeHtml(course.title)}</h3>
@@ -5112,8 +5006,8 @@ function courseCard(course) {
 }
 
 function brandMarkup(admin = false) {
-  if (admin) return `<div class="admin-brand"><img class="brand-mark" src="assets/riverdale-university-logo.png" alt=""><div><strong>Smart Managment</strong><span>ADMIN CONSOLE</span></div></div>`;
-  return `<button class="brand" data-route="home"><img class="brand-mark" src="assets/riverdale-university-logo.png" alt=""><span class="brand-copy"><strong>Smart Managment</strong><small>NEXUS INTERNATIONAL UNIVERSITY</small></span></button>`;
+  if (admin) return `<div class="admin-brand"><span class="brand-mark"></span><div><strong>Smart Managment</strong><span>ADMIN CONSOLE</span></div></div>`;
+  return `<button class="brand" data-route="home"><span class="brand-mark"></span><span class="brand-copy"><strong>Smart Managment</strong><small>NEXUS INTERNATIONAL UNIVERSITY</small></span></button>`;
 }
 
 function portalHeader(active = "home") {
@@ -5180,8 +5074,8 @@ function homePage() {
         </div>
         <div class="hero-visual" aria-label="Smart Managment learning experience illustration">
           <div class="floating-live"><strong><span class="live-dot"></span>Live now</strong><span>428 learners joined</span></div>
-          <div class="video-stage"><img class="stage-poster" src="assets/hero-lecture-cover.png" alt="University lecture about AI and society" fetchpriority="high"><div class="stage-controls">${icon("play", 12)}<div class="progress"></div><span>32:18 / 1:24:05</span></div></div>
-          <div class="floating-insight"><span class="score-ring" role="img" aria-label="Engagement 88 percent"><span aria-hidden="true">88%</span></span><div><strong>Great engagement</strong><span>AI classroom insight · 88%</span></div></div>
+          <div class="video-stage"><div class="stage-controls">${icon("play", 12)}<div class="progress"></div><span>32:18 / 1:24:05</span></div></div>
+          <div class="floating-insight"><span class="score-ring"></span><div><strong>Great engagement</strong><span>AI classroom insight · 88%</span></div></div>
         </div>
       </div>
     </section>
@@ -5195,7 +5089,7 @@ function homePage() {
     <section class="portal-section"><div class="container"><div class="section-head"><div><h2>Featured courses</h2><p>Curated learning experiences from across the university.</p></div><button class="link-button" data-route="courses">View all courses ${icon("arrow", 15)}</button></div><div class="course-grid">${featured}</div></div></section>
     <section class="portal-section tint"><div class="container"><div class="section-head"><div><h2>Explore by discipline</h2><p>Find relevant learning resources across our academic schools.</p></div></div><div class="category-grid">${categories}</div></div></section>
     <section class="portal-section"><div class="container"><div class="section-head"><div><h2>Live from Nexus</h2><p>Join experts, educators and peers in real time.</p></div><button class="link-button" data-route="live">All live events ${icon("arrow", 15)}</button></div>
-      ${homeLive ? `<div class="live-feature"><div class="live-visual"><div class="live-cover"><img class="live-cover-image" src="assets/higher-education-ai-cover.png" alt="Illustrated AI and the Future of Higher Education university course cover" loading="lazy"><div class="live-visual-content"><button class="play-button" data-route="live-room/${homeLive.id}" aria-label="${homeLive.status === "Ended" ? "Watch replay" : "Join live session"}">${icon("play", 23)}</button></div></div></div><div class="live-details">${pill(homeLive.status)}<h3>${escapeHtml(homeLive.title)}</h3><p>${escapeHtml(homeLive.description)}</p><div class="live-time"><span>${icon("calendar", 14)} ${homeLive.date}</span><span>${icon("clock", 14)} ${homeLive.time}</span></div><button class="btn btn-primary" data-route="live-room/${homeLive.id}">${homeLive.status === "Ended" ? "Watch replay" : "Join live session"} ${icon("arrow", 15)}</button></div></div>` : `<div class="empty-state"><strong>No published live events</strong>New events will appear here after publication.</div>`}
+      ${homeLive ? `<div class="live-feature"><div class="live-visual"><div class="live-visual-content"><button class="play-button" data-route="live-room/${homeLive.id}">${icon("play", 23)}</button></div></div><div class="live-details">${pill(homeLive.status)}<h3>${escapeHtml(homeLive.title)}</h3><p>${escapeHtml(homeLive.description)}</p><div class="live-time"><span>${icon("calendar", 14)} ${homeLive.date}</span><span>${icon("clock", 14)} ${homeLive.time}</span></div><button class="btn btn-primary" data-route="live-room/${homeLive.id}">${homeLive.status === "Ended" ? "Watch replay" : "Join live session"} ${icon("arrow", 15)}</button></div></div>` : `<div class="empty-state"><strong>No published live events</strong>New events will appear here after publication.</div>`}
     </div></section>
     <section class="portal-section tint"><div class="container"><div class="section-head"><div><h2>Popular this month</h2><p>Courses learners are returning to most often.</p></div></div><div class="course-grid">${popular}</div></div></section>
   `, "home");
@@ -5221,35 +5115,21 @@ function coursesPage() {
   `, "courses");
 }
 
-const defaultCourseLessons = [
-  "Introduction and course overview",
-  "Data, models and intelligent systems",
-  "Neural networks in plain language",
-  "Responsible AI and human oversight",
-  "From research to real-world practice",
-  "Building an AI-ready organisation",
-];
-
-const architectureCourseLessons = [
-  "Introduction to sustainable architecture",
-  "Climate-responsive building design",
-  "Materials and the circular economy",
-  "Healthy homes and public spaces",
-  "Designing for walkable communities",
-  "Future cities: a practical case study",
-];
-
 function courseDetailPage(id = 1) {
   const course = courseRecord(courses.find(c => c.id === Number(id)) || courses[0]);
-  const lessons = course.id === 9 ? architectureCourseLessons : defaultCourseLessons;
-  const resources = course.id === 9
-    ? [["Course handbook","PDF · 2.4 MB"],["Sustainable design guide","PDF · 840 KB"],["Lecture slides","PPTX · 8.1 MB"]]
-    : [["Course handbook","PDF · 2.4 MB"],["Responsible AI checklist","DOCX · 840 KB"],["Lecture slides","PPTX · 8.1 MB"]];
+  const lessons = [
+    "Introduction and course overview",
+    "Data, models and intelligent systems",
+    "Neural networks in plain language",
+    "Responsible AI and human oversight",
+    "From research to real-world practice",
+    "Building an AI-ready organisation",
+  ];
   const saved = state.savedCourses.has(course.id);
   const detailContent = state.courseDetailTab === "Course materials"
-    ? `<div class="resource-list">${resources.map((x,i)=>`<button data-action="download-material"><span class="resource-file">${icon(i===2?"monitor":"book",16)}</span><div><strong>${x[0]}</strong><small>${x[1]}</small></div>${icon("download",15)}</button>`).join("")}</div>`
+    ? `<div class="resource-list">${[["Course handbook","PDF · 2.4 MB"],["Responsible AI checklist","DOCX · 840 KB"],["Lecture slides","PPTX · 8.1 MB"]].map((x,i)=>`<button data-action="download-material"><span class="resource-file">${icon(i===2?"monitor":"book",16)}</span><div><strong>${x[0]}</strong><small>${x[1]}</small></div>${icon("download",15)}</button>`).join("")}</div>`
     : state.courseDetailTab === "Discussion"
-      ? `<div class="discussion-list"><article><span class="mini-avatar">AJ</span><div><strong>Alex Johnson</strong><small>2 hours ago</small><p>${course.id === 9 ? "How can building design make public spaces more comfortable in hotter summers?" : "Where should institutions draw the line between AI assistance and human accountability?"}</p></div></article><article><span class="mini-avatar">${course.initials}</span><div><strong>${escapeHtml(course.teacher)}</strong><small>45 minutes ago</small><p>${course.id === 9 ? "Start with shade, ventilation and materials, then consider how people use each space throughout the day." : "A useful starting point is to identify who owns each decision and who can challenge it."}</p></div></article><div class="discussion-compose"><input class="form-control" data-discussion-input placeholder="Add to the discussion…"/><button class="btn btn-primary btn-sm" data-action="post-discussion">Post</button></div></div>`
+      ? `<div class="discussion-list"><article><span class="mini-avatar">AJ</span><div><strong>Alex Johnson</strong><small>2 hours ago</small><p>Where should institutions draw the line between AI assistance and human accountability?</p></div></article><article><span class="mini-avatar">MC</span><div><strong>Dr. Maya Chen</strong><small>45 minutes ago</small><p>A useful starting point is to identify who owns each decision and who can challenge it.</p></div></article><div class="discussion-compose"><input class="form-control" data-discussion-input placeholder="Add to the discussion…"/><button class="btn btn-primary btn-sm" data-action="post-discussion">Post</button></div></div>`
       : `<div><h3 style="font:700 18px Manrope;margin:0 0 10px">About this course</h3><p style="color:var(--muted);font-size: 14px;line-height:1.8">This course combines foundational concepts with current cases and practical reflection. Each recorded lecture includes downloadable materials, searchable captions and a discussion prompt.</p><h3 style="font:700 15px Manrope;margin:25px 0 13px">What you will learn</h3><div class="info-list"><div class="info-row"><strong>${icon("check",14)} Explain the core concepts with confidence</strong></div><div class="info-row"><strong>${icon("check",14)} Connect theory to real-world decisions</strong></div><div class="info-row"><strong>${icon("check",14)} Evaluate opportunities through a responsible lens</strong></div></div></div>`;
   return portalShell(`
     <section class="detail-hero"><div class="container"><div class="breadcrumb"><span data-route="home">Home</span>${icon("chevron", 11)}<span data-route="courses">Courses</span>${icon("chevron", 11)}<span>${course.category}</span></div><div class="course-detail-grid">
@@ -5264,16 +5144,16 @@ function courseDetailPage(id = 1) {
 
 function playerPage(id = 1) {
   const course = courseRecord(courses.find(c => c.id === Number(id)) || courses[0]);
-  const lessons = course.id === 9 ? architectureCourseLessons : defaultCourseLessons;
+  const lessons = ["Introduction and course overview", "Data, models and intelligent systems", "Neural networks in plain language", "Responsible AI and human oversight", "From research to real-world practice", "Building an AI-ready organisation"];
   const lessonIndex = Math.min(state.currentLesson, lessons.length - 1);
   const sideContent = state.playerTab === "Materials"
     ? `<div class="player-resource-list">${[["Lecture slides","PPTX · 8.1 MB"],["Reading guide","PDF · 2.4 MB"],["Case worksheet","DOCX · 840 KB"]].map(x=>`<button data-action="download-material"><span>${icon("download",15)}</span><div><strong>${x[0]}</strong><small>${x[1]}</small></div></button>`).join("")}</div>`
     : state.playerTab === "Discussion"
-      ? `<div class="player-discussion"><p><strong>Discussion prompt</strong> ${course.id === 9 ? "How would you design a building that supports community life while reducing energy use?" : "Which decisions in this case should always require human oversight?"}</p><textarea data-player-discussion placeholder="Share your response…"></textarea><button class="btn btn-primary btn-sm" data-action="post-player-discussion">Post response</button></div>`
+      ? `<div class="player-discussion"><p><strong>Discussion prompt</strong> Which decisions in this case should always require human oversight?</p><textarea data-player-discussion placeholder="Share your response…"></textarea><button class="btn btn-primary btn-sm" data-action="post-player-discussion">Post response</button></div>`
       : `<div class="lesson-list">${lessons.map((l, i) => `<div class="lesson-item ${i===lessonIndex?"active":""}" data-select-lesson="${i}"><span class="lesson-index">${String(i+1).padStart(2,"0")}</span><div><strong>${l}</strong><span>${38+i*3} min</span></div>${icon(i<lessonIndex?"check":"play",13)}</div>`).join("")}</div>`;
   return `<div class="player-page">
     <header class="player-header"><div class="player-header-left"><button data-route="course/${course.id}">${icon("back", 20)}</button><div><strong>${escapeHtml(course.title)}</strong><span>Lesson ${lessonIndex+1} · ${escapeHtml(lessons[lessonIndex])}</span></div></div><div class="button-row"><button data-action="download-material" aria-label="Download lesson materials">${icon("download", 17)}</button><button data-action="share-player" aria-label="Share lesson">${icon("share", 17)}</button></div></header>
-    <div class="player-layout"><main class="player-main"><div class="video-canvas classroom-video ${state.playerPlaying?"is-playing":"is-paused"}"><div class="video-content-badge"><span>Now playing · Lecture ${String(lessonIndex+1).padStart(2,"0")}</span><strong>${escapeHtml(lessons[lessonIndex])}</strong></div>${state.dualStream ? `<div class="teacher-stream teacher-image-stream" data-action="drag-stream"><span class="stream-label">Instructor camera · drag to reposition</span></div>` : ""}${state.captions?`<div class="caption-line">${course.id === 9 ? "Good design balances community needs, local climate and responsible use of materials." : "Responsible AI keeps human judgement at the centre of every important decision."}</div>`:""}<div class="video-toolbar"><div class="video-progress" style="--progress:${32+lessonIndex*4}%" data-action="seek-player"></div><div class="video-controls"><div class="video-controls-group"><button data-action="play-toggle" aria-label="${state.playerPlaying?"Pause":"Play"}">${state.playerPlaying?"Ⅱ":icon("play", 16)}</button><span>32:18 / 1:16:42</span><button data-action="volume-toggle" class="${state.muted?"control-off":""}" aria-label="Mute or unmute">${icon("volume", 16)}</button></div><div class="video-controls-group"><button data-action="speed">${state.playerSpeed}</button><button data-action="captions" style="color:${state.captions ? "#6ee2d7" : "white"}">${icon("captions", 17)}</button><button data-action="stream-toggle">${state.dualStream ? "Dual stream" : "Single stream"}</button><button data-action="player-settings" aria-label="Playback settings">${icon("settings", 16)}</button><button data-action="fullscreen" aria-label="Full screen">${icon("fullscreen", 16)}</button></div></div></div></div></main>
+    <div class="player-layout"><main class="player-main"><div class="video-canvas classroom-video ${state.playerPlaying?"is-playing":"is-paused"}"><div class="video-content-badge"><span>Now playing · Lecture ${String(lessonIndex+1).padStart(2,"0")}</span><strong>${escapeHtml(lessons[lessonIndex])}</strong></div>${state.dualStream ? `<div class="teacher-stream teacher-image-stream" data-action="drag-stream"><span class="stream-label">Instructor camera · drag to reposition</span></div>` : ""}${state.captions?`<div class="caption-line">Responsible AI keeps human judgement at the centre of every important decision.</div>`:""}<div class="video-toolbar"><div class="video-progress" style="--progress:${32+lessonIndex*4}%" data-action="seek-player"></div><div class="video-controls"><div class="video-controls-group"><button data-action="play-toggle" aria-label="${state.playerPlaying?"Pause":"Play"}">${state.playerPlaying?"Ⅱ":icon("play", 16)}</button><span>32:18 / 1:16:42</span><button data-action="volume-toggle" class="${state.muted?"control-off":""}" aria-label="Mute or unmute">${icon("volume", 16)}</button></div><div class="video-controls-group"><button data-action="speed">${state.playerSpeed}</button><button data-action="captions" style="color:${state.captions ? "#6ee2d7" : "white"}">${icon("captions", 17)}</button><button data-action="stream-toggle">${state.dualStream ? "Dual stream" : "Single stream"}</button><button data-action="player-settings" aria-label="Playback settings">${icon("settings", 16)}</button><button data-action="fullscreen" aria-label="Full screen">${icon("fullscreen", 16)}</button></div></div></div></div></main>
       <aside class="player-side"><div class="tabs">${["Lessons","Materials","Discussion"].map(tab=>`<button class="${state.playerTab===tab?"active":""}" data-player-tab="${tab}">${tab}</button>`).join("")}</div>${sideContent}</aside>
     </div></div>`;
 }
@@ -5284,26 +5164,18 @@ function livePage() {
   return portalShell(`
     <section class="page-hero"><div class="container page-title"><div><span class="eyebrow">Live learning</span><h1>Be part of the conversation.</h1><p>Join live classes, guest lectures and campus events — or revisit completed sessions through instant replay.</p></div></div></section>
     <section class="portal-section"><div class="container"><div class="filter-bar"><div class="segmented">${["All","Live now","Upcoming","Ended"].map(f=>`<button class="${state.liveFilter===f?"active":""}" data-live-filter="${f}">${f}</button>`).join("")}</div><input class="filter-search" data-live-search value="${escapeHtml(state.liveSearch)}" placeholder="Search live events or instructors" /></div>
-      ${filtered.length?`<div class="live-admin-grid">${filtered.map(e=>`<article class="live-admin-card"><div class="live-admin-cover ${e.cover}">${e.coverImage?`<img class="live-admin-cover-image" src="${escapeHtml(e.coverImage)}" alt="${escapeHtml(e.coverAlt || "Live event cover")}" loading="lazy">`:""}${pill(e.status)}</div><div class="live-admin-body"><h3>${escapeHtml(e.title)}</h3><p class="live-card-description">${escapeHtml(e.description)}</p><div class="info-list"><div class="info-row"><span>Host</span><strong>${escapeHtml(e.teacher)}</strong></div><div class="info-row"><span>Date</span><strong>${e.date}</strong></div><div class="info-row"><span>Time</span><strong>${e.time}</strong></div><div class="info-row"><span>Viewing access</span><strong>${escapeHtml(e.visibility)}</strong></div></div><div class="card-actions"><button class="btn btn-secondary btn-sm ${state.calendarEvents.has(e.id)?"saved":""}" data-save-event="${e.id}">${icon(state.calendarEvents.has(e.id)?"check":"calendar",13)} ${state.calendarEvents.has(e.id)?"Added":"Add to calendar"}</button><button class="btn btn-primary btn-sm" data-route="live-room/${e.id}">${e.status==="Ended"?"Watch replay":"View event"} ${icon("arrow",13)}</button></div></div></article>`).join("")}</div>`:`<div class="empty-state"><strong>No live events found</strong>Try changing your search or status filter.</div>`}
+      ${filtered.length?`<div class="live-admin-grid">${filtered.map(e=>`<article class="live-admin-card"><div class="live-admin-cover ${e.cover}">${pill(e.status)}</div><div class="live-admin-body"><h3>${escapeHtml(e.title)}</h3><p class="live-card-description">${escapeHtml(e.description)}</p><div class="info-list"><div class="info-row"><span>Host</span><strong>${escapeHtml(e.teacher)}</strong></div><div class="info-row"><span>Date</span><strong>${e.date}</strong></div><div class="info-row"><span>Time</span><strong>${e.time}</strong></div><div class="info-row"><span>Viewing access</span><strong>${escapeHtml(e.visibility)}</strong></div></div><div class="card-actions"><button class="btn btn-secondary btn-sm ${state.calendarEvents.has(e.id)?"saved":""}" data-save-event="${e.id}">${icon(state.calendarEvents.has(e.id)?"check":"calendar",13)} ${state.calendarEvents.has(e.id)?"Added":"Add to calendar"}</button><button class="btn btn-primary btn-sm" data-route="live-room/${e.id}">${e.status==="Ended"?"Watch replay":"View event"} ${icon("arrow",13)}</button></div></div></article>`).join("")}</div>`:`<div class="empty-state"><strong>No live events found</strong>Try changing your search or status filter.</div>`}
     </div></section>
   `,"live");
 }
 
 function liveRoomPage(id = 1) {
-  const live = liveRecord(liveEvents.find(item => item.id === Number(id)) || liveEvents[0]);
-  const hasRecording = live.id === 1;
+  const live = liveRecord(liveEvents.find(item=>item.id===Number(id)) || liveEvents[0]);
   state.currentLiveId = live.id;
-  const baseChat = [["ER", "Elena Rossi", "A thoughtful point about assessment design."], ["NW", "Noah Williams", "How do we keep AI guidance consistent at scale?"], ["AP", "Amina Patel", "The student agency framework is especially useful."], ["AJ", "Alex Johnson", "Will the slides be available after the session?"]];
-  const chat = [...baseChat, ...state.chatMessages.map(message => ["AJ", "Alex Johnson", message])];
-  const side = state.liveTab === "About"
-    ? `<div class="live-about"><span>${pill(live.status)}</span><h3>${escapeHtml(live.title)}</h3><p>${escapeHtml(live.description)}</p><div class="info-list"><div class="info-row"><span>Host</span><strong>${escapeHtml(live.teacher)}</strong></div><div class="info-row"><span>Schedule</span><strong>${live.date}<br>${live.time}</strong></div><div class="info-row"><span>Access</span><strong>${escapeHtml(live.visibility)}</strong></div></div></div>`
-    : `<div class="live-chat-list">${chat.map(x => `<div class="chat-message"><span class="mini-avatar">${x[0]}</span><div><strong>${x[1]}</strong><p>${x[2]}</p></div></div>`).join("")}<div class="chat-compose"><input class="form-control" data-chat-input placeholder="Join the conversation…" /><button class="btn btn-primary btn-sm" data-action="send-chat">Send</button></div></div>`;
-  const canvasMedia = hasRecording
-    ? `<video class="live-main-media" data-live-main-video playsinline preload="metadata" poster="assets/live-main-poster.jpg" aria-label="Classroom recording"><source src="assets/live-main.mp4" type="video/mp4"></video><div class="teacher-stream"><video class="live-inset-media" data-live-inset-video playsinline preload="metadata" muted poster="assets/live-instructor-poster.jpg" aria-label="Presentation recording"><source src="assets/live-instructor.mp4" type="video/mp4"></video><span class="stream-label">Presentation</span></div>`
-    : `<div class="video-slide"><small>${live.status === "Ended" ? "Event replay" : "Live keynote"}</small><h2>${escapeHtml(live.title)}</h2><p>${escapeHtml(live.teacher)} · Nexus International University</p></div><div class="teacher-stream"><div class="presenter"></div><span class="stream-label">${escapeHtml(live.teacher)}</span></div>`;
-  return `<div class="player-page">
-    <header class="player-header"><div class="player-header-left"><button data-route="live">${icon("back", 20)}</button><div><div class="player-title-row"><span class="live-dot" aria-hidden="true"></span><strong>${escapeHtml(live.title)}</strong></div><span>${live.status} · 428 watching</span></div></div><div class="button-row"><button class="player-share-button" data-share-event="${live.id}">${icon("share", 17)} Share</button></div></header>
-    <div class="player-layout"><main class="player-main"><div class="video-canvas ${hasRecording ? "live-recording" : ""} ${state.livePlaying ? "is-playing" : "is-paused"}">${canvasMedia}${!hasRecording && state.liveCaptions ? `<div class="caption-line">The question is how we keep human agency visible as technology scales.</div>` : ""}<div class="video-toolbar"><div class="video-progress" style="--progress:${hasRecording ? "0" : "64"}%" data-action="seek-player" ${hasRecording ? 'data-live-progress role="slider" tabindex="0" aria-label="Seek video" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"' : ""}></div><div class="video-controls"><div class="video-controls-group"><button data-action="live-play-toggle" aria-label="${state.livePlaying ? "Pause" : "Play"}">${state.livePlaying ? "Ⅱ" : icon("play", 16)}</button><span ${hasRecording ? "data-live-time" : ""}>${hasRecording ? "00:00 / 05:19" : `${live.status} · 01:02:18`}</span><button data-action="live-volume-toggle" class="${state.liveMuted ? "control-off" : ""}" aria-label="Mute or unmute">${icon("volume", 16)}</button></div><div class="video-controls-group">${hasRecording ? "" : `<button data-action="live-captions" style="color:${state.liveCaptions ? "#6ee2d7" : "white"}">${icon("captions", 17)}</button>`}<button data-action="player-settings">${icon("settings", 16)}</button><button data-action="fullscreen">${icon("fullscreen", 16)}</button></div></div></div></div></main><aside class="player-side"><div class="tabs">${["Live chat", "About"].map(tab => `<button class="${state.liveTab === tab ? "active" : ""}" data-live-tab="${tab}">${tab}</button>`).join("")}</div>${side}</aside></div></div>`;
+  const baseChat = [["ER","Elena Rossi","A thoughtful point about assessment design."],["NW","Noah Williams","How do we keep AI guidance consistent at scale?"],["AP","Amina Patel","The student agency framework is especially useful."],["AJ","Alex Johnson","Will the slides be available after the session?"]];
+  const chat = [...baseChat,...state.chatMessages.map(message=>["AJ","Alex Johnson",message])];
+  const side = state.liveTab === "About" ? `<div class="live-about"><span>${pill(live.status)}</span><h3>${escapeHtml(live.title)}</h3><p>${escapeHtml(live.description)}</p><div class="info-list"><div class="info-row"><span>Host</span><strong>${escapeHtml(live.teacher)}</strong></div><div class="info-row"><span>Schedule</span><strong>${live.date}<br>${live.time}</strong></div><div class="info-row"><span>Access</span><strong>${escapeHtml(live.visibility)}</strong></div></div></div>` : `<div class="live-chat-list">${chat.map(x=>`<div class="chat-message"><span class="mini-avatar">${x[0]}</span><div><strong>${x[1]}</strong><p>${x[2]}</p></div></div>`).join("")}<div class="chat-compose"><input class="form-control" data-chat-input placeholder="Join the conversation…" /><button class="btn btn-primary btn-sm" data-action="send-chat">Send</button></div></div>`;
+  return `<div class="player-page"><header class="player-header"><div class="player-header-left"><button data-route="live">${icon("back",20)}</button><div><strong>${escapeHtml(live.title)}</strong><span><span class="live-dot"></span>${live.status} · 428 watching</span></div></div><div class="button-row"><button data-share-event="${live.id}">${icon("share",17)} Share</button></div></header><div class="player-layout"><main class="player-main"><div class="video-canvas ${state.livePlaying?"is-playing":"is-paused"}"><div class="video-slide"><small>${live.status==="Ended"?"Event replay":"Live keynote"}</small><h2>${escapeHtml(live.title)}</h2><p>${escapeHtml(live.teacher)} · Nexus International University</p></div><div class="teacher-stream"><div class="presenter"></div><span class="stream-label">${escapeHtml(live.teacher)}</span></div>${state.liveCaptions?`<div class="caption-line">The question is how we keep human agency visible as technology scales.</div>`:""}<div class="video-toolbar"><div class="video-progress" style="--progress:64%" data-action="seek-player"></div><div class="video-controls"><div class="video-controls-group"><button data-action="live-play-toggle">${state.livePlaying?"Ⅱ":icon("play",16)}</button><span>${live.status} · 01:02:18</span><button data-action="live-volume-toggle" class="${state.liveMuted?"control-off":""}">${icon("volume",16)}</button></div><div class="video-controls-group"><button data-action="live-captions" style="color:${state.liveCaptions?"#6ee2d7":"white"}">${icon("captions",17)}</button><button data-action="player-settings">${icon("settings",16)}</button><button data-action="fullscreen">${icon("fullscreen",16)}</button></div></div></div></div></main><aside class="player-side"><div class="tabs">${["Live chat","About"].map(tab=>`<button class="${state.liveTab===tab?"active":""}" data-live-tab="${tab}">${tab}</button>`).join("")}</div>${side}</aside></div></div>`;
 }
 
 function learningPage() {
@@ -5334,8 +5206,8 @@ function adminPageHead(title, description, actions = "") {
   return `<div class="admin-page-head"><div><h1>${title}</h1><p>${description}</p></div>${actions ? `<div class="button-row">${actions}</div>` : ""}</div>`;
 }
 
-function statCard(label, value, trend, ico) {
-  return `<div class="stat-card stat-${ico}"><div class="stat-top"><span>${label}</span><span class="stat-icon">${icon(ico,22)}</span></div><div class="stat-value">${value}</div><div class="stat-trend">${trend}</div></div>`;
+function statCard(label, value, trend, ico, glow = "") {
+  return `<div class="stat-card" ${glow?`style="--stat-glow:${glow}"`:""}><div class="stat-top"><span>${label}</span><span class="stat-icon">${icon(ico,17)}</span></div><div class="stat-value">${value}</div><div class="stat-trend">${trend}</div></div>`;
 }
 
 function dashboardPage() {
@@ -5343,7 +5215,7 @@ function dashboardPage() {
   const bars = values.map((h,i)=>`<div class="chart-bar-group"><span class="chart-bar" style="--h:${h}%"></span><span class="chart-bar secondary" style="--h:${Math.max(30,h-18)}%"></span></div>`).join("");
   return adminShell(`
     ${adminPageHead("Good morning, Sarah.","Here’s what is happening across the learning environment today.",`<button class="btn btn-secondary" data-route="home">${icon("globe",14)} Open portal</button><button class="btn btn-primary" data-action="quick-create">${icon("plus",14)} Quick create</button>`)}
-    <div class="stats-grid">${statCard("Recorded this week","186","↑ 12.4% from last week","video")}${statCard("Live sessions","12","3 currently live","live")}${statCard("Published courses","124","8 updated this week","book")}${statCard("Device availability","91%","20 of 22 online","monitor")}</div>
+    <div class="stats-grid">${statCard("Recorded this week","186","↑ 12.4% from last week","video")}${statCard("Live sessions","12","3 currently live","live","#ffecef")}${statCard("Published courses","124","8 updated this week","book","#e8faf6")}${statCard("Device availability","91%","20 of 22 online","monitor","#fff4df")}</div>
     <div class="dashboard-grid"><section class="panel"><div class="panel-head"><h3>Learning activity</h3><div class="segmented">${["7 days","30 days"].map(range=>`<button class="${state.dashboardRange===range?"active":""}" data-dashboard-range="${range}">${range}</button>`).join("")}</div></div><div class="panel-body"><div style="display:flex;gap:18px;font-size: 11px;color:var(--muted)"><span><i class="legend-dot" style="--dot:var(--blue-500)"></i>Views</span><span><i class="legend-dot" style="--dot:#9fdecf"></i>Unique learners</span></div><div class="chart-area"><div class="chart-bars">${bars}</div><div class="chart-labels"><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span><span>Mon</span><span>Tue</span></div></div></div></section>
       <section class="panel"><div class="panel-head"><h3>Recent activity</h3><button class="link-button" data-action="all-activity">View all</button></div><div class="panel-body"><div class="activity-list">${[["video","Recording completed","AI Foundations · Innovation 201","8 min"],["brain","Analysis report ready","Climate Science · Score 88","24 min"],["live","Live event started","AI and the Future of Higher Education","1 hr"],["book","Course published","Public Health in a Connected World","2 hr"],["monitor","Device needs attention","Studio 110 · Connection lost","3 hr"]].map(x=>`<div class="activity-item"><span class="activity-dot">${icon(x[0],13)}</span><div><strong>${x[1]}</strong><span>${x[2]}</span></div><time>${x[3]}</time></div>`).join("")}</div></div></section>
     </div>
@@ -5390,7 +5262,7 @@ function liveAdminPage() {
     ${adminPageHead("Live Events","Create, share and manage live teaching experiences.",`<button class="btn btn-primary" data-action="create-live">${icon("plus",14)} Create live event</button>`)}
     <div class="content-lifecycle-note"><span class="stat-icon">${icon("live",16)}</span><div><strong>Event status and publication are managed separately</strong><p>An event can be upcoming, live or ended while remaining unpublished from the portal. Publishing preserves the same share link and replay settings.</p></div></div>
     <div class="filter-bar"><div class="segmented">${["All","Live now","Upcoming","Ended"].map(f=>`<button class="${state.liveAdminFilter===f?"active":""}" data-live-admin-filter="${f}">${f}</button>`).join("")}</div><select class="form-control" data-live-admin-publication>${["All publication states","Published","Draft"].map(x=>`<option ${state.liveAdminPublication===x?"selected":""}>${x}</option>`).join("")}</select><input class="filter-search" data-live-admin-search value="${escapeHtml(state.liveAdminSearch)}" placeholder="Search live event" /></div>
-    ${managedEvents.length?`<div class="live-admin-grid">${managedEvents.map(e=>`<article class="live-admin-card"><div class="live-admin-cover ${e.cover}">${e.coverImage?`<img class="live-admin-cover-image" src="${escapeHtml(e.coverImage)}" alt="${escapeHtml(e.coverAlt || "Live event cover")}" loading="lazy">`:""}${pill(e.status)}<span class="publication-chip ${e.publication.toLowerCase()}">${icon(e.publication==="Published"?"globe":"edit",10)} ${e.publication}</span></div><div class="live-admin-body"><h3>${escapeHtml(e.title)}</h3><p class="live-card-description">${escapeHtml(e.description)}</p><div class="info-list"><div class="info-row"><span>Host</span><strong>${escapeHtml(e.teacher)}</strong></div><div class="info-row"><span>Schedule</span><strong>${e.date}<br>${e.time}</strong></div><div class="info-row"><span>Viewing access</span><strong>${escapeHtml(e.visibility)}</strong></div><div class="info-row"><span>Replay</span><strong>${e.replay?"Enabled":"Disabled"}</strong></div></div><div class="card-actions live-lifecycle-actions"><button class="btn btn-secondary btn-sm" data-edit-live="${e.id}">${icon("edit",12)} Edit</button>${e.publication==="Published"?`<button class="btn btn-secondary btn-sm" data-share-event="${e.id}">${icon("share",12)} Share</button>`:""}<button class="btn ${e.publication==="Published"?"btn-danger":"btn-primary"} btn-sm" data-live-publication="${e.id}" data-next-publication="${e.publication==="Published"?"Draft":"Published"}">${e.publication==="Published"?"Unpublish":"Publish"}</button></div></div></article>`).join("")}</div>`:`<div class="empty-state"><strong>No live events found</strong>Try changing the search or filters.</div>`}
+    ${managedEvents.length?`<div class="live-admin-grid">${managedEvents.map(e=>`<article class="live-admin-card"><div class="live-admin-cover ${e.cover}">${pill(e.status)}<span class="publication-chip ${e.publication.toLowerCase()}">${icon(e.publication==="Published"?"globe":"edit",10)} ${e.publication}</span></div><div class="live-admin-body"><h3>${escapeHtml(e.title)}</h3><p class="live-card-description">${escapeHtml(e.description)}</p><div class="info-list"><div class="info-row"><span>Host</span><strong>${escapeHtml(e.teacher)}</strong></div><div class="info-row"><span>Schedule</span><strong>${e.date}<br>${e.time}</strong></div><div class="info-row"><span>Viewing access</span><strong>${escapeHtml(e.visibility)}</strong></div><div class="info-row"><span>Replay</span><strong>${e.replay?"Enabled":"Disabled"}</strong></div></div><div class="card-actions live-lifecycle-actions"><button class="btn btn-secondary btn-sm" data-edit-live="${e.id}">${icon("edit",12)} Edit</button>${e.publication==="Published"?`<button class="btn btn-secondary btn-sm" data-share-event="${e.id}">${icon("share",12)} Share</button>`:""}<button class="btn ${e.publication==="Published"?"btn-danger":"btn-primary"} btn-sm" data-live-publication="${e.id}" data-next-publication="${e.publication==="Published"?"Draft":"Published"}">${e.publication==="Published"?"Unpublish":"Publish"}</button></div></div></article>`).join("")}</div>`:`<div class="empty-state"><strong>No live events found</strong>Try changing the search or filters.</div>`}
   `,"admin/live","Live Events");
 }
 
@@ -5402,9 +5274,9 @@ function aiPage() {
     ${adminPageHead("AI Classroom","Explore completed classroom analyses, evidence signals and detailed source video.",`<button class="btn btn-secondary" data-action="ai-settings">${icon("settings",14)} Analysis settings</button>`)}
     <div class="stats-grid ai-list-stats">
       ${statCard("Analysed this week","186","↑ 14 from last week","brain")}
-      ${statCard("Average insight score","86.4","↑ 2.8 this semester","chart")}
-      ${statCard("Evidence signals","7","2 high-priority moments","spark")}
-      ${statCard("Processing now","3","Estimated under 12 min","clock")}
+      ${statCard("Average insight score","86.4","↑ 2.8 this semester","chart","#e8faf6")}
+      ${statCard("Evidence signals","7","2 high-priority moments","spark","#fff4df")}
+      ${statCard("Processing now","3","Estimated under 12 min","clock","#f0ecff")}
     </div>
     <section class="panel ai-overview-band"><div class="panel-body"><div class="ai-overview-copy"><span class="eyebrow">Portfolio overview</span><h2>Teaching quality is trending upward.</h2><p>Across 186 analysed sessions, engagement improved by 4.6% while average instructor talk time remained balanced.</p></div><div class="ai-overview-metrics"><div><strong>96%</strong><span>Reports completed</span></div><div><strong>82%</strong><span>Average engagement</span></div><div><strong>93%</strong><span>Average attendance</span></div></div></div></section>
     <div class="table-panel ai-report-list"><div class="table-toolbar"><div class="table-toolbar-left"><select class="form-control" data-ai-status>${["All reports","Complete","Processing"].map(value=>`<option ${state.aiListStatus===value?"selected":""}>${value}</option>`).join("")}</select><select class="form-control" data-ai-school>${["All schools","Computing","Business","Science","Design","Health","Architecture"].map(x=>`<option ${state.aiSchool===x?"selected":""}>${x}</option>`).join("")}</select><select class="form-control" data-ai-range>${["Last 30 days","This week","This semester"].map(x=>`<option ${state.aiRange===x?"selected":""}>${x}</option>`).join("")}</select><input class="form-control ai-report-search" data-ai-search value="${escapeHtml(state.aiSearch)}" placeholder="Search course, instructor or room" /></div><span class="table-result-count">${filtered.length} of 186 reports</span></div>
@@ -5850,65 +5722,7 @@ function confirmDeleteVideo(id) {
   });
 }
 
-function formatLiveMediaTime(seconds) {
-  const total = Math.max(0, Math.floor(seconds || 0));
-  return `${String(Math.floor(total / 60)).padStart(2, "0")}:${String(total % 60).padStart(2, "0")}`;
-}
-
-function initializeLiveRecording() {
-  const main = app.querySelector("[data-live-main-video]");
-  const inset = app.querySelector("[data-live-inset-video]");
-  if (!main || !inset) return;
-  const progress = app.querySelector("[data-live-progress]");
-  const time = app.querySelector("[data-live-time]");
-  const playButton = app.querySelector('[data-action="live-play-toggle"]');
-  main.muted = state.liveMuted;
-  inset.muted = true;
-
-  const syncInset = () => {
-    if (inset.readyState && Math.abs(inset.currentTime - main.currentTime) > .3) inset.currentTime = main.currentTime;
-  };
-  const updateControls = () => {
-    const duration = Number.isFinite(main.duration) ? main.duration : 319.6;
-    const percent = duration ? Math.min(100, main.currentTime / duration * 100) : 0;
-    progress.style.setProperty("--progress", `${percent}%`);
-    progress.setAttribute("aria-valuenow", String(Math.round(percent)));
-    time.textContent = `${formatLiveMediaTime(main.currentTime)} / ${formatLiveMediaTime(duration)}`;
-    playButton.innerHTML = main.paused ? icon("play", 16) : "Ⅱ";
-    playButton.setAttribute("aria-label", main.paused ? "Play" : "Pause");
-  };
-  main.addEventListener("loadedmetadata", () => {
-    if (state.liveMediaTime > 0 && state.liveMediaTime < main.duration) main.currentTime = state.liveMediaTime;
-    syncInset();
-    updateControls();
-    if (state.livePlaying) main.play().catch(() => { state.livePlaying = false; updateControls(); });
-  });
-  inset.addEventListener("loadedmetadata", syncInset);
-  main.addEventListener("play", () => {
-    if (!main.isConnected) return;
-    state.livePlaying = true;
-    syncInset();
-    inset.play().catch(() => {});
-    updateControls();
-  });
-  main.addEventListener("pause", () => {
-    if (!main.isConnected) return;
-    state.livePlaying = false;
-    inset.pause();
-    updateControls();
-  });
-  main.addEventListener("seeking", syncInset);
-  main.addEventListener("timeupdate", () => {
-    if (!main.isConnected) return;
-    state.liveMediaTime = main.currentTime;
-    syncInset();
-    updateControls();
-  });
-  updateControls();
-}
-
 function render() {
-  closeAdminSelectMenu();
   state.route = parseRoute();
   state.portalMenuOpen = false;
   let html;
@@ -5934,35 +5748,106 @@ function render() {
     };
     html = (routes[state.route] || homePage)();
   }
-  const previousLiveVideo = app.querySelector("[data-live-main-video]");
-  if (previousLiveVideo) {
-    state.liveMediaTime = previousLiveVideo.currentTime;
-    state.livePlaying = !previousLiveVideo.paused;
-  }
   app.innerHTML = html;
-  initializeLiveRecording();
-  if (state.route.startsWith("admin/")) enhanceAdminSelects(app);
+  mountLiveVideos();
   window.scrollTo({ top: 0, behavior: "instant" });
 }
 
+function mountLiveVideos() {
+  if (!state.route.startsWith("live-room")) return;
+  const canvas = document.querySelector(".video-canvas");
+  const stream = document.querySelector(".teacher-stream");
+  if (!canvas || !stream) return;
+
+  const mainVideo = document.createElement("video");
+  mainVideo.className = "live-main-video";
+  mainVideo.src = "assets/videos/22-web.mp4";
+  mainVideo.loop = true;
+  mainVideo.playsInline = true;
+  mainVideo.preload = "metadata";
+  mainVideo.muted = state.liveMuted;
+  canvas.prepend(mainVideo);
+  canvas.classList.add("has-live-videos");
+
+  const pipVideo = document.createElement("video");
+  pipVideo.className = "live-pip-video";
+  pipVideo.src = "assets/videos/11-web.mp4";
+  pipVideo.loop = true;
+  pipVideo.playsInline = true;
+  pipVideo.preload = "metadata";
+  pipVideo.muted = true;
+  stream.prepend(pipVideo);
+  stream.classList.add("has-live-video");
+
+  const progress = canvas.querySelector(".video-progress");
+  const timeLabel = canvas.querySelector(".video-controls-group span");
+  let resumeAfterSeek = false;
+  const syncProgress = () => {
+    if (!Number.isFinite(mainVideo.duration) || mainVideo.duration <= 0) return;
+    const percent = Math.max(0, Math.min(100, mainVideo.currentTime / mainVideo.duration * 100));
+    progress?.style.setProperty("--progress", `${percent}%`);
+    if (timeLabel) timeLabel.textContent = `${formatVideoTime(mainVideo.currentTime)} / ${formatVideoTime(mainVideo.duration)}`;
+  };
+  const seekFromPointer = event => {
+    if (!progress || !Number.isFinite(mainVideo.duration)) return;
+    const rect = progress.getBoundingClientRect();
+    const ratio = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width));
+    mainVideo.currentTime = ratio * mainVideo.duration;
+    if (Number.isFinite(pipVideo.duration)) pipVideo.currentTime = Math.min(ratio * pipVideo.duration, pipVideo.duration);
+    syncProgress();
+  };
+
+  mainVideo.addEventListener("timeupdate", syncProgress);
+  mainVideo.addEventListener("loadedmetadata", syncProgress);
+  progress?.addEventListener("pointerdown", event => {
+    event.preventDefault();
+    event.stopPropagation();
+    resumeAfterSeek = !mainVideo.paused;
+    mainVideo.pause();
+    pipVideo.pause();
+    progress.classList.add("dragging");
+    progress.setPointerCapture(event.pointerId);
+    seekFromPointer(event);
+  });
+  progress?.addEventListener("pointermove", event => {
+    if (progress.classList.contains("dragging")) seekFromPointer(event);
+  });
+  progress?.addEventListener("pointerup", event => {
+    seekFromPointer(event);
+    progress.classList.remove("dragging");
+    progress.releasePointerCapture(event.pointerId);
+    if (resumeAfterSeek) {
+      mainVideo.play().catch(() => {});
+      pipVideo.play().catch(() => {});
+    }
+  });
+  progress?.addEventListener("click", event => event.stopPropagation());
+
+  if (state.livePlaying) {
+    mainVideo.play().catch(() => {});
+    pipVideo.play().catch(() => {});
+  }
+}
+
+function formatVideoTime(seconds) {
+  const total = Math.max(0, Math.floor(Number(seconds) || 0));
+  const hours = Math.floor(total / 3600);
+  const minutes = Math.floor(total % 3600 / 60);
+  const secs = total % 60;
+  return hours > 0
+    ? `${hours}:${String(minutes).padStart(2,"0")}:${String(secs).padStart(2,"0")}`
+    : `${minutes}:${String(secs).padStart(2,"0")}`;
+}
+
+function toggleLivePlayback() {
+  const videos = [...document.querySelectorAll(".live-main-video, .live-pip-video")];
+  const button = document.querySelector('[data-action="live-play-toggle"]');
+  state.livePlaying = !state.livePlaying;
+  videos.forEach(video => state.livePlaying ? video.play().catch(() => {}) : video.pause());
+  if (button) button.innerHTML = state.livePlaying ? "Ⅱ" : icon("play",16);
+}
+
 function handleClick(event) {
-  const adminOption = event.target.closest("[data-admin-select-option]");
-  if (adminOption && activeAdminSelect) {
-    const { trigger, select } = activeAdminSelect;
-    select.selectedIndex = Number(adminOption.dataset.adminSelectOption);
-    trigger.querySelector(".admin-select-label").textContent = select.options[select.selectedIndex].text;
-    if (trigger.dataset.adminSelectFieldLabel) trigger.setAttribute("aria-label", `${trigger.dataset.adminSelectFieldLabel}: ${select.options[select.selectedIndex].text}`);
-    closeAdminSelectMenu(true);
-    select.dispatchEvent(new Event("change", { bubbles: true }));
-    return;
-  }
-  const adminTrigger = event.target.closest("[data-admin-select-trigger]");
-  if (adminTrigger) {
-    if (activeAdminSelect?.trigger === adminTrigger) closeAdminSelectMenu(true);
-    else openAdminSelectMenu(adminTrigger);
-    return;
-  }
-  closeAdminSelectMenu();
   if (event.target.matches("[data-modal-backdrop]")) {
     closeModal();
     return;
@@ -6223,29 +6108,13 @@ function handleClick(event) {
     "toggle-switch": () => actionEl.classList.toggle("on"),
     "play-toggle": () => { state.playerPlaying=!state.playerPlaying; render(); },
     "volume-toggle": () => { state.muted=!state.muted; render(); toast(state.muted?"Muted":"Sound on", state.muted?"Lesson audio is muted.":"Lesson audio has been restored."); },
-    "live-play-toggle": () => {
-      const video = document.querySelector("[data-live-main-video]");
-      if (video) { if (video.paused) video.play().catch(() => toast("Playback unavailable", "The video could not be started.")); else video.pause(); }
-      else { state.livePlaying = !state.livePlaying; render(); }
-    },
-    "live-volume-toggle": () => {
-      state.liveMuted = !state.liveMuted;
-      const video = document.querySelector("[data-live-main-video]");
-      if (video) { video.muted = state.liveMuted; actionEl.classList.toggle("control-off", state.liveMuted); }
-      else render();
-    },
+    "live-play-toggle": toggleLivePlayback,
+    "live-volume-toggle": () => { state.liveMuted=!state.liveMuted; render(); },
     "live-captions": () => { state.liveCaptions=!state.liveCaptions; render(); },
     "speed": () => { const speeds=["1×","1.25×","1.5×","2×","0.75×"]; const i=speeds.indexOf(state.playerSpeed); state.playerSpeed=speeds[(i+1)%speeds.length]; render(); },
     "captions": () => { state.captions=!state.captions; render(); toast(state.captions?"Captions on":"Captions off",state.captions?"English captions are now visible.":"Captions have been hidden."); },
     "stream-toggle": () => { state.dualStream=!state.dualStream; render(); toast(state.dualStream?"Dual stream view":"Single stream view",state.dualStream?"Instructor camera and presentation are visible.":"Presentation stream is now prioritised."); },
-    "seek-player": () => {
-      const video = document.querySelector("[data-live-main-video]");
-      if (video && Number.isFinite(video.duration)) {
-        const bounds = actionEl.getBoundingClientRect();
-        const clickX = event.clientX >= bounds.left && event.clientX <= bounds.right ? event.clientX : bounds.left + bounds.width / 2;
-        video.currentTime = Math.max(0, Math.min(video.duration, (clickX - bounds.left) / bounds.width * video.duration));
-      } else toast("Playback moved", "Jumped to 42:18 in this demo.");
-    },
+    "seek-player": () => toast("Playback moved", "Jumped to 42:18 in this demo."),
     "player-settings": playerSettingsModal,
     "fullscreen": () => { const page=document.querySelector(".player-page"); if(page){page.classList.toggle("fullscreen-demo"); toast(page.classList.contains("fullscreen-demo")?"Full screen view":"Full screen closed", "Press the same control to switch back.");} },
     "drag-stream": () => { const stream=document.querySelector(".teacher-stream"); if(stream) stream.classList.toggle("repositioned"); toast("Camera repositioned", "The instructor stream can be placed over the presentation."); },
@@ -6309,33 +6178,7 @@ function handleInput(event) {
 document.addEventListener("click", handleClick);
 document.addEventListener("change", handleChange);
 document.addEventListener("input", handleInput);
-window.addEventListener("resize", () => closeAdminSelectMenu());
-document.addEventListener("scroll", event => {
-  if (activeAdminSelect && event.target !== activeAdminSelect.menu) closeAdminSelectMenu();
-}, true);
 document.addEventListener("keydown", event => {
-  if (activeAdminSelect && event.key === "Escape") {
-    event.preventDefault();
-    closeAdminSelectMenu(true);
-    return;
-  }
-  const adminTrigger = event.target.closest("[data-admin-select-trigger]");
-  if (adminTrigger && ["ArrowDown", "ArrowUp"].includes(event.key)) {
-    event.preventDefault();
-    openAdminSelectMenu(adminTrigger);
-    const options = activeAdminSelect.menu.querySelectorAll("[data-admin-select-option]");
-    const index = Math.max(0, activeAdminSelect.select.selectedIndex + (event.key === "ArrowDown" ? 1 : -1));
-    options[Math.min(index, options.length - 1)]?.focus();
-    return;
-  }
-  const adminOption = event.target.closest("[data-admin-select-option]");
-  if (adminOption && activeAdminSelect) {
-    const options = [...activeAdminSelect.menu.querySelectorAll("[data-admin-select-option]")];
-    const index = options.indexOf(adminOption);
-    const nextIndex = event.key === "Home" ? 0 : event.key === "End" ? options.length - 1 : event.key === "ArrowDown" ? Math.min(index + 1, options.length - 1) : event.key === "ArrowUp" ? Math.max(index - 1, 0) : -1;
-    if (nextIndex >= 0) { event.preventDefault(); options[nextIndex].focus(); return; }
-    if (event.key === "Tab") closeAdminSelectMenu();
-  }
   if (event.key === "Escape") closeModal();
   if (event.key === "Enter" && event.target.matches("[data-global-search]")) {
     state.courseSearch = event.target.value;
